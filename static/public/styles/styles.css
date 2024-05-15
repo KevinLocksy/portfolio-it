@@ -1,0 +1,22 @@
+* {
+  margin:0;
+  padding: 0;
+}
+
+html {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+  transition: background-color 0.3s;
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+}
+
+header {
+  background-color: var(--background-secondary);
+}
+
+footer {
+  background-color: var(--background-secondary);
+}

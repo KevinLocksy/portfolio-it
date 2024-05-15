@@ -1,0 +1,22 @@
+[data-theme="dark"] {
+  --background-primary: #140834e2;
+  --background-secondary: #190c3de2;
+  --shadow-primary:#28213be2;
+  --shadow-secondary:256, 28%, 18%, 0.886;
+  --box-shadow-secondary:0px 6px 3em hsla(256, 28%, 18%, 0.886, 0.08);
+  --text-primary: #ffffff;
+}
+
+[data-theme="light"] {
+  --background-primary: #d7d2d2;
+  --background-secondary: #cfc1c1;
+  --shadow-primary:#28213be2;
+  --shadow-secondary:#28213be2;
+  --text-primary: #000000;
+}
+
+[data-theme="pink"] {
+  --background-primary: #b43232;
+  --background-secondary: #b43232;
+  --text-primary: #000000;
+}
