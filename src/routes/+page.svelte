@@ -5,17 +5,15 @@
 
 <script>
   import Card from '$components/Card.svelte';
-  import {constants_socialMedia} from '$constants/socialmedia.js';
-  import {constants_personalInfo} from '$constants/personalInfo.js';
-  import {LANG} from "$lib/constants/localStorage.js";
-  import {toggleTheme} from '$utils/theme.js';
-  import {updateLang} from '$utils/lang.js';
-  import {i18n} from '$utils/i18n.js';
-  import {theme,lang_code} from '$store/store.js';
+  import SOCIAL_MEDIA from '$lib/config/socialmedia.conf.json';
+  import PERSONAL_INFO from '$lib/config/personalInfo.conf.json';
+  import LANG from "$lib/config/i18n.conf.json";
+  import {toggleTheme} from '$utils/theme.utils.js';
+  import {isDarkTheme} from '$store/theme.store.js';
+  import {i18n} from '$utils/i18n.utils.js';
+  import {i18nStore} from '$store/i18n.store.js';
 
-  const PERSONAL_INFO = constants_personalInfo.personalInfo;
   const LOGO = PERSONAL_INFO.logo;
-  const SOCIAL_MEDIA = constants_socialMedia.socialmedia;
   const LANGUAGE = LANG.language;
   //https://svelte.dev/repl/de39de663ef2445b8fe17b79c500013b?version=3.33.0 i18n
   //https://codepen.io/davidkpiano/pen/gOoNZNe halo cursor
@@ -30,7 +28,7 @@
 <header>
   <div>
     <div class='btn-dark-mode' role='button' on:click={toggleTheme} on:keyup tabindex="0">
-      <img class='logo locksy' src={$theme =="light" ? LOGO.img.light : LOGO.img.light} alt='{LOGO.alt}' title='{LOGO.title}' />
+      <img class='logo locksy' src={isDarkTheme? LOGO.img.dark : LOGO.img.light} alt='{LOGO.alt}' title='{LOGO.title}' />
     </div>
     <div class='pseudo'>
       <h1>{PERSONAL_INFO.pseudo}</h1>
@@ -42,7 +40,7 @@
     <div>
       <select on:change={onLangChange} name="lang" id="lang">
         {#each LANGUAGE as {locale,code}}
-          <option value={code} selected={code == $lang_code ? "selected" : ""}>{locale}</option>
+          <option value={code} selected={code == $i18nStore ? "selected" : ""}>{locale}</option>
         {/each}
       </select>
 
@@ -58,10 +56,10 @@
       <p> {$i18n.pres.title}</p>
       <p> {$i18n.pres.desc}</p>
       <div id="pres-desc-social">
-        {#each SOCIAL_MEDIA as { url, img, alt, title }}
+        {#each SOCIAL_MEDIA.socialmedia as { url, img, alt, title }}
         <div class="socialMedia">
           <a href={url}>
-            <img class='logo' src={$theme =="light" ? img.light : img.dark} alt='{alt}' title='{title}' />
+            <img class='logo' src={$isDarkTheme ? img.dark : img.light} alt='{alt}' title='{title}' />
           </a>
         </div>
       {/each}
