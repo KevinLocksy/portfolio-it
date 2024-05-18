@@ -22,7 +22,6 @@
   //https://threejs.org/docs/index.html#manual/en/introduction/Installation 3D
 
   const onLangChange = async () => {
-    updateLang();
     await i18n.switchLang();
   }
 

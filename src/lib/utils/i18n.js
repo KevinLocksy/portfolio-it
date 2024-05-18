@@ -39,8 +39,8 @@ const init18n = () => {
       set(bundle);
     },
     switchLang: async () => {
-      const bundle = await getTranslateJSON(get(lang_code));
       updateLang();
+      const bundle = await getTranslateJSON(get(lang_code));
       set(bundle);
     }
   };
