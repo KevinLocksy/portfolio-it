@@ -7,15 +7,25 @@
   import Card from '$components/Card.svelte';
   import {constants_socialMedia} from '$constants/socialmedia.js';
   import {constants_personalInfo} from '$constants/personalInfo.js';
+  import {LANG} from "$lib/constants/localStorage.js";
   import {toggleTheme} from '$utils/theme.js';
-  import {theme} from '$store/store.js';
+  import {updateLang} from '$utils/lang.js';
+  import {i18n} from '$utils/i18n.js';
+  import {theme,lang_code} from '$store/store.js';
 
   const PERSONAL_INFO = constants_personalInfo.personalInfo;
   const LOGO = PERSONAL_INFO.logo;
   const SOCIAL_MEDIA = constants_socialMedia.socialmedia;
+  const LANGUAGE = LANG.language;
   //https://svelte.dev/repl/de39de663ef2445b8fe17b79c500013b?version=3.33.0 i18n
   //https://codepen.io/davidkpiano/pen/gOoNZNe halo cursor
   //https://threejs.org/docs/index.html#manual/en/introduction/Installation 3D
+
+  const onLangChange = async () => {
+    updateLang();
+    await i18n.switchLang();
+  }
+
 </script>
 
 <header>
@@ -30,14 +40,15 @@
 
   <div>
     <div>3D</div>
-    <div>language</div>
-    {#each SOCIAL_MEDIA as { url, img, alt, title }}
-      <div class="socialMedia">
-        <a href={url}>
-          <img class='logo' src={$theme =="light" ? img.light : img.dark} alt='{alt}' title='{title}' />
-        </a>
-      </div>
-    {/each}
+    <div>
+      <select on:change={onLangChange} name="lang" id="lang">
+        {#each LANGUAGE as {locale,code}}
+          <option value={code} selected={code == $lang_code ? "selected" : ""}>{locale}</option>
+        {/each}
+      </select>
+
+    </div>
+
   </div>
 </header>
 
@@ -45,7 +56,17 @@
 <main>
   <div id="presentation">
     <div id='pres-desc'>
-      <p> Hello I am blah blah</p>
+      <p> {$i18n.pres.title}</p>
+      <p> {$i18n.pres.desc}</p>
+      <div id="pres-desc-social">
+        {#each SOCIAL_MEDIA as { url, img, alt, title }}
+        <div class="socialMedia">
+          <a href={url}>
+            <img class='logo' src={$theme =="light" ? img.light : img.dark} alt='{alt}' title='{title}' />
+          </a>
+        </div>
+      {/each}
+      </div>
     </div>
     <div id='pres-img'> 3D thing</div>
   </div>
@@ -60,7 +81,7 @@
 </main>
 
 <footer>
-  image artist vs tech man
+  <!-- {$i18n.pres.title} -->
 </footer>
 
 <style>
@@ -113,6 +134,11 @@
   #pres-desc{
     grid-column: 2;
   }
+  #pres-desc-social{
+    display: flex;
+    flex-direction: row;
+  }
+
   #pres-img{
     grid-column: 3;
   }
