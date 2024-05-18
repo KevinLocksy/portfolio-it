@@ -8,6 +8,7 @@ const config = {
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter: adapter(),
 		alias:{
+			$assets:'src/assets',
 			$styles:'src/assets/styles',
 			$components:'src/lib/components',
 			$constants:'src/lib/constants',

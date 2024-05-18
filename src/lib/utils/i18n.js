@@ -2,7 +2,9 @@ import {writable,get} from "svelte/store";
 import {lang_code} from '$store/store.js';
 import {setDefaultLang,updateLang} from '$utils/lang.js';
 
-import en from "../../assets/i18n/lang-en.json";//change path
+import en from "$assets/i18n/lang-en.json";//change path
+import mappingJSON from "$lib/config/i18n.mapping.json";
+
 const defaultLang = {
   lang: "en",
   ...en
@@ -33,8 +35,6 @@ const init18n = () => {
   return { subscribe, 
     init: async () => {
       setDefaultLang();
-      console.log("init");
-      console.log("get(lang_code)=",get(lang_code))
       const bundle = await getTranslateJSON(get(lang_code));
       set(bundle);
     },
@@ -49,11 +49,3 @@ const init18n = () => {
 export const i18n = init18n();
 
 //https://svelte.dev/repl/f1b33d5d448f470cafc11110a5175fed?version=3.48.0 for the json format
-
-//issue with the path
-const mappingJSON = {
-  "en-US":"./src/assets/i18n/lang-en.json",
-  "fr-FR":"./src/assets/i18n/lang-fr.json",
-  // "epo-EO":"./src/assets/i18n/lang-fr.json",
-  // "spa-ES":"./src/assets/i18n/lang-fr.json",
-}
