@@ -3,5 +3,7 @@
     "title":"EN - Hello",
     "desc":"EN - Desc"
   },
-  "desc":"sdqs"
+  "techStack":{
+    "desc":"Technologies and Framework I know : the stylish font here"
+  }
 }

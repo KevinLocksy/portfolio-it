@@ -1,0 +1,84 @@
+{
+  "techStack":[
+    {
+      "name":"java",
+      "img":{
+        "path":"public/img/logo/techStack/java-sqr.logo.png",
+        "title":"",
+        "alt":"Java logo"
+      }
+    },
+    {
+      "name":"python",
+      "img":{
+        "path":"public/img/logo/techStack/python-sqr.logo.png",
+        "title":"",
+        "alt":"Python logo"
+      }
+    },
+    {
+      "name":"c++",
+      "img":{
+        "path":"public/img/logo/techStack/c++-sqr.logo.png",
+        "title":"",
+        "alt":"C++ logo"
+      }
+    },
+    {
+      "name":"html5",
+       "img":{
+        "path":"public/img/logo/techStack/html5-sqr.logo.png",
+        "title":"",
+        "alt":"HTML5 logo"
+      }
+    },
+    {
+      "name":"js",
+       "img":{
+        "path":"public/img/logo/techStack/python-sqr.logo.png",
+        "title":"",
+        "alt":"Javascript logo"
+      }
+    },
+    {
+      "name":"css3",
+       "img":{
+        "path":"public/img/logo/techStack/css3-sqr.logo.png",
+        "title":"",
+        "alt":"CSS3 logo"
+      }
+    },
+    {
+      "name":"svelte",
+       "img":{
+        "path":"public/img/logo/techStack/svelte-sqr.logo.png",
+        "title":"",
+        "alt":"PytSveltehon logo"
+      }
+    },
+    {
+      "name":"react native",
+       "img":{
+        "path":"public/img/logo/techStack/reactNative-sqr.logo.png",
+        "title":"",
+        "alt":"React Native logo"
+      }
+    },
+    {
+      "name":"photoshop",
+       "img":{
+        "path":"public/img/logo/techStack/photoshop-sqr.logo.png",
+        "title":"",
+        "alt":"Photoshop logo"
+      }
+    },
+    {
+      "name":"latex",
+       "img":{
+        "path":"public/img/logo/techStack/latex-sqr.logo.png",
+        "title":"",
+        "alt":"Latex logo"
+      }
+    }
+  ]
+}

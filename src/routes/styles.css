@@ -1,0 +1,13 @@
+
+.logo, .socialMedia {
+  height: 50px;
+  width:50px;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+.btn-dark-mode{
+  cursor: pointer;
+}
+.logo.locksy{
+  border-radius: 50px;
+}

@@ -7,6 +7,7 @@
   import Card from '$components/Card.svelte';
   import SOCIAL_MEDIA from '$lib/config/socialmedia.conf.json';
   import PERSONAL_INFO from '$lib/config/personalInfo.conf.json';
+  import TECH_STACK from '$config/techStack.conf.json';
   import LANG from "$lib/config/i18n.conf.json";
   import {toggleTheme} from '$utils/theme.utils.js';
   import {isDarkTheme} from '$store/theme.store.js';
@@ -57,19 +58,27 @@
       <p> {$i18n.pres.desc}</p>
       <div id="pres-desc-social">
         {#each SOCIAL_MEDIA.socialmedia as { url, img, alt, title }}
-        <div class="socialMedia">
-          <a href={url}>
-            <img class='logo' src={$isDarkTheme ? img.dark : img.light} alt='{alt}' title='{title}' />
-          </a>
-        </div>
-      {/each}
+          <div class="socialMedia">
+            <a href={url}>
+              <img class='logo' src={$isDarkTheme ? img.dark : img.light} alt='{alt}' title='{title}' />
+            </a>
+          </div>
+        {/each}
       </div>
     </div>
     <div id='pres-img'> 3D thing</div>
   </div>
 
   <div id="techStack">
-    Stack
+    <h2>{$i18n.techStack.desc}</h2>
+    <div id="techStack-list">
+      {#each TECH_STACK.techStack as {name, img}}
+        <div class="techStack-logo-container"  name='{name}'>
+          <img class='techStack-logo-img logo' src={img.path} alt='{img.alt}' title='{img.title}' />
+          <h4 class="techStack-logo-caption">{name}</h4>
+        </div>
+      {/each}
+    </div>
   </div>
   <div id="projects">
     <Card></Card>
@@ -82,6 +91,8 @@
 </footer>
 
 <style>
+  @import url("./styles.css");
+
   header, footer{
     display: flex;
     width:100%;
@@ -90,8 +101,8 @@
   }
   header{
     position: fixed;
-    top: 0;
     justify-content:space-between;
+    z-index: 999;/* this is odd*/
   }
   header > *{
     display: flex;
@@ -99,34 +110,28 @@
     align-items: center;
   }
   main{
-    margin-top:50px;
+    display:grid;
+    grid-template-rows: 0fr 2fr 1fr 3fr 3fr;
+    /* margin-top:50px; */
+    position: relative;
     width: 100%;
   }
   footer{
-    position: fixed;
-    bottom: 0;
     justify-content: center;
   }
   
-  .logo, .socialMedia {
-    height: 50px;
-    width:50px;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
-  }
-  .btn-dark-mode{
-    cursor: pointer;
-  }
-  .logo.locksy{
-    border-radius: 50px;
+  #presentation, #techStack, #projects {
+    display:grid;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
   }
 
   #presentation{
-    display:grid;
+    grid-row: 2;
+    position: relative;
+    top:30%;
     grid-template-columns: 3fr 4fr 3fr 3fr;
-    height:30vh;
-    width:(100% - 2em);
-    padding: 2em;
   }
   #pres-desc{
     grid-column: 2;
@@ -135,20 +140,52 @@
     display: flex;
     flex-direction: row;
   }
-
+  
   #pres-img{
     grid-column: 3;
   }
-
+  
   #techStack{
-    height:10vh;
-    display: flex;
-    justify-content: center;
+    grid-row: 3;
+    position: relative;
+    flex-direction: column;
   }
-  #projects{
+  #techStack-list{
     display: flex;
+  }
+  .techStack-logo-container{
+    position: relative;
+    height: fit-content;
+    height: 200px;
+    margin: 1rem; 
+  }
+  .techStack-logo-container:hover .techStack-logo-caption {
+    opacity: 90;
+  }
+  .techStack-logo-container::after{
+    content: "";
+    position: absolute;
+    height: 1rem;
+    width: 4rem;
+    left:0.13rem;
+    background: rgb(17, 17, 17);
+    border-radius: 100%;
+    filter: blur(6px);
+  }
+  .techStack-logo-caption{
+    position: absolute;
+    height: max-content;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+    font-style: italic;
+    opacity: 0;
+    transition: opacity 0.5s linear;
+  }
+
+  #projects{
+    grid-row: 4;
     flex-direction: row;
-    justify-content: center;
   }
 
 </style>
