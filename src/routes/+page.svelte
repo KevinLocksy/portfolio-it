@@ -156,32 +156,48 @@
   .techStack-logo-container{
     position: relative;
     height: fit-content;
-    height: 200px;
-    margin: 1rem; 
+    margin: 1rem;
   }
-  .techStack-logo-container:hover .techStack-logo-caption {
-    opacity: 90;
+  
+  /* background halo: position + height + width mandatory in the transition */
+  .techStack-logo-container::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 110%;
+    background: radial-gradient(closest-side, var(--background-halo-primary), transparent);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity var(--logo-transition-duration) ;
   }
+  .techStack-logo-container:hover::before {
+    opacity: 1;
+  }
+  
+  /* shadow  */
   .techStack-logo-container::after{
     content: "";
     position: absolute;
     height: 1rem;
     width: 4rem;
     left:0.13rem;
-    background: rgb(17, 17, 17);
+    background: var(--shadow-primary);
     border-radius: 100%;
     filter: blur(6px);
+    z-index: -1;
   }
   .techStack-logo-caption{
     position: absolute;
     height: max-content;
     width: 100%;
     text-align: center;
-    z-index: 1;
     font-style: italic;
     color:var(--logo-caption-primary);
     opacity: 0;
-    transition: opacity 0.5s linear;
+    transition: opacity var(--logo-transition-duration) linear;
+  }
+  .techStack-logo-container:hover .techStack-logo-caption {
+    opacity: 1;
   }
 
   #projects{
