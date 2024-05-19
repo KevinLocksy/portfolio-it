@@ -1,7 +1,7 @@
 {
   "techStack":[
     {
-      "name":"java",
+      "name":"Java",
       "img":{
         "path":"public/img/logo/techStack/java-sqr.logo.png",
         "title":"",
@@ -9,7 +9,7 @@
       }
     },
     {
-      "name":"python",
+      "name":"Python",
       "img":{
         "path":"public/img/logo/techStack/python-sqr.logo.png",
         "title":"",
@@ -17,15 +17,15 @@
       }
     },
     {
-      "name":"c++",
+      "name":"C++",
       "img":{
-        "path":"public/img/logo/techStack/c++-sqr.logo.png",
+        "path":"public/img/logo/techStack/cpp-sqr.logo.png",
         "title":"",
         "alt":"C++ logo"
       }
     },
     {
-      "name":"html5",
+      "name":"Html5",
        "img":{
         "path":"public/img/logo/techStack/html5-sqr.logo.png",
         "title":"",
@@ -33,15 +33,15 @@
       }
     },
     {
-      "name":"js",
+      "name":"JS",
        "img":{
-        "path":"public/img/logo/techStack/python-sqr.logo.png",
+        "path":"public/img/logo/techStack/js-sqr.logo.png",
         "title":"",
         "alt":"Javascript logo"
       }
     },
     {
-      "name":"css3",
+      "name":"CSS3",
        "img":{
         "path":"public/img/logo/techStack/css3-sqr.logo.png",
         "title":"",
@@ -49,7 +49,7 @@
       }
     },
     {
-      "name":"svelte",
+      "name":"Svelte",
        "img":{
         "path":"public/img/logo/techStack/svelte-sqr.logo.png",
         "title":"",
@@ -57,7 +57,7 @@
       }
     },
     {
-      "name":"react native",
+      "name":"React Native",
        "img":{
         "path":"public/img/logo/techStack/reactNative-sqr.logo.png",
         "title":"",
@@ -65,7 +65,7 @@
       }
     },
     {
-      "name":"photoshop",
+      "name":"Photoshop",
        "img":{
         "path":"public/img/logo/techStack/photoshop-sqr.logo.png",
         "title":"",
@@ -73,7 +73,7 @@
       }
     },
     {
-      "name":"latex",
+      "name":"Latex",
        "img":{
         "path":"public/img/logo/techStack/latex-sqr.logo.png",
         "title":"",
