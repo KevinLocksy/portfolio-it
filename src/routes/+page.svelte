@@ -54,8 +54,8 @@
 <main>
   <div id="presentation">
     <div id='pres-desc'>
-      <p> {$i18n.pres.title}</p>
-      <p> {$i18n.pres.desc}</p>
+      <p> {@html $i18n.pres.title}</p>
+      <p> {@html  $i18n.pres.desc}</p>
       <div id="pres-desc-social">
         {#each SOCIAL_MEDIA.socialmedia as { url, img, alt, title }}
           <div class="socialMedia">
@@ -70,7 +70,7 @@
   </div>
 
   <div id="techStack">
-    <h2>{$i18n.techStack.desc}</h2>
+    <h2>{@html $i18n.techStack.desc}</h2>
     <div id="techStack-list">
       {#each TECH_STACK.techStack as {name, img}}
         <div class="techStack-logo-container"  name='{name}'>
