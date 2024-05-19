@@ -179,6 +179,7 @@
     text-align: center;
     z-index: 1;
     font-style: italic;
+    color:var(--logo-caption-primary);
     opacity: 0;
     transition: opacity 0.5s linear;
   }

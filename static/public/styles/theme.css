@@ -5,6 +5,7 @@
   --shadow-secondary:256, 28%, 18%, 0.886;
   --box-shadow-secondary:0px 6px 3em hsla(256, 28%, 18%, 0.886, 0.08);
   --text-primary: #ffffff;
+  --logo-caption-primary:#ffffff;
 }
 
 [data-theme="light"] {
@@ -13,6 +14,7 @@
   --shadow-primary:#28213be2;
   --shadow-secondary:#28213be2;
   --text-primary: #000000;
+  --logo-caption-primary:#ffffff;
 }
 
 [data-theme="pink"] {
