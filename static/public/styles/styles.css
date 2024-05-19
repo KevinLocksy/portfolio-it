@@ -5,6 +5,22 @@
 
 html {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  --cursor-x-px: calc(var(--x) * 1px);
+  --cursor-y-px: calc(var(--y) * 1px);
+
+  &:before{
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(
+      800px circle at var(--cursor-x-px) var(--cursor-y-px),
+      rgba(255, 255, 255, 0.3),
+      transparent 70%
+      );
+    z-index: -1;
+  }
 }
 
 body {

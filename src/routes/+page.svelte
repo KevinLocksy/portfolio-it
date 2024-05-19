@@ -9,6 +9,7 @@
   import PERSONAL_INFO from '$lib/config/personalInfo.conf.json';
   import TECH_STACK from '$config/techStack.conf.json';
   import LANG from "$lib/config/i18n.conf.json";
+  import {setCursorPositions} from '$utils/cursor.utils.js';
   import {toggleTheme} from '$utils/theme.utils.js';
   import {isDarkTheme} from '$store/theme.store.js';
   import {i18n} from '$utils/i18n.utils.js';
@@ -20,78 +21,100 @@
   //https://codepen.io/davidkpiano/pen/gOoNZNe halo cursor
   //https://threejs.org/docs/index.html#manual/en/introduction/Installation 3D
 
+  setCursorPositions();
   const onLangChange = async () => {
     await i18n.switchLang();
   }
 
 </script>
 
-<header>
-  <div>
-    <div class='btn-dark-mode' role='button' on:click={toggleTheme} on:keyup tabindex="0">
-      <img class='logo locksy' src={isDarkTheme? LOGO.img.dark : LOGO.img.light} alt='{LOGO.alt}' title='{LOGO.title}' />
-    </div>
-    <div class='pseudo'>
-      <h1>{PERSONAL_INFO.pseudo}</h1>
-    </div>
-  </div>
-
-  <div>
-    <div>3D</div>
+<div id="page">
+  <header>
     <div>
-      <select on:change={onLangChange} name="lang" id="lang">
-        {#each LANGUAGE as {locale,code}}
-          <option value={code} selected={code == $i18nStore ? "selected" : ""}>{locale}</option>
-        {/each}
-      </select>
-
+      <div class='btn-dark-mode' role='button' on:click={toggleTheme} on:keyup tabindex="0">
+        <img class='logo locksy' src={isDarkTheme? LOGO.img.dark : LOGO.img.light} alt='{LOGO.alt}' title='{LOGO.title}' />
+      </div>
+      <div class='pseudo'>
+        <h1>{PERSONAL_INFO.pseudo}</h1>
+      </div>
     </div>
 
-  </div>
-</header>
+    <div>
+      <div>3D</div>
+      <div>
+        <select on:change={onLangChange} name="lang" id="lang">
+          {#each LANGUAGE as {locale,code}}
+            <option value={code} selected={code == $i18nStore ? "selected" : ""}>{locale}</option>
+          {/each}
+        </select>
+
+      </div>
+
+    </div>
+  </header>
 
 
-<main>
-  <div id="presentation">
-    <div id='pres-desc'>
-      <p> {@html $i18n.pres.title}</p>
-      <p> {@html  $i18n.pres.desc}</p>
-      <div id="pres-desc-social">
-        {#each SOCIAL_MEDIA.socialmedia as { url, img, alt, title }}
-          <div class="socialMedia">
-            <a href={url}>
-              <img class='logo' src={$isDarkTheme ? img.dark : img.light} alt='{alt}' title='{title}' />
-            </a>
+  <main>
+    <div id="presentation">
+      <div id='pres-desc'>
+        <p> {@html $i18n.pres.title}</p>
+        <p> {@html  $i18n.pres.desc}</p>
+        <div id="pres-desc-social">
+          {#each SOCIAL_MEDIA.socialmedia as { url, img, alt, title }}
+            <div class="socialMedia">
+              <a href={url}>
+                <img class='logo' src={$isDarkTheme ? img.dark : img.light} alt='{alt}' title='{title}' />
+              </a>
+            </div>
+          {/each}
+        </div>
+      </div>
+      <div id='pres-img'> 3D thing</div>
+    </div>
+
+    <div id="techStack">
+      <h2>{@html $i18n.techStack.desc}</h2>
+      <div id="techStack-list">
+        {#each TECH_STACK.techStack as {name, img}}
+          <div class="techStack-logo-container"  name='{name}'>
+            <img class='techStack-logo-img logo' src={img.path} alt='{img.alt}' title='{img.title}' />
+            <h4 class="techStack-logo-caption">{name}</h4>
           </div>
         {/each}
       </div>
     </div>
-    <div id='pres-img'> 3D thing</div>
-  </div>
-
-  <div id="techStack">
-    <h2>{@html $i18n.techStack.desc}</h2>
-    <div id="techStack-list">
-      {#each TECH_STACK.techStack as {name, img}}
-        <div class="techStack-logo-container"  name='{name}'>
-          <img class='techStack-logo-img logo' src={img.path} alt='{img.alt}' title='{img.title}' />
-          <h4 class="techStack-logo-caption">{name}</h4>
-        </div>
-      {/each}
+    <div id="projects">
+      <Card></Card>
+      <Card></Card>
     </div>
-  </div>
-  <div id="projects">
-    <Card></Card>
-    <Card></Card>
-  </div>
-</main>
+  </main>
 
-<footer>
-  <!-- {$i18n.pres.title} -->
-</footer>
-
+  <footer>
+    <!-- {$i18n.pres.title} -->
+  </footer>
+</div>
 <style>
   @import url("./styles.css");
+
+  #page{
+    --cursor-x-px: calc(var(--x) * 1px);
+    --cursor-y-px: calc(var(--y) * 1px);
+    height: 100%;
+
+  &:before{
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(
+      800px circle at var(--cursor-x-px) var(--cursor-y-px),
+      rgba(255, 255, 255, 0.3),
+      transparent 70%
+      );
+    z-index: -1;
+  }
+  }
 
   header, footer{
     display: flex;
@@ -112,7 +135,6 @@
   main{
     display:grid;
     grid-template-rows: 0fr 2fr 1fr 3fr 3fr;
-    /* margin-top:50px; */
     position: relative;
     width: 100%;
   }
