@@ -14,6 +14,9 @@ html {
   --shadow-card-primary:#1a1721e2;
   --shadow-card-secondary:#28213be2;
   --text-primary: #ffffff;
+  --card-background-primary:blue;
+  --card-border-primary:rgb(0, 0, 203);
+  --card-shadow-primary:rgb(0, 0, 203);
 }
 
 [data-theme="light"] {
@@ -28,6 +31,9 @@ html {
   --shadow-card-primary:#1a1721e2;
   --shadow-card-secondary:#28213be2;
   --text-primary: #000000;
+  --card-background-primary:rgb(255, 159, 255);
+  --card-border-primary:rgb(255, 164, 247);
+  --card-shadow-primary:rgb(139, 72, 156);
 }
 
 [data-theme="pink"] {

@@ -54,9 +54,6 @@
 
 <style>
   .container{
-    --card-background-primary:blue;
-    --card-border-primary:rgb(0, 0, 203);
-    --card-shadow-primary:rgb(0, 0, 203);
     --card-transform-duration:0.5s;
     --card-rotation-duration:1s;
     --card-rotation-angle:30deg;
