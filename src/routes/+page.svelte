@@ -169,6 +169,11 @@
     height: fit-content;
     margin: 1rem;
     /* ::before = background halo-logo: (position,height,width) mandatory in the transition. init in public/styles/styles.css */
+    &::before, &::after{
+    content: "";
+    position: absolute;
+    z-index: -1;
+  }
     &::before {
       width: 100%;
       height: 110%;
