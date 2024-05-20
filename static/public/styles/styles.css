@@ -16,7 +16,7 @@ html {
     width: 100%;
     background: radial-gradient(
       800px circle at var(--cursor-x-px) var(--cursor-y-px),
-      rgba(255, 255, 255, 0.3),
+      var(--background-halo-primary),
       transparent 70%
       );
     z-index: -1;
