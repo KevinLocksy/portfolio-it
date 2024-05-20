@@ -4,8 +4,7 @@ const scrollingEvent_start = "scroll";
 const scrollingEvent_ending = "scrollend";
 
 export function setCursorPositions(){
-  const html = document.querySelector("html");
-  const cursor = new CursorPosition(html);
+  const cursor = new CursorPosition();
   
   document.addEventListener(cursorEvent_start, setCursorPosition);
   document.addEventListener(scrollingEvent_start, setScrollPosition)
@@ -16,6 +15,7 @@ export function setCursorPositions(){
   }
   
   function setScrollPosition(e){
+    const html = document.documentElement;//to get the scroll position
     cursor.setScrollProperties(html.scrollLeft,html.scrollTop);
     e.target.removeEventListener(scrollingEvent_ending,removeListener);
   }
@@ -27,8 +27,9 @@ export function setCursorPositions(){
   }
 }
 
+
 class CursorPosition {
-  constructor(element) {
+  constructor() {
     this.posX = {
       scroll:0,
       mouse:0,
@@ -37,7 +38,6 @@ class CursorPosition {
       scroll:0,
       mouse:0,
     };
-    this.element = element ? element : document.documentElement; //element that the cursor positions will be the attributes {--x,--y}  
   }
 
   setCursorProperties(positionX,positionY){
@@ -52,7 +52,8 @@ class CursorPosition {
   }
 
   #setCursorPositionProperties(){
-    this.element.style.setProperty("--x", this.posX.scroll+this.posX.mouse);
-    this.element.style.setProperty("--y", this.posY.scroll+this.posY.mouse);
+    const html = document.documentElement;//to get the scroll position
+    html.style.setProperty("--x", this.posX.scroll+this.posX.mouse);
+    html.style.setProperty("--y", this.posY.scroll+this.posY.mouse);
   }
 }

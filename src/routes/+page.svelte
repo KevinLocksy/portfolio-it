@@ -28,14 +28,14 @@
 
 </script>
 
-  <header>
-    <div>
-      <div class='btn-dark-mode' role='button' on:click={toggleTheme} on:keyup tabindex="0">
-        <img class='logo locksy' src={isDarkTheme? LOGO.img.dark : LOGO.img.light} alt='{LOGO.alt}' title='{LOGO.title}' />
-      </div>
-      <div class='pseudo'>
-        <h1>{PERSONAL_INFO.pseudo}</h1>
-      </div>
+<header>
+  <div>
+    <div class='btn-dark-mode' role='button' on:click={toggleTheme} on:keyup tabindex="0">
+      <img class='logo locksy' src={isDarkTheme? LOGO.img.dark : LOGO.img.light} alt='{LOGO.alt}' title='{LOGO.title}' />
+    </div>
+    <div class='pseudo'>
+      <h1>{PERSONAL_INFO.pseudo}</h1>
+    </div>
     </div>
 
     <div>
@@ -43,17 +43,15 @@
       <div>
         <select on:change={onLangChange} name="lang" id="lang">
           {#each LANGUAGE as {locale,code}}
-            <option value={code} selected={code == $i18nStore ? "selected" : ""}>{locale}</option>
+          <option value={code} selected={code == $i18nStore ? "selected" : ""}>{locale}</option>
           {/each}
         </select>
-
       </div>
-
     </div>
   </header>
-
-
+  
   <main>
+    <div id="pointer-halo"/>
     <div id="presentation">
       <div id='pres-desc'>
         <div id='pres-desc-text'>
@@ -121,7 +119,18 @@
   footer{
     justify-content: center;
   }
-  
+  #pointer-halo{
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(
+    800px circle at calc(var(--x) * 1px) calc(var(--y) * 1px),
+    var(--background-halo-cursor-primary),
+    transparent 90%
+    );
+  z-index: -1;
+  }
   #presentation, #techStack, #projects {
     display:grid;
     justify-content: center;
