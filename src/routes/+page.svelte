@@ -173,7 +173,7 @@
     position: absolute;
     width: 100%;
     height: 110%;
-    background: radial-gradient(closest-side, var(--background-halo-primary), transparent);
+    background: radial-gradient(closest-side, var(--background-halo-logo-primary), transparent);
     opacity: 0;
     z-index: -1;
     transition: opacity var(--logo-transition-duration) ;
@@ -189,7 +189,7 @@
     height: 1rem;
     width: 4rem;
     left:0.13rem;
-    background: var(--shadow-primary);
+    background: var(--shadow-logo-primary);
     border-radius: 100%;
     filter: blur(6px);
     z-index: -1;

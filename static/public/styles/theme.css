@@ -6,19 +6,27 @@ html {
 [data-theme="dark"] {
   --background-primary: #140834e2;
   --background-secondary: #190c3de2;
-  --background-halo-primary:#181359e2;
-  --shadow-primary:#1a1721e2;
-  --shadow-secondary:256, 28%, 18%, 0.886;
-  --box-shadow-secondary:0px 6px 3em hsla(256, 28%, 18%, 0.886, 0.08);
+  --background-halo-cursor-primary:#181359e2;
+  --background-halo-cursor-secondary:#942a78e2;
+  --background-halo-logo-primary:#942a78e2;
+  --shadow-logo-primary:#28893fe2;
+  --shadow-logo-secondary:256, 28%, 18%, 0.886;
+  --shadow-card-primary:#1a1721e2;
+  --shadow-card-secondary:#28213be2;
   --text-primary: #ffffff;
 }
 
 [data-theme="light"] {
   --background-primary: #d7d2d2;
   --background-secondary: #cfc1c1;
-  --background-halo-primary:#c9b1b1;
-  --shadow-primary:#1a1721e2;
-  --shadow-secondary:#28213be2;
+  --background-halo-cursor-primary:#c9b1b1;
+  --background-halo-cursor-secondary:#942a78e2;
+  --background-halo-logo-primary:#792d65e2;
+  --background-halo-logo-secondary:#942a78e2;
+  --shadow-logo-primary:#1a1721e2;
+  --shadow-logo-secondary:#28213be2;
+  --shadow-card-primary:#1a1721e2;
+  --shadow-card-secondary:#28213be2;
   --text-primary: #000000;
 }
 
