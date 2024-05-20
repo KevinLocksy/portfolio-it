@@ -1,61 +1,58 @@
-const event = "pointermove";
-const event_ending = "pointerout";
-
-function findScroller(element) {
-  element.onscroll = function() { console.log(element)}
-  if (element.onscroll){
-    return element
-  }
-  Array.from(element.children).forEach(findScroller);
-}
-
-
+const cursorEvent_start = "pointermove";
+const cursorEvent_ending = "pointerout";
+const scrollingEvent_start = "scroll";
+const scrollingEvent_ending = "scrollend";
 
 export function setCursorPositions(){
   const html = document.querySelector("html");
-  const scrolling_Elem = findScroller(document);
-  let posX={
-    scroll:0,
-    mouse:0,
-  };
-  let posY={
-    scroll:0,
-    mouse:0,
-  };
-  scrolling_Elem.addEventListener(event, setCursorProperties);
+  const cursor = new CursorPosition(html);
+  
+  document.addEventListener(cursorEvent_start, setCursorPosition);
+  document.addEventListener(scrollingEvent_start, setScrollPosition)
 
-   document.addEventListener("scroll", () => {
-    console.log("test, document.documentElement=",document.documentElement)
-    console.log("test, document.documentElement.scrollTop; =",document.documentElement.scrollTop)
-    console.log("test, document.documentElement.scrollLeft; =",document.documentElement.scrollLeft)
-    posX.scroll=html.scrollLeft;
-    posY.scroll=html.scrollTop;
-    html.style.setProperty("--x", posX.scroll+posX.mouse);
-    html.style.setProperty("--y", posY.scroll+posY.mouse);
-  })
-
-  function setCursorProperties(e){
-    posX.mouse = e.clientX;
-    posY.mouse  = e.clientY;
-    // console.log("test, e=",e)
-    // console.log("test, e.clientX=",e.clientX)
-    // console.log("test, e.pageX=",e.pageX)
-    // console.log("test, e.x=",e.pageX)
-    // console.log("test, e.layerX=",e.layerX)
-    // console.log("test, e.screenX=",e.screenX)
-    // console.log("test, e.target=",e.target)
-    html.style.setProperty("--x", posX.scroll+posX.mouse);
-    html.style.setProperty("--y", posY.scroll+posY.mouse);
- 
-    e.target.removeEventListener(event_ending,removeListener);
+  function setCursorPosition(e){
+    cursor.setCursorProperties(e.clientX,e.clientY);
+    e.target.removeEventListener(cursorEvent_ending,removeListener);
   }
   
+  function setScrollPosition(e){
+    cursor.setScrollProperties(html.scrollLeft,html.scrollTop);
+    e.target.removeEventListener(scrollingEvent_ending,removeListener);
+  }
 
   function removeListener(ev){
+    ev.target.removeEventListener(cursorEvent_start,setCursorPosition);
+    ev.target.removeEventListener(cursorEvent_ending,removeListener);
+    ev.target.removeEventListener(scrollingEvent_ending,removeListener);
+  }
+}
 
-    ev.target.removeEventListener(event,setCursorProperties);
-    ev.target.removeEventListener(event_ending,removeListener);
+class CursorPosition {
+  constructor(element) {
+    this.posX = {
+      scroll:0,
+      mouse:0,
+    };
+    this.posY = {
+      scroll:0,
+      mouse:0,
+    };
+    this.element = element ? element : document.documentElement; //element that the cursor positions will be the attributes {--x,--y}  
+  }
 
+  setCursorProperties(positionX,positionY){
+    this.posX.mouse=positionX;
+    this.posY.mouse=positionY;
+    this.#setCursorPositionProperties();
+  }
+  setScrollProperties(positionX,positionY){
+    this.posX.scroll=positionX;
+    this.posY.scroll=positionY;
+    this.#setCursorPositionProperties();
+  }
 
+  #setCursorPositionProperties(){
+    this.element.style.setProperty("--x", this.posX.scroll+this.posX.mouse);
+    this.element.style.setProperty("--y", this.posY.scroll+this.posY.mouse);
   }
 }
