@@ -28,7 +28,6 @@
 
 </script>
 
-<div id="page">
   <header>
     <div>
       <div class='btn-dark-mode' role='button' on:click={toggleTheme} on:keyup tabindex="0">
@@ -92,29 +91,8 @@
   <footer>
     <!-- {$i18n.pres.title} -->
   </footer>
-</div>
 <style>
   @import url("./styles.css");
-
-  #page{
-    --cursor-x-px: calc(var(--x) * 1px);
-    --cursor-y-px: calc(var(--y) * 1px);
-    height: 100%;
-
-  &:before{
-    content: "";
-    display: block;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background: radial-gradient(
-      800px circle at var(--cursor-x-px) var(--cursor-y-px),
-      rgba(255, 255, 255, 0.3),
-      transparent 70%
-      );
-    z-index: -1;
-  }
-  }
 
   header, footer{
     display: flex;
