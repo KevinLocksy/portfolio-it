@@ -1,6 +1,6 @@
 {
   "en-US":"./src/assets/i18n/lang-en.json",
+  "epo-EO":"./src/assets/i18n/lang-epo.json",
   "fr-FR":"./src/assets/i18n/lang-fr.json",
-  "epo-EO":"./src/assets/i18n/lang-fr.json",
-  "spa-ES":"./src/assets/i18n/lang-fr.json"
+  "spa-ES":"./src/assets/i18n/lang-spa.json"
 }
