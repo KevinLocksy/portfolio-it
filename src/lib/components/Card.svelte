@@ -12,7 +12,7 @@
 
 </script>
 
-<div bind:this={card} class='card' role='button' on:click={flipCard} on:keyup tabindex="0">
+<div bind:this={card} class='container card' role='button' on:click={flipCard} on:keyup tabindex="0">
   <div class='card-inner'>
     <div class='card-front'>
       <div class='card-img'>
@@ -47,6 +47,13 @@
 </div>
 
 <style>
+  .container{
+    --card-background-primary:blue;
+    --card-border-primary:rgb(0, 0, 203);
+    --card-shadow-primary:rgb(0, 0, 203);
+    --card-transform-duration:0.5s;
+    --card-animation-duration:1s;
+  }
   .card{
     position: relative;
     display: flex;
@@ -54,14 +61,13 @@
     width: 45vh;
     padding:1em;
     margin:1em;
-    border: solid 1px;
+    border: solid 1px var(--card-border-primary);
     border-radius: 1em;
-    box-shadow: var(--box-shadow-secondary);
-    background-color: var(--background-secondary);
+    box-shadow: 0px 10px 10px var(--card-shadow-primary);
+    background-color: var(--card-background-primary);
     cursor: pointer;
     transform-style: preserve-3d;
     transform-origin: center;
-    transition: transform 0.5s;
     perspective: 1000px;
   }
   .card-inner{
@@ -74,7 +80,6 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    transition: transform 0.6s;
     transform-style: preserve-3d;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
