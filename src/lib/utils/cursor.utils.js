@@ -23,6 +23,7 @@ export function setCursorPositions(){
   function removeListener(ev){
     ev.target.removeEventListener(cursorEvent_start,setCursorPosition);
     ev.target.removeEventListener(cursorEvent_ending,removeListener);
+    ev.target.removeEventListener(scrollingEvent_start,removeListener);
     ev.target.removeEventListener(scrollingEvent_ending,removeListener);
   }
 }
