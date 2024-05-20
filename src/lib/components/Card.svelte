@@ -68,6 +68,7 @@
     cursor: pointer;
     transform-style: preserve-3d;
     transform-origin: center;
+    transition: transform 0.5s;
     perspective: 1000px;
   }
   .card-inner{
