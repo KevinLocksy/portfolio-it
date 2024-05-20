@@ -8,11 +8,17 @@
   function flipCard(){
     const isTransformEmpty = typeof card.style.transform === "string" && card.style.transform.length === 0;
     card.style.transform = isTransformEmpty ? "rotateY(180deg)" : "";
+
+    if(isTransformEmpty){
+      card.classList.remove("animation");
+    }else{
+      card.classList.add("animation");
+    }
   }
 
 </script>
 
-<div bind:this={card} class='container card' role='button' on:click={flipCard} on:keyup tabindex="0">
+<div bind:this={card} class='container card animation' role='button' on:click={flipCard} on:keyup tabindex="0">
   <div class='card-inner'>
     <div class='card-front'>
       <div class='card-img'>
@@ -52,7 +58,8 @@
     --card-border-primary:rgb(0, 0, 203);
     --card-shadow-primary:rgb(0, 0, 203);
     --card-transform-duration:0.5s;
-    --card-animation-duration:1s;
+    --card-rotation-duration:1s;
+    --card-rotation-angle:30deg;
   }
   .card{
     position: relative;
@@ -70,6 +77,14 @@
     transform-origin: center;
     transition: transform 0.5s;
     perspective: 1000px;
+  }
+  .animation:hover{
+    animation-name: rotation var(--card-rotation-duration) infinite linear forwards;
+    -webkit-animation: rotation var(--card-rotation-duration) infinite linear forwards;
+  }
+  @keyframes rotation {
+    25% { transform: rotateY(var(--card-rotation-angle)); }
+    75% { transform: rotateY(- var(--card-rotation-angle)); }
   }
   .card-inner{
     position: relative;
