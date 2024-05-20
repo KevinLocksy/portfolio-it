@@ -1,17 +1,19 @@
 * {
   margin:0;
   padding: 0;
+  &::before,&::after{
+    content: "";
+    position: absolute;
+    z-index: -1;
+  }
 }
 
 html {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   --cursor-x-px: calc(var(--x) * 1px);
   --cursor-y-px: calc(var(--y) * 1px);
-
-  &:before{
-    content: "";
+  &::before{
     display: block;
-    position: absolute;
     height: 100%;
     width: 100%;
     background: radial-gradient(
@@ -19,7 +21,6 @@ html {
       var(--background-halo-cursor-primary),
       transparent 70%
       );
-    z-index: -1;
   }
 }
 

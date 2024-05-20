@@ -128,7 +128,9 @@
     height: 100%;
     width: 100%;
   }
-
+  /**
+  * Presentation section
+  */
   #presentation{
     grid-row: 1;
     position: relative;
@@ -148,11 +150,12 @@
     flex-direction: row;
     padding: 1em;
   }
-  
   #pres-img{
     grid-column: 3;
   }
-  
+  /**
+  * TechStack section
+  */
   #techStack{
     grid-row: 2;
     position: relative;
@@ -165,34 +168,26 @@
     position: relative;
     height: fit-content;
     margin: 1rem;
-  }
-  
-  /* background halo: position + height + width mandatory in the transition */
-  .techStack-logo-container::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 110%;
-    background: radial-gradient(closest-side, var(--background-halo-logo-primary), transparent);
-    opacity: 0;
-    z-index: -1;
-    transition: opacity var(--logo-transition-duration) ;
-  }
-  .techStack-logo-container:hover::before {
-    opacity: 1;
-  }
-  
-  /* shadow  */
-  .techStack-logo-container::after{
-    content: "";
-    position: absolute;
-    height: 1rem;
-    width: 4rem;
-    left:0.13rem;
-    background: var(--shadow-logo-primary);
-    border-radius: 100%;
-    filter: blur(6px);
-    z-index: -1;
+    /* ::before = background halo-logo: (position,height,width) mandatory in the transition. init in public/styles/styles.css */
+    &::before {
+      width: 100%;
+      height: 110%;
+      background: radial-gradient(closest-side, var(--background-halo-logo-primary), transparent);
+      opacity: 0;
+      transition: opacity var(--logo-transition-duration) ;
+    }
+    &:hover::before {
+      opacity: 1;
+    }
+    /* ::after = shadow on the ground: (position,height,width) mandatory. init in public/styles/styles.css  */
+    &::after{
+      height: 1rem;
+      width: 4rem;
+      left:0.13rem;
+      background: var(--shadow-logo-primary);
+      filter: blur(6px);
+      border-radius: 100%;
+    }
   }
   .techStack-logo-caption{
     position: absolute;
@@ -207,7 +202,9 @@
   .techStack-logo-container:hover .techStack-logo-caption {
     opacity: 1;
   }
-
+  /**
+  * Projects section
+  */
   #projects{
     grid-row: 3;
     flex-direction: row;
