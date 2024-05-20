@@ -56,8 +56,10 @@
   <main>
     <div id="presentation">
       <div id='pres-desc'>
-        <p> {@html $i18n.pres.title}</p>
-        <p> {@html  $i18n.pres.desc}</p>
+        <div id='pres-desc-text'>
+          <p> {@html $i18n.pres.title}</p>
+          <p> {@html $i18n.pres.desc}</p>
+        </div>
         <div id="pres-desc-social">
           {#each SOCIAL_MEDIA.socialmedia as { url, img, alt, title }}
             <div class="socialMedia">
@@ -112,7 +114,7 @@
   }
   main{
     display:grid;
-    grid-template-rows: 0fr 2fr 1fr 3fr 3fr;
+    grid-template-rows: 2fr 1fr 3fr 3fr;
     position: relative;
     width: 100%;
   }
@@ -128,7 +130,7 @@
   }
 
   #presentation{
-    grid-row: 2;
+    grid-row: 1;
     position: relative;
     top:30%;
     grid-template-columns: 3fr 4fr 3fr 3fr;
@@ -136,9 +138,15 @@
   #pres-desc{
     grid-column: 2;
   }
+  #pres-desc-text{
+    padding: 1em;
+    text-align: justify;
+    text-justify: inter-character;
+  }
   #pres-desc-social{
     display: flex;
     flex-direction: row;
+    padding: 1em;
   }
   
   #pres-img{
@@ -146,7 +154,7 @@
   }
   
   #techStack{
-    grid-row: 3;
+    grid-row: 2;
     position: relative;
     flex-direction: column;
   }
@@ -201,7 +209,7 @@
   }
 
   #projects{
-    grid-row: 4;
+    grid-row: 3;
     flex-direction: row;
   }
 
