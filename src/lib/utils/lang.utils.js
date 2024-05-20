@@ -7,24 +7,18 @@ import {i18nStore} from "$store/i18n.store.js";
 const DEFAULT_LANG = LANG.language[0].locale;
 
 export function setDefaultLang(){
-  //set attribute in project's html file
-  var systLang = navigator.language || navigator.userLanguage || DEFAULT_LANG; 
+  var systLang = navigator.language || navigator.userLanguage || DEFAULT_LANG; //set attribute in project's html file
   document.querySelector(HTML_ATTR.HTML).setAttribute(HTML_ATTR.LANG,systLang);
 
-  //create local storage item
-  const localStorageLang = getLocalStorageLang();
+  const localStorageLang = getLocalStorageLang(); //create local storage item
   if (localStorageLang == null) {
     localStorage.setItem(STORAGE_KEY.LANG, systLang);
   }
-
-  //update writable in store, used to be able to retrieve/update value in js since localstorage not defined in .svelte
-  i18nStore.set(getLocalStorageLang());
-}
+  i18nStore.set(getLocalStorageLang()); //update writable in store, used to be able to retrieve/update value in js since localstorage not defined in .svelte
+}//end export function setDefaultLang()
 
 export function updateLang(){
   const langVal = document.getElementById("lang").value;//get dropdown value
-  //update local storage
-  localStorage.setItem(STORAGE_KEY.LANG, langVal);
-  //update store writable
-  i18nStore.set(langVal);
-}
+  localStorage.setItem(STORAGE_KEY.LANG, langVal);//update local storage
+  i18nStore.set(langVal);//update store writable
+}//end export function updateLang()

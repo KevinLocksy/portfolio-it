@@ -1,4 +1,5 @@
-html {
+:root {
+  --color-scheme-transition-duration:0.4s;
   --logo-transition-duration:0.5s;
   --logo-caption-primary:#ffffff;
 }
@@ -17,7 +18,7 @@ html {
   --card-background-primary:blue;
   --card-border-primary:rgb(0, 0, 203);
   --card-shadow-primary:rgb(0, 0, 203);
-}
+}/*end [data-theme="dark"]*/
 
 [data-theme="light"] {
   --background-primary: #d7d2d2;
@@ -34,7 +35,7 @@ html {
   --card-background-primary:rgb(255, 159, 255);
   --card-border-primary:rgb(255, 164, 247);
   --card-shadow-primary:rgb(139, 72, 156);
-}
+}/*end [data-theme="light"]*/
 
 [data-theme="pink"] {
   --background-primary: #b43232;

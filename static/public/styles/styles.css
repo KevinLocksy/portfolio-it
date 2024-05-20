@@ -2,21 +2,14 @@
   margin:0;
   padding: 0;
 }
-
 html {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-
 body {
-  transition: background-color 0.3s;
+  transition: background-color var(--color-scheme-transition-duration);
   background-color: var(--background-primary);
   color: var(--text-primary);
 }
-
-header {
-  background-color: var(--background-secondary);
-}
-
-footer {
+header,footer {
   background-color: var(--background-secondary);
 }

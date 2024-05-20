@@ -5,6 +5,9 @@
    */
   let card;
 
+  /**
+   * 
+   */
   function flipCard(){
     const isTransformEmpty = typeof card.style.transform === "string" && card.style.transform.length === 0;
     card.style.transform = isTransformEmpty ? "rotateY(180deg)" : "";
@@ -55,6 +58,7 @@
 <style>
   .container{
     --card-transform-duration:0.5s;
+    --card-flip-duration:0.4s;
     --card-rotation-duration:1s;
     --card-rotation-angle:30deg;
   }
@@ -72,7 +76,7 @@
     cursor: pointer;
     transform-style: preserve-3d;
     transform-origin: center;
-    transition: transform 0.5s;
+    transition: transform var(--card-flip-duration);
     perspective: 1000px;
   }
   .animation:hover{

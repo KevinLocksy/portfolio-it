@@ -105,7 +105,7 @@
     justify-content:space-between;
     z-index: 999;/* this is odd*/
   }
-  header > *{
+  header>*{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -120,16 +120,16 @@
     justify-content: center;
   }
   #pointer-halo{
-  position: absolute;
-  display: block;
-  height: 100%;
-  width: 100%;
-  background: radial-gradient(
-    800px circle at calc(var(--x) * 1px) calc(var(--y) * 1px),
-    var(--background-halo-cursor-primary),
-    transparent 90%
-    );
-  z-index: -1;
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(
+      800px circle at calc(var(--x) * 1px) calc(var(--y) * 1px),
+      var(--background-halo-cursor-primary),
+      transparent 90%
+      );
+    z-index: -1;
   }
   #presentation, #techStack, #projects {
     display:grid;
@@ -179,10 +179,10 @@
     margin: 1rem;
     /* ::before = background halo-logo: (position,height,width) mandatory in the transition. init in public/styles/styles.css */
     &::before, &::after{
-    content: "";
-    position: absolute;
-    z-index: -1;
-  }
+      content: "";
+      position: absolute;
+      z-index: -1;
+    }
     &::before {
       width: 100%;
       height: 110%;
@@ -223,5 +223,4 @@
     grid-row: 3;
     flex-direction: row;
   }
-
 </style>
