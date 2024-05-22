@@ -10,6 +10,7 @@
   import TECH_STACK from '$config/techStack.conf.json';
   import LANG from "$lib/config/i18n.conf.json";
   import {setCursorPositions} from '$utils/cursor.utils.js';
+  import {typeText} from '$utils/textTyper.utils.js';
   import {toggleTheme} from '$utils/theme.utils.js';
   import {isDarkTheme} from '$store/theme.store.js';
   import {i18n} from '$utils/i18n.utils.js';
@@ -72,14 +73,14 @@
     </div>
 
     <div id="techStack">
-      <h2>{@html $i18n.techStack.desc}</h2>
       <div id="techStack-list">
-        {#each TECH_STACK.techStack as {name, img}}
-          <div class="techStack-logo-container"  name='{name}'>
-            <img class='techStack-logo-img logo' src={img.path} alt='{img.alt}' title='{img.title}' />
-            <h4 class="techStack-logo-caption">{name}</h4>
-          </div>
-        {/each}
+        <h2 use:typeText class="font-tech">{$i18n.techStack.desc}</h2>
+          {#each TECH_STACK.techStack as {name, img}}
+            <div class="techStack-logo-container"  name='{name}'>
+              <img class='techStack-logo-img logo' src={img.path} alt='{img.alt}' title='{img.title}' />
+              <h4 class="techStack-logo-caption">{name}</h4>
+            </div>
+          {/each}
       </div>
     </div>
     <div id="projects">
@@ -93,7 +94,6 @@
   </footer>
 <style>
   @import url("./styles.css");
-
   header, footer{
     display: flex;
     width:100%;
@@ -170,6 +170,7 @@
     position: relative;
     flex-direction: column;
   }
+
   #techStack-list{
     display: flex;
   }
@@ -215,6 +216,9 @@
   }
   .techStack-logo-container:hover .techStack-logo-caption {
     opacity: 1;
+  }
+  .font-tech {
+    font-family: 'Technology', sans-serif;
   }
   /**
   * Projects section
