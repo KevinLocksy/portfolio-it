@@ -14,8 +14,8 @@ const defaultLang = {
  * @returns language dict
  */
 async function getTranslateJSON(locale){
+  const path = mappingJSON[locale];
   try {
-    const path = mappingJSON[locale];
     const promise = await fetch(path);
     const bundle = await promise.json();
     return {
