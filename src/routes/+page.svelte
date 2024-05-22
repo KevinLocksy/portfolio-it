@@ -73,8 +73,8 @@
     </div>
 
     <div id="techStack">
+      <h2 use:typeText class="font-tech">{$i18n.techStack.desc}</h2>
       <div id="techStack-list">
-        <h2 use:typeText class="font-tech">{$i18n.techStack.desc}</h2>
           {#each TECH_STACK.techStack as {name, img}}
             <div class="techStack-logo-container"  name='{name}'>
               <img class='techStack-logo-img logo' src={img.path} alt='{img.alt}' title='{img.title}' />
