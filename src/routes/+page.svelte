@@ -4,7 +4,6 @@
 </svelte:head>
 
 <script>
-  import Card from '$components/Card.svelte';
   import SOCIAL_MEDIA from '$lib/config/socialmedia.conf.json';
   import PERSONAL_INFO from '$lib/config/personalInfo.conf.json';
   import TECH_STACK from '$config/techStack.conf.json';
@@ -15,7 +14,7 @@
   import {isDarkTheme} from '$store/theme.store.js';
   import {i18n} from '$utils/i18n.utils.js';
   import {i18nStore} from '$store/i18n.store.js';
-
+  import Tabs from '$components/Tabs/Tabs.svelte';
   const LOGO = PERSONAL_INFO.logo;
   const LANGUAGE = LANG.language;
   //https://svelte.dev/repl/de39de663ef2445b8fe17b79c500013b?version=3.33.0 i18n
@@ -71,21 +70,20 @@
       </div>
       <div id='pres-img'> 3D thing</div>
     </div>
-
+    
     <div id="techStack">
       <h2 use:typeText class="font-tech">{$i18n.techStack.desc}</h2>
       <div id="techStack-list">
-          {#each TECH_STACK.techStack as {name, img}}
-            <div class="techStack-logo-container"  name='{name}'>
-              <img class='techStack-logo-img logo' src={img.path} alt='{img.alt}' title='{img.title}' />
-              <h4 class="techStack-logo-caption">{name}</h4>
-            </div>
-          {/each}
+        {#each TECH_STACK.techStack as {name, img}}
+        <div class="techStack-logo-container"  name='{name}'>
+          <img class='techStack-logo-img logo' src={img.path} alt='{img.alt}' title='{img.title}' />
+          <h4 class="techStack-logo-caption">{name}</h4>
+        </div>
+        {/each}
       </div>
     </div>
     <div id="projects">
-      <Card></Card>
-      <Card></Card>
+      <Tabs />
     </div>
   </main>
 
