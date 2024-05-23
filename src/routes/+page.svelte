@@ -15,6 +15,7 @@
   import {i18n} from '$utils/i18n.utils.js';
   import {i18nStore} from '$store/i18n.store.js';
   import Tabs from '$components/Tabs/Tabs.svelte';
+  import Model3d from '$components/Model3d/Model3d.svelte';
   const LOGO = PERSONAL_INFO.logo;
   const LANGUAGE = LANG.language;
   //https://svelte.dev/repl/de39de663ef2445b8fe17b79c500013b?version=3.33.0 i18n
@@ -68,7 +69,7 @@
           {/each}
         </div>
       </div>
-      <div id='pres-img'> 3D thing</div>
+      <div id='pres-img'><Model3d /></div>
     </div>
     
     <div id="techStack">
