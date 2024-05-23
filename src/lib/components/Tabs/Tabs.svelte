@@ -31,14 +31,14 @@
     padding-left: 0;
     margin-bottom: 0;
     list-style: none;
-    border-bottom: 1px solid #dee2e6;
+    border-bottom: 1px solid var(--tab-border-primary);
   }
   li{
     width:10%;
     min-width:min-content;
 
     &:hover{
-      background-color: blueviolet;
+      background-color: var(--tab-background-secondary);
     }
   }
   span{
@@ -51,6 +51,6 @@
     border-bottom: none;
   }
   .active{
-    background-color: rgb(41, 41, 181);
+    background-color: var(--tab-background-primary);
   }
 </style>

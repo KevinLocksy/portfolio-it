@@ -18,6 +18,9 @@
   --card-background-primary:blue;
   --card-border-primary:rgb(0, 0, 203);
   --card-shadow-primary:rgb(0, 0, 203);
+  --tab-border-primary:#ffffff;
+  --tab-background-primary:rgb(50, 50, 119);
+  --tab-background-secondary:rgb(0, 0, 203);
 }/*end [data-theme="dark"]*/
 
 [data-theme="light"] {
@@ -35,6 +38,9 @@
   --card-background-primary:rgb(255, 159, 255);
   --card-border-primary:rgb(255, 164, 247);
   --card-shadow-primary:rgb(139, 72, 156);
+  --tab-border-primary:#000000;
+  --tab-background-primary:rgb(139, 72, 156);
+  --tab-background-secondary:rgb(97, 57, 107);
 }/*end [data-theme="light"]*/
 
 [data-theme="pink"] {
