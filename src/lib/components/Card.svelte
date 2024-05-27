@@ -1,5 +1,5 @@
 <script>
-  export let projectName, summary, stack;
+  export let project, summary, stack;
   /**
    * @type {HTMLElement}
    */
@@ -28,7 +28,7 @@
         image
       </div>
       <div class='card-body'>
-        <h2>{projectName}</h2>
+        <h2>{project}</h2>
         <p>{summary}</p>
         <a href='/#'>git link</a>
         <p>{stack}</p>
