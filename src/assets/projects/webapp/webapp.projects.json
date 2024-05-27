@@ -1,19 +1,25 @@
 {
   "webapp":[
     {
-      "project":"Webapp Name",
+      "project":"logo + Webapp Name",
       "standfirst":"Once upon a time",
       "summary":"This awesome project !",
+      "description":"description magical",
+      "features":["feature 1 is ksljdlskdjlk","feature 2 is dbsdjkbjsh","Javascript"],
       "git":"link.git.com",
-      "stack":"Svelte ...",
+      "demo":"link.demo.com",
+      "stack":["Svelte","Javascript","CSS","HTML"],
       "img":"./path.jpg"
     },
     {
-      "project":"Project Name",
+      "project":"logo + Webapp Name",
       "standfirst":"Once upon a time",
       "summary":"This awesome project !",
+      "description":"description magical",
+      "features":["feature 1 is awesome","feature 2 is magical","??"],
       "git":"link.git.com",
-      "stack":"Svelte ...",
+      "demo":"link.demo.com",
+      "stack":["Svelte","Javascript"],
       "img":"./path.jpg"
     }
   ]
