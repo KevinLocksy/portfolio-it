@@ -27,6 +27,7 @@
   .container{
     width: 70vw;
     padding: 1rem;
+    --tab-border-radius:0.5rem;
   }
   ul{
     display: flex;
@@ -40,15 +41,14 @@
   li{
     width:10%;
     min-width:min-content;
-
+    border: 0px solid transparent;
+    border-top-left-radius: var(--tab-border-radius);
+    border-top-right-radius: var(--tab-border-radius);
     &:hover{
       background-color: var(--tab-background-secondary);
     }
   }
   span{
-    border: 1px solid transparent;
-    border-top-left-radius: 0.25rem;
-    border-top-right-radius: 0.25rem;
     display: block;
     padding: 0.5rem 1rem;
     cursor: pointer;
