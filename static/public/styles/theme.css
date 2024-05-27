@@ -16,8 +16,11 @@
   --shadow-card-secondary:#28213be2;
   --text-primary: #ffffff;
   --card-background-primary:blue;
+  --card-background-secondary:rgb(0, 0, 203);
   --card-border-primary:rgb(0, 0, 203);
   --card-shadow-primary:rgb(0, 0, 203);
+  --card-shadow-secondary:rgba(0,255,182,0.5);
+  --card-shadow-third:rgba(0,255,135,1);
   --tab-border-primary:#ffffff;
   --tab-background-primary:rgb(50, 50, 119);
   --tab-background-secondary:rgb(0, 0, 203);
@@ -38,6 +41,8 @@
   --card-background-primary:rgb(255, 159, 255);
   --card-border-primary:rgb(255, 164, 247);
   --card-shadow-primary:rgb(139, 72, 156);
+  --card-shadow-secondary:rgba(0, 30, 255, 0.5);
+  --card-shadow-third:rgb(0, 30, 255);
   --tab-border-primary:#000000;
   --tab-background-primary:rgb(139, 72, 156);
   --tab-background-secondary:rgb(97, 57, 107);
