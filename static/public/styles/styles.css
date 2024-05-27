@@ -6,6 +6,8 @@ html {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 body {
+  display: flex;
+  flex-direction: column;
   transition: background-color var(--color-scheme-transition-duration);
   background-color: var(--background-primary);
   color: var(--text-primary);
