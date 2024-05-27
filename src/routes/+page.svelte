@@ -111,7 +111,7 @@
   }
   main{
     display:grid;
-    grid-template-rows: 275px 150px 75%; /* change according to media screen size*/
+    grid-template-rows: 275px 200px 75%; /* change according to media screen size*/
     position: relative;
     height: fit-content;
     width: 100%;
