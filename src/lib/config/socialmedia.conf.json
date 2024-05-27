@@ -21,6 +21,16 @@
       "title":"@Kevin.Locksy"
     },
     {
+      "name": "LinkedIn",
+      "url":"https://www.linkedin.com/",
+      "img":{
+        "dark":"public/img/logo/socialMedia/logo_darkmode_linkedin.png",
+        "light":"public/img/logo/socialMedia/logo_lightmode_linkedin.png"
+      },
+      "alt":"@Kevin.Locksy",
+      "title":"@Kevin.Locksy"
+    },
+    {
       "name": "Mail",
       "url":"mailto:artsy.locksy@proton.me",
       "img":{
