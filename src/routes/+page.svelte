@@ -111,9 +111,11 @@
   }
   main{
     display:grid;
-    grid-template-rows: 2fr 1fr 3fr 3fr;
+    grid-template-rows: 275px 150px 75%; /* change according to media screen size*/
     position: relative;
+    height: fit-content;
     width: 100%;
+    margin-top:50px;
   }
   footer{
     justify-content: center;
@@ -135,6 +137,8 @@
     justify-content: center;
     height: 100%;
     width: 100%;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
   }
   /**
   * Presentation section
@@ -142,11 +146,12 @@
   #presentation{
     grid-row: 1;
     position: relative;
-    top:30%;
-    grid-template-columns: 3fr 4fr 3fr 3fr;
+    grid-template-columns: 2fr 4fr 2fr 2fr
   }
   #pres-desc{
     grid-column: 2;
+    padding: 1em;
+    margin-right:3rem;
   }
   #pres-desc-text{
     padding: 1em;
@@ -167,7 +172,6 @@
   #techStack{
     grid-row: 2;
     position: relative;
-    flex-direction: column;
   }
 
   #techStack-list{
@@ -224,6 +228,5 @@
   */
   #projects{
     grid-row: 3;
-    flex-direction: row;
   }
 </style>
