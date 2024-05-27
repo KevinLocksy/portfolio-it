@@ -24,6 +24,10 @@
 </div>
 
 <style>
+  .container{
+    width: 70vw;
+    padding: 1rem;
+  }
   ul{
     display: flex;
     flex-wrap: wrap;
