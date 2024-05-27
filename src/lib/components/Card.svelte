@@ -1,5 +1,5 @@
 <script>
-  export let project, standfirst, summary, git, stack, img;
+  export let project, standfirst, summary, description, features, git, demo, stack, img;
   let card;
   const nodeType_URL = "A";
 
@@ -31,8 +31,8 @@
         <div class='card-body'>
           <h2 class='title'>{project}</h2>
           <h4 class='standfirst'>{standfirst}</h4>
-          <p class='standfirst'>{summary}</p>
-          <a class='git-link' href='{git}' target='_blank'>{git} or git logo</a>
+          <p class='summary'>{summary}</p>
+          <a class='git-link' href='{git}' target='_blank'>only git logo</a>
           <div class="stack" role="list">
             {#if stack}
               {#each stack as language}
@@ -48,20 +48,19 @@
     <div class='card-back'>
       <div class='card-inner'>
         <div class='card-desc'>
-          <h2>description</h2>
-            <ul>
-              <li>Coffee</li>
-              <li>Tea</li>
-              <li>Milk</li>
+          <h2>Description</h2>
+          <p class='description'>{description}</p>
+          {#if features}
+            <ul class='feature'>
+              {#each features as feature}
+                  <li>{feature}</li>
+              {/each}
             </ul>
+          {/if}
         </div>
-        <div class='card-body'>
-          <div>
-            git
-          </div>
-          <div>
-            demo: website
-          </div>
+        <div class='card-ref'>
+          <a class='git-link' href='{git}' target='_blank'>logo + {git}</a>
+          <a class='demo-link' href='{demo}' target='_blank'>demo: website</a>
         </div>
       </div>
     </div>
@@ -71,8 +70,9 @@
 <style>
   .component{
     --card-transform-duration:0.5s;
-    --card-flip-duration:0.4s;
-    --card-rotation-duration:1s;
+    --card-flip-duration:0.8s;
+    --card-rotation-duration:3s;
+    --card-rotation-iteration:2;
     --card-rotation-angle:30deg;
   }
   /**
@@ -81,9 +81,8 @@
   .card{
     position: relative;
     display: flex;
-    height: 30vh;
-    width: 25vw;
-    box-shadow: 0px 10px 10px var(--card-shadow-primary);
+    height: max(30vh,200px);
+    width: max(25vw,250px);
     cursor: pointer;
     transform-style: preserve-3d;
     transform-origin: center;
@@ -91,8 +90,8 @@
     perspective: 1000px;
   }
   .animation:hover{
-    animation-name: rotation var(--card-rotation-duration) infinite linear forwards;
-    -webkit-animation: rotation var(--card-rotation-duration) infinite linear forwards;
+    animation-name: rotation var(--card-rotation-duration) var(--card-rotation-iteration) linear forwards;
+    -webkit-animation: rotation var(--card-rotation-duration) var(--card-rotation-iteration) linear forwards;
   }
   @keyframes rotation {
     25% { transform: rotateY(var(--card-rotation-angle)); }
@@ -107,6 +106,7 @@
     height: 100%;
     border: solid 1px var(--card-border-primary);
     border-radius: 1em;
+    box-shadow: 0px 10px 10px var(--card-shadow-primary);
   }
   .card-front, .card-back{
     position: absolute;
@@ -124,9 +124,12 @@
     margin: 1em;
   }
   .card-img{
-    flex:1;
+    flex:1.5;
   }
-  .card-body{
+  .card-ref{
+    flex:0.5;
+  }
+  .card-body,.card-desc{
     flex:2;
   }
   /**
@@ -146,6 +149,15 @@
     background-color: pink;
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
+  }
+  .card-desc{
+    margin-left:1em;
+  }
+  .card-ref{
+    margin-right:1em;
+  }
+  .card-desc>*{
+    margin-bottom: 0.5em;
   }
   /**
   * shining bullet points
