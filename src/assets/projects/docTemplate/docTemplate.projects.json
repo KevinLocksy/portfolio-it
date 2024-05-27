@@ -1,0 +1,20 @@
+{
+  "doctemplate":[
+    {
+      "project":"Doc Name",
+      "standfirst":"Once upon a time",
+      "summary":"This awesome project !",
+      "git":"link.git.com",
+      "stack":"Svelte ...",
+      "img":"./path.jpg"
+    },
+    {
+      "project":"Project Name",
+      "standfirst":"Once upon a time",
+      "summary":"This awesome project !",
+      "git":"link.git.com",
+      "stack":"Svelte ...",
+      "img":"./path.jpg"
+    }
+  ]
+}
