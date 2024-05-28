@@ -111,7 +111,7 @@
   }
   main{
     display:grid;
-    grid-template-rows: 275px 200px 75%; /* change according to media screen size*/
+    grid-template-rows: 355px 200px auto; /* change according to media screen size*/
     position: relative;
     height: fit-content;
     width: 100%;
@@ -137,8 +137,6 @@
     justify-content: center;
     height: 100%;
     width: 100%;
-    margin-top: 5rem;
-    margin-bottom: 2rem;
   }
   /**
   * Presentation section
@@ -146,6 +144,7 @@
   #presentation{
     grid-row: 1;
     position: relative;
+    align-items: center;
     grid-template-columns: 2fr 4fr 2fr 2fr
   }
   #pres-desc{
@@ -228,5 +227,6 @@
   */
   #projects{
     grid-row: 3;
+    margin-top: 0;
   }
 </style>
