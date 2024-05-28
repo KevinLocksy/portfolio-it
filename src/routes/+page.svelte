@@ -40,7 +40,6 @@
     </div>
 
     <div>
-      <div>3D</div>
       <div>
         <select on:change={onLangChange} name="lang" id="lang">
           {#each LANGUAGE as {locale,code}}
@@ -69,7 +68,9 @@
           {/each}
         </div>
       </div>
-      <div id='pres-img'><Model3d /></div>
+      <div id='pres-3d'>
+        <Model3d />
+      </div>
     </div>
     
     <div id="techStack">
@@ -83,8 +84,13 @@
         {/each}
       </div>
     </div>
+
     <div id="projects">
       <Tabs />
+    </div>
+
+    <div id="art">
+      
     </div>
   </main>
 
@@ -111,7 +117,7 @@
   }
   main{
     display:grid;
-    grid-template-rows: 355px 200px auto; /* change according to media screen size*/
+    grid-template-rows: 355px 200px 400px auto; /* change according to media screen size*/
     position: relative;
     height: fit-content;
     width: 100%;
@@ -162,7 +168,7 @@
     flex-direction: row;
     padding: 1em;
   }
-  #pres-img{
+  #pres-3d{
     grid-column: 3;
   }
   /**
@@ -228,5 +234,11 @@
   #projects{
     grid-row: 3;
     margin-top: 0;
+  }
+  /**
+  * Artistic section
+  */
+  #art{
+    grid-row: 4;
   }
 </style>
