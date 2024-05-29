@@ -40,8 +40,8 @@ const init18n = () => {
       const bundle = await getTranslateJSON(get(i18nStore));
       set(bundle);
     },
-    switchLang: async () => {
-      updateLang();
+    switchLang: async (newLang) => {
+      updateLang(newLang);
       const bundle = await getTranslateJSON(get(i18nStore));
       set(bundle);
     }

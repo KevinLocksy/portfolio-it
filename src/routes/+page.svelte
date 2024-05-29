@@ -16,6 +16,7 @@
   import {i18nStore} from '$store/i18n.store.js';
   import Tabs from '$components/Tabs/Tabs.svelte';
   import Model3d from '$components/Model3d/Model3d.svelte';
+	import DropdownList from '$components/DropdownList.svelte';
   const LOGO = PERSONAL_INFO.logo;
   const LANGUAGE = LANG.language;
   //https://svelte.dev/repl/de39de663ef2445b8fe17b79c500013b?version=3.33.0 i18n
@@ -23,10 +24,10 @@
   //https://threejs.org/docs/index.html#manual/en/introduction/Installation 3D
 
   setCursorPositions();
-  const onLangChange = async () => {
-    await i18n.switchLang();
+  const onLangChange = async (e) => {
+    const newLang = e.target.value;
+    await i18n.switchLang(newLang);
   }
-
 </script>
 
 <header>
@@ -37,62 +38,56 @@
     <div class='pseudo'>
       <h1>{PERSONAL_INFO.pseudo}</h1>
     </div>
-    </div>
+  </div>
 
-    <div>
-      <div>
-        <select on:change={onLangChange} name="lang" id="lang">
-          {#each LANGUAGE as {locale,code}}
-          <option value={code} selected={code == $i18nStore ? "selected" : ""}>{locale}</option>
-          {/each}
-        </select>
-      </div>
-    </div>
-  </header>
+  <div id='dp-dwn-lang'>
+    <DropdownList options={LANGUAGE} defaultValue={$i18nStore} onClick={onLangChange}/>
+  </div>
+</header>
   
-  <main>
-    <div id="pointer-halo"/>
-    <div id="presentation">
-      <div id='pres-desc'>
-        <div id='pres-desc-text'>
-          <p> {@html $i18n.pres.title}</p>
-          <p> {@html $i18n.pres.desc}</p>
-        </div>
-        <div id="pres-desc-social">
-          {#each SOCIAL_MEDIA.socialmedia as { url, img, alt, title }}
-            <div class="socialMedia">
-              <a href={url}>
-                <img class='logo' src={$isDarkTheme ? img.dark : img.light} alt='{alt}' title='{title}' />
-              </a>
-            </div>
-          {/each}
-        </div>
+<main>
+  <div id="pointer-halo"/>
+  <div id="presentation">
+    <div id='pres-desc'>
+      <div id='pres-desc-text'>
+        <p> {@html $i18n.pres.title}</p>
+        <p> {@html $i18n.pres.desc}</p>
       </div>
-      <div id='pres-3d'>
-        <Model3d />
-      </div>
-    </div>
-    
-    <div id="techStack">
-      <h2 use:typeText class="font-tech">{$i18n.techStack.desc}</h2>
-      <div id="techStack-list">
-        {#each TECH_STACK.techStack as {name, img}}
-        <div class="techStack-logo-container"  name='{name}'>
-          <img class='techStack-logo-img logo' src={img.path} alt='{img.alt}' title='{img.title}' />
-          <h4 class="techStack-logo-caption">{name}</h4>
-        </div>
+      <div id="pres-desc-social">
+        {#each SOCIAL_MEDIA.socialmedia as { url, img, alt, title }}
+          <div class="socialMedia">
+            <a href={url}>
+              <img class='logo' src={$isDarkTheme ? img.dark : img.light} alt='{alt}' title='{title}' />
+            </a>
+          </div>
         {/each}
       </div>
     </div>
-
-    <div id="projects">
-      <Tabs />
+    <div id='pres-3d'>
+      <Model3d />
     </div>
-
-    <div id="art">
-      
+  </div>
+  
+  <div id="techStack">
+    <h2 use:typeText class="font-tech">{$i18n.techStack.desc}</h2>
+    <div id="techStack-list">
+      {#each TECH_STACK.techStack as {name, img}}
+      <div class="techStack-logo-container"  name='{name}'>
+        <img class='techStack-logo-img logo' src={img.path} alt='{img.alt}' title='{img.title}' />
+        <h4 class="techStack-logo-caption">{name}</h4>
+      </div>
+      {/each}
     </div>
-  </main>
+  </div>
+
+  <div id="projects">
+    <Tabs />
+  </div>
+
+  <div id="art">
+    
+  </div>
+</main>
 
   <footer>
     <!-- {$i18n.pres.title} -->
@@ -137,6 +132,11 @@
       transparent 90%
       );
     z-index: -1;
+  }
+  #dp-dwn-lang{
+    position: relative;
+    height: inherit;
+    width: 200px;
   }
   #presentation, #techStack, #projects {
     display:grid;

@@ -1,24 +1,32 @@
 {
   "language":[
     {
+      "id":0,
+      "label":"English",
+      "value":"en-US",
       "locale":"EN",
-      "code":"en-US",
-      "flag":""
+      "logo":"/public/img/lang/flag-en.png"
     },
     {
+      "id":1,
+      "label":"Français",
+      "value":"fr-FR",
       "locale":"FR",
-      "code":"fr-FR",
-      "flag":""
+      "logo":"/public/img/lang/flag-fr.png"
     },
     {
+      "id":2,
+      "label":"Esperanto",
+      "value":"epo-EO",
       "locale":"EO",
-      "code":"epo-EO",
-      "flag":""
+      "logo":"/public/img/lang/flag-epo.png"
     },
     {
+      "id":3,
+      "label":"Español",
+      "value":"spa-ES",
       "locale":"ES",
-      "code":"spa-ES",
-      "flag":""
+      "logo":"/public/img/lang/flag-spa.png"
     }
   ]
 }

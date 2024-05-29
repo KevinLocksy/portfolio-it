@@ -7,6 +7,11 @@
 [data-theme="dark"] {
   --background-primary: #140834e2;
   --background-secondary: #190c3de2;
+  --background-dropdown-active: #79c865a8;
+  --background-dropdown-primary: #465acbfd;
+  --background-dropdown-secondary: #6573c8d8;
+  --background-dropdown-hover-primary:#3c4ca9e2;
+  --background-dropdown-hover-secondary:#3047c7e2;
   --background-halo-cursor-primary:#181359e2;
   --background-halo-cursor-secondary:#942a78e2;
   --background-halo-logo-primary:#942a78e2;
@@ -29,6 +34,11 @@
 [data-theme="light"] {
   --background-primary: #d7d2d2;
   --background-secondary: #cfc1c1;
+  --background-dropdown-active: #6573c8d8;
+  --background-dropdown-primary: #465acbfd;
+  --background-dropdown-secondary: rgba(64, 27, 106, 0.886);
+  --background-dropdown-hover-primary:#a93c83e2;
+  --background-dropdown-hover-secondary:#c730bae2;
   --background-halo-cursor-primary:#c9b1b1;
   --background-halo-cursor-secondary:#942a78e2;
   --background-halo-logo-primary:#792d65e2;
