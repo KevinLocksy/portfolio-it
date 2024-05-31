@@ -60,26 +60,25 @@
     --option-separator-color:grey;
     --tooltip-transition-delay:1s;
     --tooltip-transition-duration:2s;
+    --button-height:2.5em;
+    --min-width:5em;
+    --max-width:8em;
     height: 100%;
     width: 100%;
   }
   /**
-  * General elements
   */
-  button{
-    display: flex;
-    height: 2.5em;
-    width: 100%;
-    min-height: 100%;
-    align-items: center;
-    text-align: start;
-    border: none;
-    padding-left: 0.5em;
+  .dropdown-container{
+    display:flex;
+    flex-direction: column;
+    min-width: var(--min-width);
+    max-width: var(--max-width);
   }
-  .icon.flag{
-    height: 20px;
-    width: 32px;
-    margin-right: 0.5em;
+  button.options-selected{
+    position: relative;
+    background-color: var(--background-primary);
+    color: var(--text-primary);
+    border-radius: 6px;
   }
   .options-selected-arrow{
     display: inline-block;
@@ -91,29 +90,15 @@
     border-bottom: solid var(--arrow-color);
     transform: rotate(45deg);
   }
-  /**
-  */
-  .dropdown-container{
-    display:flex;
-    flex-direction: column;
-    width: 100%;
-    min-width: 8em;
-    max-width: 50%;
-    position: absolute;
-    top:12.5%;
-    right:0.5em;
-  }
-  button.options-selected{
-    position: relative;
-    background-color: var(--background-primary);
-    color: var(--text-primary);
-    border-radius: 6px;
-  }
   div.options-list{
+    position: absolute;
     display: none;
     flex-direction: column;
     border-radius: 6px;
+    top:var(--button-height);
     width: 100%;
+    min-width: var(--min-width);
+    max-width: var(--max-width);
   }
   div.options-list.open{
     display:flex;
@@ -164,5 +149,23 @@
     /* margin-right: 1em; */
     opacity: 0;
     border: solid black;
+  }
+    /**
+  * General elements
+  */
+  button{
+    display: flex;
+    height: var(--button-height);
+    width: 100%;
+    min-height: 100%;
+    align-items: center;
+    text-align: start;
+    border: none;
+    padding-left: 0.5em;
+  }
+  .icon.flag{
+    height: 20px;
+    width: 32px;
+    margin-right: 0.5em;
   }
 </style>
