@@ -32,13 +32,14 @@
 
 <div class="component">
   <div class="dropdown-container" role="button" use:clickOutside on:click_outside={closeDropdownList} tabindex="0" on:keydown={()=>{}}>
-    <button class="options-selected" value={selectedValue} on:click={() => toggleDropdownList(open)}>
+    <button class="options-selected" data-option-id={selectedId} value={selectedValue} on:click={() => toggleDropdownList(open)}>
       <img class='flag icon' src={options[selectedId].logo} alt='flag' title='flag'/>
       {options[selectedId].label}
       <span class="options-selected-arrow"/>
     </button>
     <div class="options-list {open ? "open" : ""}">
       {#each options as option}
+        {#if selectedId != option.id}
         <button class="options-item {(option.value == selectedValue) ? "active" : ""}" data-option-id={option.id} value="{option.value}" on:click={(e)=> selectOption(e)}>
           {#if (option.logo)}
           <img class='flag icon' src={option.logo} alt='flag' title='flag'/>
@@ -46,6 +47,7 @@
           {option.label}
           <span class="option-tooltip">{option.locale}</span>
         </button>
+        {/if}
       {/each}
     </div>
   </div>
