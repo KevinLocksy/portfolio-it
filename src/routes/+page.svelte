@@ -97,7 +97,7 @@
   header, footer{
     display: flex;
     width:100%;
-    height:50px;
+    min-height:50px;
     align-items: center;
   }
   header{
@@ -112,9 +112,9 @@
   }
   main{
     display:grid;
-    grid-template-rows: 355px 200px 400px auto; /* change according to media screen size*/
+    grid-template-rows: minmax(355px,auto) minmax(200px,auto) minmax(400px,auto) auto; /* change according to media screen size*/
     position: relative;
-    height: fit-content;
+    min-height: fit-content;
     width: 100%;
     margin-top:50px;
   }
