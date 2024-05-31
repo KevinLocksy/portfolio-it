@@ -40,7 +40,7 @@
     <div class="options-list {open ? "open" : ""}">
       {#each options as option}
         {#if selectedId != option.id}
-        <button class="options-item {(option.value == selectedValue) ? "active" : ""}" data-option-id={option.id} value="{option.value}" on:click={(e)=> selectOption(e)}>
+        <button class="options-item" data-option-id={option.id} value="{option.value}" on:click={(e)=> selectOption(e)}>
           {#if (option.logo)}
           <img class='flag icon' src={option.logo} alt='flag' title='flag'/>
           {/if}
@@ -147,9 +147,6 @@
         background-color: var(--background-dropdown-hover-primary);
       }
     }
-  }
-  button.options-item.active{
-    background-color:var(--background-dropdown-active);
   }
   /**
   * Tooltip
