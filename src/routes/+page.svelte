@@ -101,7 +101,8 @@
     align-items: center;
   }
   header{
-    position: fixed;
+    position: sticky;
+    top:0;
     justify-content:space-between;
     z-index: 999;/* this is odd*/
   }
@@ -116,7 +117,6 @@
     position: relative;
     min-height: fit-content;
     width: 100%;
-    margin-top:50px;
   }
   footer{
     justify-content: center;
