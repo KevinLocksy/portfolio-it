@@ -10,7 +10,7 @@ const config = {
 		alias:{
 			$assets:'src/assets',
 			$components:'src/lib/components',
-			$config:'src/lib/config',
+			$config:'src/config',
 			$constants:'src/lib/constants',
 			$store:'src/lib/store',
 			$styles:'src/assets/styles',

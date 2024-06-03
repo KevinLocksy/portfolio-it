@@ -1,6 +1,6 @@
 import {STORAGE_KEY} from "$lib/constants/localStorage.const.js";
-import LANG from "$lib/config/i18n.conf.json";
 import {HTML_ATTR} from "$lib/constants/htmlAttr.const.js";
+import LANG from "$config/i18n.conf.json";
 import {getLocalStorageLang} from "$lib/utils/localStorage.utils.js";
 import {i18nStore} from "$store/i18n.store.js";
 

@@ -2,7 +2,7 @@ import {writable,get} from "svelte/store";
 import {i18nStore} from '$store/i18n.store.js';
 import {setDefaultLang,updateLang} from '$utils/lang.utils.js';
 import en from "$assets/i18n/lang-en.json";
-import mappingJSON from "$lib/config/i18n.mapping.json";
+import mappingJSON from "$config/i18n.mapping.json";
 
 const defaultLang = {
   lang: "en",

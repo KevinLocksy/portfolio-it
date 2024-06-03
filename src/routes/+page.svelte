@@ -4,10 +4,10 @@
 </svelte:head>
 
 <script>
-  import SOCIAL_MEDIA from '$lib/config/socialmedia.conf.json';
-  import PERSONAL_INFO from '$lib/config/personalInfo.conf.json';
+  import SOCIAL_MEDIA from '$config/socialmedia.conf.json';
+  import PERSONAL_INFO from '$config/personalInfo.conf.json';
   import TECH_STACK from '$config/techStack.conf.json';
-  import LANG from "$lib/config/i18n.conf.json";
+  import LANG from "$config/i18n.conf.json";
   import {setCursorPositions} from '$utils/cursor.utils.js';
   import {typeText} from '$utils/textTyper.utils.js';
   import {toggleTheme} from '$utils/theme.utils.js';
@@ -90,7 +90,7 @@
 </main>
 
   <footer>
-    <!-- {$i18n.pres.title} -->
+    
   </footer>
 <style>
   @import url("./styles.css");
