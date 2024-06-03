@@ -99,6 +99,7 @@
     width:100%;
     min-height:50px;
     align-items: center;
+    box-shadow: 0px 1px 5px var(--box-shadow-primary);
   }
   header{
     position: sticky;

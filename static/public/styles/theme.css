@@ -2,6 +2,7 @@
   --color-scheme-transition-duration:0.4s;
   --logo-transition-duration:0.5s;
   --logo-caption-primary:#ffffff;
+  --box-shadow-primary:#191b1f;
 }
 
 [data-theme="dark"] {
