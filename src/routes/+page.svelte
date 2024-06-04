@@ -46,46 +46,48 @@
 </header>
   
 <main>
-  <div id="pointer-halo"/>
-  <div id="presentation">
-    <div id='pres-desc'>
-      <div id='pres-desc-text'>
-        <p> {@html $i18n.pres.title}</p>
-        <p> {@html $i18n.pres.desc}</p>
+
+  <div id='main-wrapper'>
+    <div id="presentation">
+      <div id='pres-desc'>
+        <div id='pres-desc-text'>
+          <p> {@html $i18n.pres.title}</p>
+          <p> {@html $i18n.pres.desc}</p>
+        </div>
+        <div id="pres-desc-social">
+          {#each SOCIAL_MEDIA.socialmedia as { url, img, alt, title }}
+            <div class="socialMedia">
+              <a href={url}>
+                <img class='logo' src={$isDarkTheme ? img.dark : img.light} alt='{alt}' title='{title}' />
+              </a>
+            </div>
+          {/each}
+        </div>
       </div>
-      <div id="pres-desc-social">
-        {#each SOCIAL_MEDIA.socialmedia as { url, img, alt, title }}
-          <div class="socialMedia">
-            <a href={url}>
-              <img class='logo' src={$isDarkTheme ? img.dark : img.light} alt='{alt}' title='{title}' />
-            </a>
-          </div>
+      <div id='pres-3d'>
+        <Model3d />
+      </div>
+    </div>
+    
+    <div id="techStack">
+      <h2 use:typeText class="font-tech">{$i18n.techStack.desc}</h2>
+      <div id="techStack-list">
+        {#each TECH_STACK.techStack as {name, img}}
+        <div class="techStack-logo-container"  name='{name}'>
+          <img class='techStack-logo-img logo' src={img.path} alt='{img.alt}' title='{img.title}' />
+          <h4 class="techStack-logo-caption">{name}</h4>
+        </div>
         {/each}
       </div>
     </div>
-    <div id='pres-3d'>
-      <Model3d />
-    </div>
-  </div>
-  
-  <div id="techStack">
-    <h2 use:typeText class="font-tech">{$i18n.techStack.desc}</h2>
-    <div id="techStack-list">
-      {#each TECH_STACK.techStack as {name, img}}
-      <div class="techStack-logo-container"  name='{name}'>
-        <img class='techStack-logo-img logo' src={img.path} alt='{img.alt}' title='{img.title}' />
-        <h4 class="techStack-logo-caption">{name}</h4>
-      </div>
-      {/each}
-    </div>
-  </div>
 
-  <div id="projects">
-    <Tabs />
-  </div>
+    <div id="projects">
+      <Tabs />
+    </div>
 
-  <div id="art">
-    
+    <div id="art">
+      
+    </div>
   </div>
 </main>
 
@@ -101,6 +103,9 @@
     align-items: center;
     box-shadow: 0px 1px 5px var(--box-shadow-primary);
   }
+  /**
+  * Structure
+  */
   header{
     position: sticky;
     top:0;
@@ -113,31 +118,29 @@
     align-items: center;
   }
   main{
-    display:grid;
-    grid-template-rows: minmax(355px,auto) minmax(200px,auto) minmax(400px,auto) auto; /* change according to media screen size*/
-    position: relative;
-    min-height: fit-content;
-    width: 100%;
-  }
-  footer{
-    justify-content: center;
-  }
-  #pointer-halo{
-    position: absolute;
-    display: block;
-    height: 100%;
-    width: 100%;
     background: radial-gradient(
       800px circle at calc(var(--x) * 1px) calc(var(--y) * 1px),
       var(--background-halo-cursor-primary),
       transparent 90%
       );
-    z-index: -1;
+  }
+  footer{
+    justify-content: center;
   }
   #dp-dwn-lang{
     position: relative;
     height: inherit;
     width: 200px;
+  }
+  /**
+  * Main
+  */
+  #main-wrapper{
+    display:grid;
+    grid-template-rows: minmax(355px,auto) minmax(200px,auto) minmax(400px,auto) auto; /* change according to media screen size*/
+    position: relative;
+    min-height: fit-content;
+    width: 100%;
   }
   #presentation, #techStack, #projects {
     display:grid;
