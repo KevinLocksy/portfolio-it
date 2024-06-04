@@ -8,7 +8,7 @@
   const changeTab = tabId => () => { activeTabId = tabId; }; //different from (activeTab) => { activeTabId = activeTab;}
 </script>
 
-<div class="container">
+<div name="tab" class="container">
   <div id="tab-list">
     <ul role="tablist" aria-label="Sample Tabs">
       {#each items as item}  
@@ -24,9 +24,8 @@
 </div>
 
 <style>
-  .container{
+  div.container[name=tab]{
     width: 70vw;
-    padding: 1rem;
     --tab-border-radius:0.5rem;
   }
   ul{
