@@ -32,7 +32,7 @@
 
 <header>
   <div>
-    <div class='btn-dark-mode' role='button' on:click={toggleTheme} on:keyup tabindex="0">
+    <div class='color-scheme' role='button' on:click={toggleTheme} on:keyup tabindex="0">
       <img class='logo locksy' src={isDarkTheme? LOGO.img.dark : LOGO.img.light} alt='{LOGO.alt}' title='{LOGO.title}' />
     </div>
     <div class='pseudo'>
@@ -40,14 +40,13 @@
     </div>
   </div>
 
-  <div id='dp-dwn-lang'>
+  <div class='lang-dropdown'>
     <DropdownList options={LANGUAGE} defaultValue={$i18nStore} onClick={onLangChange}/>
   </div>
 </header>
   
 <main>
-
-  <div id='main-wrapper'>
+  <div id='main-wrapper'> <!-- wrapper if i want to make a component out of it: it is easier for the css, etc-->
     <div id="presentation">
       <div id='pres-desc'>
         <div id='pres-desc-text'>
@@ -70,14 +69,16 @@
     </div>
     
     <div id="techStack">
-      <h2 use:typeText class="font-tech">{$i18n.techStack.desc}</h2>
-      <div id="techStack-list">
-        {#each TECH_STACK.techStack as {name, img}}
-        <div class="techStack-logo-container"  name='{name}'>
-          <img class='techStack-logo-img logo' src={img.path} alt='{img.alt}' title='{img.title}' />
-          <h4 class="techStack-logo-caption">{name}</h4>
+      <div id="techStack-wrapper">
+        <h2 use:typeText class="font-tech">{$i18n.techStack.desc}</h2>
+        <div id="techStack-list">
+          {#each TECH_STACK.techStack as {name, img}}
+          <div class="techStack-logo-container"  name='{name}'>
+            <img class='techStack-logo-img logo' src={img.path} alt='{img.alt}' title='{img.title}' />
+            <h4 class="techStack-logo-caption">{name}</h4>
+          </div>
+          {/each}
         </div>
-        {/each}
       </div>
     </div>
 
@@ -111,11 +112,11 @@
     top:0;
     justify-content:space-between;
     z-index: 999;/* this is odd*/
-  }
-  header>*{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    &>*{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
   }
   main{
     background: radial-gradient(
@@ -127,7 +128,13 @@
   footer{
     justify-content: center;
   }
-  #dp-dwn-lang{
+  /**
+  * Header elements
+  */
+  div.color-scheme{
+    cursor: pointer;
+  }
+  div.lang-dropdown{
     position: relative;
     height: inherit;
     width: 200px;
@@ -136,31 +143,27 @@
   * Main
   */
   #main-wrapper{
-    display:grid;
-    grid-template-rows: minmax(355px,auto) minmax(200px,auto) minmax(400px,auto) auto; /* change according to media screen size*/
-    position: relative;
-    min-height: fit-content;
-    width: 100%;
+    margin: 0 auto;
+    max-width: 1440px;
   }
   #presentation, #techStack, #projects {
-    display:grid;
-    justify-content: center;
-    height: 100%;
+    align-content: center;
+    margin: 0 auto;
     width: 100%;
   }
   /**
   * Presentation section
   */
   #presentation{
-    grid-row: 1;
-    position: relative;
+    min-height: 355px;
     align-items: center;
-    grid-template-columns: 2fr 4fr 2fr 2fr
+    display: flex;
+    flex-direction: row;
   }
   #pres-desc{
-    grid-column: 2;
+    flex:1;
     padding: 1em;
-    margin-right:3rem;
+    margin:0 3rem;
   }
   #pres-desc-text{
     padding: 1em;
@@ -173,35 +176,40 @@
     padding: 1em;
   }
   #pres-3d{
-    grid-column: 3;
+    flex:1;
+    margin:0 auto;
   }
   /**
   * TechStack section
   */
   #techStack{
-    grid-row: 2;
-    position: relative;
+    min-height: 200px;
   }
-
+  /**necessary because the "flex-direction" is column to have the child elements in the same width*/
+  #techStack-wrapper{
+    width: fit-content;
+    margin: 0 auto;
+  }
   #techStack-list{
     display: flex;
+    flex-direction: row;
   }
   .techStack-logo-container{
     position: relative;
-    height: fit-content;
+    max-height: fit-content;
     margin: 1rem;
-    /* ::before = background halo-logo: (position,height,width) mandatory in the transition. init in public/styles/styles.css */
     &::before, &::after{
       content: "";
       position: absolute;
-      z-index: -1;
     }
+    /* ::before = background halo-logo: (position,height,width) mandatory in the transition. init in public/styles/styles.css */
     &::before {
       width: 100%;
       height: 110%;
       background: radial-gradient(closest-side, var(--background-halo-logo-primary), transparent);
-      opacity: 0;
       transition: opacity var(--logo-transition-duration) ;
+      opacity: 0;
+      z-index: -1;
     }
     &:hover::before {
       opacity: 1;
@@ -236,13 +244,12 @@
   * Projects section
   */
   #projects{
-    grid-row: 3;
-    margin-top: 0;
+    min-height: 400px;
   }
   /**
   * Artistic section
   */
   #art{
-    grid-row: 4;
+    min-height: 400px;
   }
 </style>
