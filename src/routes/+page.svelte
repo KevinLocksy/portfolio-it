@@ -36,7 +36,7 @@
       <img class='logo locksy' src={isDarkTheme? LOGO.img.dark : LOGO.img.light} alt='{LOGO.alt}' title='{LOGO.title}' />
     </div>
     <div class='pseudo'>
-      <h1>{PERSONAL_INFO.pseudo}</h1>
+      <h1>{PERSONAL_INFO.pseudo} - IT Portfolio</h1>
     </div>
   </div>
 
