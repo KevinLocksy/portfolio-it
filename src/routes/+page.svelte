@@ -31,13 +31,11 @@
 </script>
 
 <header>
-  <div>
+  <div id='trademark'>
     <div class='color-scheme' role='button' on:click={toggleTheme} on:keyup tabindex="0">
       <img class='logo locksy' src={isDarkTheme? LOGO.img.dark : LOGO.img.light} alt='{LOGO.alt}' title='{LOGO.title}' />
     </div>
-    <div class='pseudo'>
-      <h1>{PERSONAL_INFO.pseudo} - IT Portfolio</h1>
-    </div>
+    <h1 class='title'>{PERSONAL_INFO.pseudo} - IT Portfolio</h1>
   </div>
 
   <div class='lang-dropdown'>
@@ -47,7 +45,7 @@
   
 <main>
   <div id='main-wrapper'> <!-- wrapper if i want to make a component out of it: it is easier for the css, etc-->
-    <div id="presentation">
+    <section id="presentation">
       <div id='pres-desc'>
         <div id='pres-desc-text'>
           <p> {@html $i18n.pres.title}</p>
@@ -66,9 +64,9 @@
       <div id='pres-3d'>
         <Model3d />
       </div>
-    </div>
+    </section>
     
-    <div id="techStack">
+    <section id="techStack">
       <div id="techStack-wrapper">
         <h2 use:typeText class="font-tech">{$i18n.techStack.desc}</h2>
         <div id="techStack-list">
@@ -80,43 +78,45 @@
           {/each}
         </div>
       </div>
-    </div>
+    </section>
 
-    <div id="projects">
+    <section id="projects">
       <Tabs />
-    </div>
+    </section>
 
-    <div id="art">
+    <section id="art">
       
-    </div>
+    </section>
   </div>
 </main>
 
   <footer>
-    
+    <p id='credits'>Developed by Kevin Locksy</p>
+    <p id='contact'>Contact</p>
+    <p id='date'>Date</p>
   </footer>
+
 <style>
-  @import url("./styles.css");
+  /* @import url("./styles.css"); */
   header, footer{
-    display: flex;
-    width:100%;
+    max-width:100%;
     min-height:50px;
     align-items: center;
     box-shadow: 0px 1px 5px var(--box-shadow-primary);
+    padding: 0 1em;
+  }
+  section{
+    margin: 1em;
   }
   /**
   * Structure
   */
   header{
+    display: flex;
+    justify-content:space-between;
     position: sticky;
     top:0;
-    justify-content:space-between;
-    z-index: 999;/* this is odd*/
-    &>*{
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
+    z-index: 999;
   }
   main{
     background: radial-gradient(
@@ -126,11 +126,21 @@
       );
   }
   footer{
-    justify-content: center;
+    display: grid;
+    grid-template-areas: "credits contact date";
+    grid-template-columns: repeat(3,1fr);
   }
   /**
   * Header elements
   */
+  div#trademark{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  h1.title{
+    margin: 0 0.5em;
+  }
   div.color-scheme{
     cursor: pointer;
   }
@@ -140,21 +150,43 @@
     width: 200px;
   }
   /**
+  * Footer elements
+  */
+  p#credits{
+    grid-area: credits;
+  }
+  p#contact{
+    grid-area: contact;
+    justify-self: center;
+  }
+  p#date{
+    grid-area: date;
+    justify-self: end;
+  }
+  /**
   * Main
   */
   #main-wrapper{
     margin: 0 auto;
     max-width: 1440px;
   }
-  #presentation, #techStack, #projects {
-    align-content: center;
-    margin: 0 auto;
-    width: 100%;
+  /**
+  * Logo
+  */
+  .logo, .socialMedia {
+    max-height: 50px;
+    max-width: 50px;
+  }
+  .socialMedia {
+    margin: 0 0.5em;
+  }
+  .logo.locksy{
+    border-radius: 50px;
   }
   /**
   * Presentation section
   */
-  #presentation{
+  section#presentation{
     min-height: 355px;
     align-items: center;
     display: flex;
@@ -182,17 +214,18 @@
   /**
   * TechStack section
   */
-  #techStack{
+  section#techStack{
     min-height: 200px;
   }
   /**necessary because the "flex-direction" is column to have the child elements in the same width*/
   #techStack-wrapper{
     width: fit-content;
     margin: 0 auto;
+    padding: 1em;
   }
   #techStack-list{
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
   }
   .techStack-logo-container{
     position: relative;
@@ -243,13 +276,16 @@
   /**
   * Projects section
   */
-  #projects{
+  section#projects{
     min-height: 400px;
+    display: flex;
+    justify-content: center;
+    padding: 2em;
   }
   /**
   * Artistic section
   */
-  #art{
+  section#art{
     min-height: 400px;
   }
 </style>
