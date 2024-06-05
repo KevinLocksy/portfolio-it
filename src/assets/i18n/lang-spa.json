@@ -4,6 +4,10 @@
     "desc":"Artisto en mi corazón, pensador libre, y developer en mi tiempo libre, me dedico para dar lo mejor de mi mismo."
   },
   "techStack":{
-    "desc":"Technologies and frameworks"
+    "desc":"Technologies y frameworks"
+  },
+  "footer":{
+    "credits":"Desarrollado por Kevin LOCKSY",
+    "contact":"Contacto"
   }
 }

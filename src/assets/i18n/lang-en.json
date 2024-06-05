@@ -5,5 +5,9 @@
   },
   "techStack":{
     "desc":"Technologies and frameworks"
+  },
+  "footer":{
+    "credits":"Developed by Kevin LOCKSY",
+    "contact":"Contact"
   }
 }

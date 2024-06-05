@@ -5,5 +5,9 @@
   },
   "techStack":{
     "desc":"Teknologioj kaj kadroj"
+  },
+  "footer":{
+    "credits":"",
+    "contact":"Contact"
   }
 }

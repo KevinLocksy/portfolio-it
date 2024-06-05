@@ -91,9 +91,9 @@
 </main>
 
   <footer>
-    <p id='credits'>Developed by Kevin Locksy</p>
-    <p id='contact'>Contact</p>
-    <p id='date'>Date</p>
+    <h4 id='credits'>{$i18n.footer.credits}</h4>
+    <h4 id='contact'>{$i18n.footer.contact}</h4>
+    <h4 id='date'>Date</h4>
   </footer>
 
 <style>
@@ -152,14 +152,14 @@
   /**
   * Footer elements
   */
-  p#credits{
+  h4#credits{
     grid-area: credits;
   }
-  p#contact{
+  h4#contact{
     grid-area: contact;
     justify-self: center;
   }
-  p#date{
+  h4#date{
     grid-area: date;
     justify-self: end;
   }
