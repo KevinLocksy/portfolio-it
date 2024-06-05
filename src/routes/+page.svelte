@@ -190,15 +190,17 @@
     min-height: 355px;
     align-items: center;
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap-reverse;
   }
   #pres-desc{
+    min-width:25em;/**need to use clamp*/
+    max-width:45em;/**need to use clamp*/
     flex:1;
-    padding: 1em;
+    padding: 1rem;
     margin:0 3rem;
   }
   #pres-desc-text{
-    padding: 1em;
+    padding: 1rem;
     text-align: justify;
     text-justify: inter-character;
   }
@@ -208,6 +210,7 @@
     padding: 1em;
   }
   #pres-3d{
+    min-width:25em;/**need to use clamp*/
     flex:1;
     margin:0 auto;
   }
