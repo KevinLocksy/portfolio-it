@@ -103,7 +103,7 @@
     min-height:50px;
     align-items: center;
     box-shadow: 0px 1px 5px var(--box-shadow-primary);
-    padding: 0 1em;
+    padding: 0.5em 1em;
   }
   section{
     margin: 1em;
@@ -138,30 +138,33 @@
     flex-direction: row;
     align-items: center;
   }
-  h1.title{
-    margin: 0 0.5em;
-  }
   div.color-scheme{
     cursor: pointer;
   }
   div.lang-dropdown{
     position: relative;
     height: inherit;
-    width: 200px;
+    width: clamp(3em,4em + 10vw,15em);
   }
   /**
   * Footer elements
   */
-  h4#credits{
-    grid-area: credits;
-  }
-  h4#contact{
-    grid-area: contact;
-    justify-self: center;
-  }
-  h4#date{
-    grid-area: date;
-    justify-self: end;
+  footer{
+    /** To be generic */
+    &>*:first-child{
+      grid-column: 1;
+      grid-area: credits;
+    }
+    &>*:nth-child(2){
+      grid-column: 2;
+      grid-area: contact;
+      justify-self: center;
+    }
+    &>*:last-child{
+      grid-column: 3;
+      grid-area: date;
+      justify-self: end;
+    }
   }
   /**
   * Main
@@ -174,33 +177,34 @@
   * Logo
   */
   .logo, .socialMedia {
-    max-height: 50px;
-    max-width: 50px;
+    width:clamp(15px,15px + 5vw,50px);
+    height: auto;
   }
   .socialMedia {
     margin: 0 0.5em;
   }
   .logo.locksy{
     border-radius: 50px;
+    width: clamp(25px,50px + 1vw,50px);
   }
   /**
   * Presentation section
   */
   section#presentation{
     min-height: 355px;
-    align-items: center;
     display: flex;
+    align-items: center;
     flex-flow: row wrap-reverse;
   }
   #pres-desc{
-    min-width:25em;/**need to use clamp*/
-    max-width:45em;/**need to use clamp*/
-    flex:1;
-    padding: 1rem;
-    margin:0 3rem;
+    flex: 2;
+    max-width:35em;
+    margin: 1em clamp(1em,5vw,8em);
+    background-color: var(--background-third);
+    box-shadow: 0 0 15px 10px var(--background-third);
   }
   #pres-desc-text{
-    padding: 1rem;
+    padding: 1em clamp(1em,10vw,3em);
     text-align: justify;
     text-justify: inter-character;
   }
@@ -210,9 +214,10 @@
     padding: 1em;
   }
   #pres-3d{
-    min-width:25em;/**need to use clamp*/
-    flex:1;
-    margin:0 auto;
+    flex: 1;
+    display: flex;
+    justify-content:center;
+    padding: 1em 0;
   }
   /**
   * TechStack section
@@ -223,17 +228,19 @@
   /**necessary because the "flex-direction" is column to have the child elements in the same width*/
   #techStack-wrapper{
     width: fit-content;
+    min-width: 25em;
     margin: 0 auto;
     padding: 1em;
   }
   #techStack-list{
     display: flex;
     flex-flow: row wrap;
+    width: clamp(20em,100vw,500em);
   }
   .techStack-logo-container{
     position: relative;
     max-height: fit-content;
-    margin: 1rem;
+    margin: calc(1rem + 1vw);
     &::before, &::after{
       content: "";
       position: absolute;
@@ -252,9 +259,8 @@
     }
     /* ::after = shadow on the ground: (position,height,width) mandatory. init in public/styles/styles.css  */
     &::after{
+      width: clamp(15px,15px + 5vw,50px);
       height: 1rem;
-      width: 4rem;
-      left:0.13rem;
       background: var(--shadow-logo-primary);
       filter: blur(6px);
       border-radius: 100%;
@@ -281,6 +287,7 @@
   */
   section#projects{
     min-height: 400px;
+    min-width: 35em;
     display: flex;
     justify-content: center;
     padding: 2em;

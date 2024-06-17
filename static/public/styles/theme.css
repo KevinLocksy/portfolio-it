@@ -8,6 +8,7 @@
 [data-theme="dark"] {
   --background-primary: #140834e2;
   --background-secondary: #190c3de2;
+  --background-third:#141414;
   --background-dropdown-active: #79c865a8;
   --background-dropdown-primary: #465acbfd;
   --background-dropdown-secondary: #6573c8d8;
@@ -35,6 +36,7 @@
 [data-theme="light"] {
   --background-primary: #d7d2d2;
   --background-secondary: #cfc1c1;
+  --background-third:#141414;
   --background-dropdown-active: #6573c8d8;
   --background-dropdown-primary: #465acbfd;
   --background-dropdown-secondary: rgba(64, 27, 106, 0.886);

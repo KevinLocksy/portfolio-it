@@ -17,3 +17,10 @@ body {
 header,footer {
   background-color: var(--background-secondary);
 }
+h1{
+  font-size: clamp(0.1em,0.1em + 5vw,3em);
+  padding: clamp(0.1em,0.1em + 5vw,0.5em) 0;
+}
+h2{
+  padding: 1em 0;
+}
