@@ -1,6 +1,6 @@
 .tab {
-  padding: 1em;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
+  padding: 1em;
+  gap:2em;
 }

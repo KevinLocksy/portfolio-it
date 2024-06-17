@@ -25,7 +25,7 @@
 
 <style>
   div.container[name=tab]{
-    width: 70vw;
+    min-width: 70vw;
     --tab-border-radius:0.5rem;
   }
   ul{
