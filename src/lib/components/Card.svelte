@@ -1,7 +1,7 @@
 <script>
   export let project, standfirst, summary, description, features, git, demo, stack, img;
   let card;
-  const nodeType_URL = "A";
+  const nodeType_URL = "A";//html tag a
 
   /**
    * 
@@ -81,8 +81,8 @@
   .card{
     position: relative;
     display: flex;
-    height: max(30vh,200px);
-    width: max(25vw,250px);
+    height: clamp(10em,25vh,15em);
+    width: clamp(20em,25vw,35em);
     cursor: pointer;
     transform-style: preserve-3d;
     transform-origin: center;
