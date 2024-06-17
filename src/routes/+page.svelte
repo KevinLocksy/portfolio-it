@@ -149,18 +149,18 @@
   /**
   * Footer elements
   */
-  footer{
+  footer>*{
     /** To be generic */
-    &>*:first-child{
+    &:first-child{
       grid-column: 1;
       grid-area: credits;
     }
-    &>*:nth-child(2){
+    &:nth-child(2){
       grid-column: 2;
       grid-area: contact;
       justify-self: center;
     }
-    &>*:last-child{
+    &:last-child{
       grid-column: 3;
       grid-area: date;
       justify-self: end;
