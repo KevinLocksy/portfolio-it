@@ -116,7 +116,7 @@
     justify-content:space-between;
     position: sticky;
     top:0;
-    z-index: 999;
+    max-height:75px;
   }
   main{
     background: radial-gradient(
