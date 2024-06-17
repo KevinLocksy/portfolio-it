@@ -278,6 +278,7 @@
   }
   .techStack-logo-container:hover .techStack-logo-caption {
     opacity: 1;
+    z-index: 1;
   }
   .font-tech {
     font-family: 'Technology', sans-serif;
