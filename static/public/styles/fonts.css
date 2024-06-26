@@ -4,3 +4,10 @@
   src:
     url("/public/fonts/Technology/Technology.ttf") format("truetype"),
 }
+
+@font-face {
+  font-family: "Yellowtail";
+  font-display: swap;
+  src:
+    url("/public/fonts/Yellowtail/Yellowtail-Regular.ttf") format("truetype"),
+}
