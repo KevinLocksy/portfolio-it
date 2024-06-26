@@ -118,12 +118,11 @@
   #techStack-list{
     display: flex;
     flex-flow: row wrap;
-    width: clamp(20em,80vw,200em);
   }
   .techStack-logo-container{
     position: relative;
     max-height: fit-content;
-    margin: calc(1rem + 1vw);
+    margin: calc(0.5rem + 1vw);
     &::before, &::after{
       content: "";
       position: absolute;
