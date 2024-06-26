@@ -52,6 +52,7 @@
     box-shadow: 0px 1px 5px var(--box-shadow-primary);
     background-color: var(--background-secondary);
     padding: 0.5em 1em;
+    z-index:var(--z-index-main-header);
   }
   /**
   * Structure
