@@ -13,6 +13,7 @@
 }
 html {
   font-family: var(--font-family-primary);
+  overflow-x: hidden; /*check why it is necessary*/
 }
 body {
   display: flex;
