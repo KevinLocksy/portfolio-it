@@ -9,6 +9,8 @@
 	import DropdownList from '$components/DropdownList.svelte';
 
   const LOGO = PERSONAL_INFO.logo;
+  const CREATION_DATE = PERSONAL_INFO.date_creation;
+  const currentYear = (new Date()).getFullYear();
   const LANGUAGE = LANG.language;
 
   const onLangChange = async (e) => {
@@ -40,7 +42,7 @@
   <footer>
     <h4 id='credits'>{$i18n.footer.credits}</h4>
     <h4 id='contact'>{$i18n.footer.contact}</h4>
-    <h4 id='date'>Date</h4>
+    <h4 id='date'>{CREATION_DATE}{#if currentYear.toString()!=CREATION_DATE} - {currentYear}{/if}</h4>
   </footer>
 {/await}
 
