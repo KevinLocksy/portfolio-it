@@ -40,7 +40,7 @@
   
   <section id="techStack">
     <div id="techStack-wrapper">
-      <h2 use:typeText class="font-tech">{$i18n.techStack.desc}</h2>
+      <h2 use:typeText>{$i18n.techStack.desc}</h2>
       <div id="techStack-list">
         {#each TECH_STACK.techStack as {name, img}}
         <div class="techStack-logo-container"  name='{name}'>
@@ -109,6 +109,7 @@
   */
   section#techStack{
     min-height: 200px;
+    font-family: var(--font-family-tercery);
   }
   /**necessary because the "flex-direction" is column to have the child elements in the same width*/
   #techStack-wrapper{
@@ -161,9 +162,6 @@
   .techStack-logo-container:hover .techStack-logo-caption {
     opacity: 1;
     z-index: 1;
-  }
-  .font-tech {
-    font-family: var(--font-family-tercery);
   }
   /**
   * Projects section
