@@ -112,15 +112,13 @@
   }
   /**necessary because the "flex-direction" is column to have the child elements in the same width*/
   #techStack-wrapper{
-    width: fit-content;
-    min-width: 25em;
     margin: 0 auto;
     padding: 1em;
   }
   #techStack-list{
     display: flex;
     flex-flow: row wrap;
-    width: clamp(20em,100vw,500em);
+    width: clamp(20em,80vw,200em);
   }
   .techStack-logo-container{
     position: relative;
