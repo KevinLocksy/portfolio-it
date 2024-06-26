@@ -69,7 +69,7 @@
   main{
     flex:auto;
     background: radial-gradient(
-      800px circle at calc(var(--x) * 1px) calc(var(--y) * 1px),
+      var(--background-halo-cursor-radius) circle at calc(var(--x) * 1px) calc(var(--y) * 1px),
       var(--background-halo-cursor-primary),
       transparent 90%
       );
