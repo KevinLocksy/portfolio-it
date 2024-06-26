@@ -37,7 +37,7 @@
       {options[selectedId].label}
       <span class="options-selected-arrow"/>
     </button>
-    <div class="options-list {open ? "open" : ""}">
+    <div class="options-list" class:open>
       {#each options as option}
         {#if selectedId != option.id}
         <button class="options-item" data-option-id={option.id} value="{option.value}" on:click={(e)=> selectOption(e)}>
