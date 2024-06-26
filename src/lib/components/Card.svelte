@@ -74,6 +74,7 @@
     --card-rotation-duration:3s;
     --card-rotation-iteration:2;
     --card-rotation-angle:30deg;
+    font-family:var(--font-family-primary,initial);
   }
   /**
   * Card
