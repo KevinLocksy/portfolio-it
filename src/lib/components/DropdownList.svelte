@@ -34,7 +34,7 @@
   <div class="dropdown-container" role="button" use:clickOutside on:click_outside={closeDropdownList} tabindex="0" on:keydown={()=>{}}>
     <button class="options-selected" data-option-id={selectedId} value={selectedValue} on:click={() => toggleDropdownList(open)}>
       <img class='flag icon' src={options[selectedId].logo} alt='flag' title='flag'/>
-      {options[selectedId].label}
+      <span class="size-l">{options[selectedId].label}</span>
       <span class="options-selected-arrow"/>
     </button>
     <div class="options-list" class:open>
@@ -43,8 +43,10 @@
         <button class="options-item" data-option-id={option.id} value="{option.value}" on:click={(e)=> selectOption(e)}>
           {#if (option.logo)}
           <img class='flag icon' src={option.logo} alt='flag' title='flag'/>
+          {:else}
+          <span>{option.label}</span>
           {/if}
-          {option.label}
+          <span class="size-l">{option.label}</span>
           <span class="option-tooltip">{option.locale}</span>
         </button>
         {/if}
@@ -63,6 +65,8 @@
     --button-height:2.5em;
     --min-width:5em;
     --max-width:8em;
+    --flag-height:20px;
+    --flag-width:32px;
     height: 100%;
     width: 100%;
   }
@@ -150,13 +154,23 @@
     opacity: 0;
     border: solid black;
   }
-    /**
+  /**
+  * Responsive
+  */
+  @media screen and (max-width:30em){
+    .size-l{
+      display: none;      
+    }
+    button,button.options-item{
+      width:calc(var(--flag-width) + 12vw);
+    }
+  }
+  /**
   * General elements
   */
   button{
     display: flex;
     height: var(--button-height);
-    width: 100%;
     min-height: 100%;
     align-items: center;
     text-align: start;
@@ -164,8 +178,8 @@
     padding-left: 0.5em;
   }
   .icon.flag{
-    height: 20px;
-    width: 32px;
+    height: var(--flag-height);
+    width: var(--flag-width);
     margin-right: 0.5em;
   }
 </style>
