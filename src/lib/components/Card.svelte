@@ -81,8 +81,8 @@
   .card{
     position: relative;
     display: flex;
-    height: clamp(10em,25vh,15em);
-    width: clamp(20em,25vw,35em);
+    height: 15em;
+    width: 20em;
     cursor: pointer;
     transform-style: preserve-3d;
     transform-origin: center;
