@@ -173,7 +173,7 @@
     min-height: 400px;
     display: flex;
     justify-content: center;
-    padding: 2em;
+    padding: 1em;
   }
   /**
   * Artistic section
