@@ -171,7 +171,6 @@
   */
   section#projects{
     min-height: 400px;
-    min-width: 35em;
     display: flex;
     justify-content: center;
     padding: 2em;
