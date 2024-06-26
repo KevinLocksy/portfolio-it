@@ -163,7 +163,7 @@
     z-index: 1;
   }
   .font-tech {
-    font-family: 'Technology', sans-serif;
+    font-family: var(--font-family-tercery);
   }
   /**
   * Projects section
