@@ -130,12 +130,15 @@
     }
     /* ::before = background halo-logo: (position,height,width) mandatory in the transition. init in public/styles/styles.css */
     &::before {
-      width: 100%;
-      height: 110%;
+      width: 135%;
+      height: 120%;
       background: radial-gradient(closest-side, var(--background-halo-logo-primary), transparent);
-      transition: opacity var(--logo-transition-duration) ;
+      transition: opacity var(--logo-transition-duration);
       opacity: 0;
-      z-index: -1;
+      z-index: var(--z-index-shadow);
+      position: absolute;
+      top: -20%;
+      left: -15%;
     }
     &:hover::before {
       opacity: 1;
