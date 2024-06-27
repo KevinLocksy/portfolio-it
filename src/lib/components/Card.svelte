@@ -66,6 +66,7 @@
         <div class='card-desc'>
           <h2>Description</h2>
           <p class='description'>{description}</p>
+          <h5>Features</h5>
           {#if features}
             <ul class='feature'>
               {#each features as feature}
