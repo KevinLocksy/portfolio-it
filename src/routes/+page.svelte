@@ -135,8 +135,6 @@
       background: radial-gradient(closest-side, var(--background-halo-logo-primary), transparent);
       transition: opacity var(--logo-transition-duration);
       opacity: 0;
-      z-index: var(--z-index-shadow);
-      position: absolute;
       top: -20%;
       left: -15%;
     }
