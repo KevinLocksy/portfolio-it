@@ -108,12 +108,14 @@
   * TechStack section
   */
   section#techStack{
+    display: flex;
+    align-items: center;
     min-height: 200px;
     font-family: var(--font-family-tercery);
+    padding-bottom: 1em;/**because of the h2 padding*/
   }
   /**necessary because the "flex-direction" is column to have the child elements in the same width*/
   #techStack-wrapper{
-    margin: 0 auto;
     padding: 1em;
   }
   #techStack-list{
@@ -161,8 +163,11 @@
     transition: opacity var(--logo-transition-duration) linear;
   }
   .techStack-logo-container:hover .techStack-logo-caption {
-    opacity: 1;
-    z-index: 1;
+    z-index: var(--z-index-logo);
+  }
+  .techStack-logo-img{
+    position: relative;
+    z-index: var(--z-index-logo);
   }
   /**
   * Projects section
