@@ -17,7 +17,7 @@
    * 
    */
   function flipCard(e){
-    if (e.target.nodeName === nodeType_URL)
+    if (e.target.nodeName === nodeType_URL || e.target.parentNode.nodeName === nodeType_URL )
       return;
 
     const isTransformEmpty = typeof card.style.transform === "string" && card.style.transform.length === 0;
