@@ -42,7 +42,7 @@
     <div id="techStack-wrapper">
       <h2 use:typeText>{$i18n.techStack.desc}</h2>
       <div id="techStack-list">
-        {#each TECH_STACK.techStack as {name, img}}
+        {#each TECH_STACK as {name, img}}
         <div class="techStack-logo-container"  name='{name}'>
           <img class='techStack-logo-img logo' src={img.path} alt='{img.alt}' title='{img.title}' />
           <h4 class="techStack-logo-caption">{name}</h4>
@@ -163,6 +163,7 @@
     transition: opacity var(--logo-transition-duration) linear;
   }
   .techStack-logo-container:hover .techStack-logo-caption {
+    opacity: 1;
     z-index: var(--z-index-logo);
   }
   .techStack-logo-img{
