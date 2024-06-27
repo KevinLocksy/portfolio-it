@@ -66,21 +66,26 @@
         <div class='card-desc'>
           <h2>Description</h2>
           <p class='description'>{description}</p>
+        </div>
+        <div class='card-feat'>
           <h5>Features</h5>
           {#if features}
-            <ul class='feature'>
+          <ul class='feature'>
               {#each features as feature}
-                  <li>{feature}</li>
+              <li>{feature}</li>
               {/each}
             </ul>
           {/if}
         </div>
-        <div class='card-ref'>
+        <div class='card-link'>
           <a class='git-link' href='{git_url}' target='_blank'>
             <img class="logo card" src={$isDarkTheme ? git_img.dark : git_img.light} alt="{git_url}" title="{git_url}">
             <span>{git_url}</span>
           </a>
-          <a class='demo-link' href='{demo}' target='_blank'>demo: website</a>
+          <a class='demo-link' href='{demo}' target='_blank'>
+            <img class="logo card" src={$isDarkTheme ? git_img.dark : git_img.light} alt="{git_url}" title="{git_url}">
+            <span>{demo}</span>
+          </a>
         </div>
       </div>
     </div>
@@ -108,7 +113,7 @@
   h2{
     padding-top: unset;
   }
-  p{
+  p,li{
     font-size: small;
   }
   /**
@@ -156,16 +161,14 @@
   .card-inner{
     display: flex;
     flex-direction: row;
+    gap:1em;
     height:100%;
     margin: 1em;
   }
   .card-img{
     flex:1.5;
   }
-  .card-ref{
-    flex:0.5;
-  }
-  .card-body,.card-desc{
+  .card-body{
     flex:2;
   }
   /**
@@ -186,14 +189,32 @@
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
   }
+  .card-back>.card-inner{
+    display: grid;
+    grid-template-areas: 
+      "desc feat"
+      "link link";
+  }
+  /**Desc section*/
   .card-desc{
-    margin-left:1em;
+    grid-area: desc;
   }
-  .card-ref{
-    margin-right:1em;
+  /**Features section*/
+  .card-feat{
+    grid-area: feat;
   }
-  .card-desc>*{
-    margin-bottom: 0.5em;
+  /**Link section*/
+  .card-link{
+    grid-area: link;
+  }
+  .card-link>*{
+    display: flex;
+    width:fit-content;
+    margin: 0.5em 0;
+    & > span{
+      font-size: smaller;
+      margin: 0 1em;
+    }
   }
   /**
   * shining bullet points
@@ -232,11 +253,6 @@
   */
   .title{
     padding-bottom: 0.5em;
-  }
-  .git-link{
-    width:fit-content;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
   }
   img.logo.card{
     height:1.5em;
