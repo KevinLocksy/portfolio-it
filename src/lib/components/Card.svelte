@@ -1,5 +1,5 @@
 <script>
-  export let project, standfirst, summary, description, features, git_url, demo, stack, img;
+  export let projectName, standfirst, summary, description, features, git_url, demo, stack, img;
   import {isDarkTheme} from '$store/theme.store.js';
   import SOCIAL_MEDIA from '$config/socialmedia.conf.json';
 
@@ -39,8 +39,12 @@
           img {img}
         </div>
         <div class='card-body'>
-          <h2 class='title'>{project}</h2>
-          <h4 class='standfirst'>{standfirst}</h4>
+          <h2 class='title'>
+            <a href='{demo}' target='_blank'>
+              {projectName}
+            </a>
+          </h2>
+          <p class='standfirst'>{standfirst}</p>
           <p class='summary'>{summary}</p>
           <a class='git-link' href='{git_url}' target='_blank'>
             <img class="logo card" src={$isDarkTheme ? git_img.dark : git_img.light} alt="{git_url}" title="{git_url}">
@@ -99,6 +103,12 @@
     --dot-shadow-secondary: var(--card-dot-shadow-secondary,rgba(0,255,135,1));
     font-family:var(--font-family-primary,initial);
     color:var(--card-font-color-primary,var(--text-primary));
+  }
+  h2{
+    padding-top: unset;
+  }
+  p{
+    font-size: small;
   }
   /**
   * Card
