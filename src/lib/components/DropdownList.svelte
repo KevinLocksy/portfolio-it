@@ -59,30 +59,40 @@
   .component{
     --arrow-color:grey;
     --arrow-size:5px;
-    --option-separator-color:grey;
+    --option-separator-color:#232121;
     --tooltip-transition-delay:1s;
     --tooltip-transition-duration:2s;
     --button-height:2.5em;
     --min-width:5em;
-    --max-width:8em;
+    --max-width:10em;
     --flag-height:20px;
     --flag-width:32px;
+    --border-radius:6px;
+    --text-color-primary: var(--text-color-dropdown-primary,#ffffffff);
+    --background-primary: var(--background-dropdown-primary, #0c0e1bfc);
+    --background-secondary: var(--background-dropdown-secondary, #191d3afc);
+    --background-hover-primary: var(--background-dropdown-hover-primary, #0c0e1bfc);
+    --font-family:var(--font-family-dropdown,initial);
     height: 100%;
     width: 100%;
+    min-width: minmax(fit-content,var(--min-width));
+
   }
   /**
   */
   .dropdown-container{
     display:flex;
     flex-direction: column;
-    min-width: var(--min-width);
+    min-width: minmax(fit-content,var(--min-width));
     max-width: var(--max-width);
   }
   button.options-selected{
     position: relative;
     background-color: var(--background-primary);
     color: var(--text-primary);
-    border-radius: 6px;
+    border: solid 1px var(--option-separator-color);
+    border-width: thin;
+    border-radius: var(--border-radius);
   }
   .options-selected-arrow{
     display: inline-block;
@@ -98,10 +108,11 @@
     position: absolute;
     display: none;
     flex-direction: column;
-    border-radius: 6px;
+    border-radius: var(--border-radius);
+    border: solid 1px var(--option-separator-color);
+    border-width: thin;
     top:var(--button-height);
     width: 100%;
-    min-width: var(--min-width);
     max-width: var(--max-width);
   }
   div.options-list.open{
@@ -112,28 +123,27 @@
   */
   button.options-item{
     width: 100%;
-    background-color: var(--background-dropdown-primary);
+    background-color: var(--background-primary);
     &:hover{
-      background-color: var(--background-dropdown-hover-primary);
+      background-color: var(--background-hover-primary);
     }
     &:not(:last-child){
-      border-bottom: solid var(--option-separator-color); 
+      border-bottom: solid var(--option-separator-color);
       border-width: thin;
     }
     &:first-child{
-      margin-top: 0.5em;
-      border-top-left-radius: 6px;
-      border-top-right-radius: 6px;
+      border-top-left-radius: var(--border-radius);
+      border-top-right-radius: var(--border-radius);
       border-width: thin;
     }
     &:last-child{
-      border-bottom-left-radius: 6px;
-      border-bottom-right-radius: 6px;
+      border-bottom-left-radius: var(--border-radius);
+      border-bottom-right-radius: var(--border-radius);
     }
     &:nth-child(odd){
-      background-color: var(--background-dropdown-secondary);
+      background-color: var(--background-secondary);
       &:hover{
-        background-color: var(--background-dropdown-hover-primary);
+        background-color: var(--background-hover-primary);
       }
     }
   }
@@ -159,7 +169,7 @@
   */
   @media screen and (max-width:30em){
     .size-l{
-      display: none;      
+      display: none;
     }
     button,button.options-item{
       width:calc(var(--flag-width) + 12vw);
@@ -171,11 +181,14 @@
   button{
     display: flex;
     height: var(--button-height);
+    min-width: minmax(fit-content,var(--min-width));
     min-height: 100%;
     align-items: center;
     text-align: start;
+    color:var(--text-color-primary);
     border: none;
     padding-left: 0.5em;
+    font-family: var(--font-family);
   }
   .icon.flag{
     height: var(--flag-height);

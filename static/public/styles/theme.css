@@ -1,16 +1,18 @@
 [data-theme="dark"] {
   --background-primary: #140834e2;
   --background-secondary: #190c3de2;
-  --background-third:#141414;
-  --background-dropdown-active: #79c865a8;
-  --background-dropdown-primary: #465acbfd;
-  --background-dropdown-secondary: #6573c8d8;
-  --background-dropdown-hover-primary:#3c4ca9e2;
-  --background-dropdown-hover-secondary:#3047c7e2;
+  /* --background-primary: #031d38eb;
+  --background-secondary: #021a34eb; */
+  --background-third:#0a080861;
+  /* --background-dropdown-active: #79c865a8; */
+  --background-dropdown-primary: #140834e2;
+  --background-dropdown-secondary: #190c3de2;
+  --background-dropdown-hover-primary:#181359e2;
+  /* --background-halo-cursor-primary:#13355aeb; */
   --background-halo-cursor-primary:#181359e2;
   --background-halo-cursor-secondary:#942a78e2;
   --background-halo-logo-primary:#942a78e2;
-  --shadow-logo-primary:#28893fe2;
+  --shadow-logo-primary:#2a3e54eb;
   --shadow-logo-secondary:256, 28%, 18%, 0.886;
   --shadow-card-primary:#1a1721e2;
   --shadow-card-secondary:#28213be2;
