@@ -76,7 +76,6 @@
     height: 100%;
     width: 100%;
     min-width: minmax(fit-content,var(--min-width));
-
   }
   /**
   */

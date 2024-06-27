@@ -40,9 +40,7 @@
   window.addEventListener('resize', resize);
 </script>
 
-<div id='model'>
-  <canvas bind:this={canvas}></canvas>
-</div>
+<canvas id='model' bind:this={canvas}></canvas>
 
 <style>
 
