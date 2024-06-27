@@ -1,25 +1,14 @@
 {
   "webapp":[
     {
-      "project":"logo + Webapp Name",
-      "standfirst":"Once upon a time",
-      "summary":"This awesome project !",
-      "description":"description magical",
-      "features":["feature 1 is ksljdlskdjlk","feature 2 is dbsdjkbjsh","Javascript"],
-      "git":"link.git.com",
+      "project":"Artistic Portfolio",
+      "standfirst":"@Kevin.locksy",
+      "summary":"I developed my own artistic portfolio to share my vision of the world. ",
+      "description":"Use technology to show the beauty of the world",
+      "features":["Image comparison slider","Modal gallery"],
+      "git":"https://github.com/KevinLocksy/portfolio-art",
       "demo":"link.demo.com",
       "stack":["Svelte","Javascript","CSS","HTML"],
-      "img":"./path.jpg"
-    },
-    {
-      "project":"logo + Webapp Name",
-      "standfirst":"Once upon a time",
-      "summary":"This awesome project !",
-      "description":"description magical",
-      "features":["feature 1 is awesome","feature 2 is magical","??"],
-      "git":"link.git.com",
-      "demo":"link.demo.com",
-      "stack":["Svelte","Javascript"],
       "img":"./path.jpg"
     }
   ]
