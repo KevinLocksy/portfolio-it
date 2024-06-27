@@ -55,8 +55,8 @@
   --card-border-secondary:#110e2fe3;
   --card-shadow-primary:#110e2fe3;
   --card-shadow-secondary:#17133ee3;
-  --card-dot-shadow-primary:rgba(0, 36, 233, 0.57);
-  --card-dot-shadow-secondary:rgb(0, 36, 233);
+  --card-dot-shadow-primary:rgba(127, 118, 192, 0.8);
+  --card-dot-shadow-secondary:rgba(95, 90, 255, 0.85);
   --tab-border-primary:#000000;
   --tab-line:#1d1b1b;
   --tab-background-color-active:#e4d1e9e3;
