@@ -26,7 +26,10 @@
 <style>
   div.container[name=tab]{
     min-width: 70vw;
-    --tab-border-radius:0.5rem;
+    --border-radius:0.5rem;
+    --background-color-active:var(--tab-background-color-active,#110e2fe3);
+    --background-color-hover:var(--tab-background-color-hover,#17133ee3);
+    --line-color:lavender;
   }
   ul{
     display: flex;
@@ -35,16 +38,16 @@
     padding-left: 0;
     margin-bottom: 0;
     list-style: none;
-    border-bottom: 1px solid var(--tab-border-primary);
+    border-bottom: 1px solid var(--line-color);
   }
   li{
     width:10%;
     min-width:min-content;
     border: 0px solid transparent;
-    border-top-left-radius: var(--tab-border-radius);
-    border-top-right-radius: var(--tab-border-radius);
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
     &:hover{
-      background-color: var(--tab-background-secondary);
+      background-color: var(--background-color-hover);
     }
   }
   span{
@@ -54,6 +57,6 @@
     border-bottom: none;
   }
   .active{
-    background-color: var(--tab-background-primary);
+    background-color: var(--background-color-active);
   }
 </style>
