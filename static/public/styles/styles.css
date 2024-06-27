@@ -8,6 +8,8 @@
   --font-family-secondary:'Yellowtail';
   --font-family-tercery:'Technology', sans-serif;
   --z-index-main-header: 700;
+  --z-index-shadow: 100;
+  --z-index-logo: 200;
   --background-halo-cursor-radius:30vw;
 }
 
