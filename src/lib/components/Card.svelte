@@ -81,14 +81,14 @@
     --card-rotation-angle:30deg;
     --front-background-color: var(--card-background-primary,#110e2fe3);
     --front-border-color: var(--card-border-primary,#110e2fe3);
-    --front-shadow-color: var(--card-border-primary,#110e2fe3);
+    --front-shadow-color: var(--card-shadow-primary,#110e2fe3);
     --back-background-color:var(--card-background-secondary,#17133ee3);
     --back-border-color: var(--card-border-secondary,#110e2fe3);
-    --back-shadow-color: var(--card-border-secondary,#110e2fe3);
+    --back-shadow-color: var(--card-shadow-secondary,#110e2fe3);
     --dot-shadow-primary: var(--card-dot-shadow-primary,rgba(0,255,182,0.5));
     --dot-shadow-secondary: var(--card-dot-shadow-secondary,rgba(0,255,135,1));
     font-family:var(--font-family-primary,initial);
-    color:var(--card-font-color-primary,#d8d8fb);
+    color:var(--card-font-color-primary,var(--text-primary));
   }
   /**
   * Card

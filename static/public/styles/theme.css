@@ -1,55 +1,66 @@
 [data-theme="dark"] {
+  --text-primary: #ffffff;
   --background-primary: #140834e2;
   --background-secondary: #190c3de2;
-  --background-third:#0a080861;
   --background-dropdown-primary: #140834e2;
   --background-dropdown-secondary: #190c3de2;
   --background-dropdown-hover-primary:#181359e2;
+  --text-color-dropdown-primary:#ffffff;
   --background-halo-cursor-primary:#181359e2;
   --background-halo-cursor-secondary:#942a78e2;
   --background-halo-logo-primary:#2a3e54eb;
+  --shadow-desc-primary:#0a080861;
   --shadow-logo-primary:#2a3e54eb;
   --shadow-logo-secondary:256, 28%, 18%, 0.886;
   --shadow-card-primary:#1a1721e2;
   --shadow-card-secondary:#28213be2;
-  --text-primary: #ffffff;
-  /* --card-background-primary:blue;
-  --card-background-secondary:rgb(0, 0, 203); */
-  /* --card-border-primary:rgb(0, 0, 203); */
-  --card-shadow-primary:rgb(0, 0, 203);
+  --card-font-color-primary:#d8d8fb;
+  --card-background-primary:#110e2fe3;/*card-primary: front*/
+  --card-background-secondary:#17133ee3; /*card-secondary: back*/
+  --card-border-primary:#110e2fe3;
+  --card-border-secondary:#110e2fe3;
+  --card-shadow-primary:#110e2fe3;
+  --card-shadow-secondary:#17133ee3;
   --card-dot-shadow-primary:rgba(0, 36, 233, 0.57);
   --card-dot-shadow-secondary:rgb(0, 36, 233);
   --tab-border-primary:#ffffff;
+  --tab-line:lavender;
   --tab-background-color-active:#110e2fe3;
   --tab-background-color-hover:#17133ee3;
 }/*end [data-theme="dark"]*/
 
 [data-theme="light"] {
-  --background-primary: #d7d2d2;
-  --background-secondary: #cfc1c1;
-  --background-third:#141414;
+  --text-primary: #1d1b1b;
+  --background-primary: #e7e7e7;
+  --background-secondary: #e7dddd;
   --background-dropdown-active: #6573c8d8;
-  --background-dropdown-primary: #465acbfd;
-  --background-dropdown-secondary: rgba(64, 27, 106, 0.886);
+  --background-dropdown-primary: #e7dddd;
+  --background-dropdown-secondary: #e7dddd;
   --background-dropdown-hover-primary:#a93c83e2;
   --background-dropdown-hover-secondary:#c730bae2;
-  --background-halo-cursor-primary:#c9b1b1;
+  --text-color-dropdown-primary:#1d1b1b;
+  --background-halo-cursor-primary:#decaca;
   --background-halo-cursor-secondary:#942a78e2;
   --background-halo-logo-primary:#792d65e2;
   --background-halo-logo-secondary:#942a78e2;
-  --shadow-logo-primary:#1a1721e2;
+  --shadow-desc-primary:#e7dddd;
+  --shadow-logo-primary:#1a172175;
   --shadow-logo-secondary:#28213be2;
   --shadow-card-primary:#1a1721e2;
   --shadow-card-secondary:#28213be2;
-  --text-primary: #000000;
-  --card-background-primary:rgb(255, 159, 255);
-  --card-border-primary:rgb(255, 164, 247);
-  --card-shadow-primary:rgb(139, 72, 156);
-  --card-shadow-secondary:rgba(0, 30, 255, 0.5);
-  --card-shadow-third:rgb(0, 30, 255);
+  --card-font-color-primary:#110e2fe3;
+  --card-background-primary:#e4d1e9e3;/*card-primary: front*/
+  --card-background-secondary:#e7d0ede3; /*card-secondary: back*/
+  --card-border-primary:#110e2fe3;
+  --card-border-secondary:#110e2fe3;
+  --card-shadow-primary:#110e2fe3;
+  --card-shadow-secondary:#17133ee3;
+  --card-dot-shadow-primary:rgba(0, 36, 233, 0.57);
+  --card-dot-shadow-secondary:rgb(0, 36, 233);
   --tab-border-primary:#000000;
-  --tab-background-primary:rgb(139, 72, 156);
-  --tab-background-secondary:rgb(97, 57, 107);
+  --tab-line:#1d1b1b;
+  --tab-background-color-active:#e4d1e9e3;
+  --tab-background-color-hover:#e7d0ede3;
 }/*end [data-theme="light"]*/
 
 [data-theme="pink"] {

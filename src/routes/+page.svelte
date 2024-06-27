@@ -85,8 +85,8 @@
     flex: 2;
     max-width:35em;
     margin: 1em clamp(1em,5vw,8em);
-    background-color: var(--background-third);
-    box-shadow: 0 0 15px 10px var(--background-third);
+    background-color: var(--shadow-desc-primary);
+    box-shadow: 0 0 15px 10px var(--shadow-desc-primary);
   }
   #pres-desc-text{
     padding: 1em clamp(1em,10vw,3em);

@@ -29,7 +29,7 @@
     --border-radius:0.5rem;
     --background-color-active:var(--tab-background-color-active,#110e2fe3);
     --background-color-hover:var(--tab-background-color-hover,#17133ee3);
-    --line-color:lavender;
+    --line-color:var(--tab-line,var(--text-color));
   }
   ul{
     display: flex;
