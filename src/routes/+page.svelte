@@ -24,7 +24,7 @@
         <p> {@html $i18n.pres.desc}</p>
       </div>
       <div id="pres-desc-social">
-        {#each SOCIAL_MEDIA.socialmedia as { url, img, alt, title }}
+        {#each SOCIAL_MEDIA as { url, img, alt, title }}
           <div class="socialMedia">
             <a href={url}>
               <img class='logo' src={$isDarkTheme ? img.dark : img.light} alt='{alt}' title='{title}' />
