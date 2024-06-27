@@ -1,7 +1,17 @@
 <script>
   export let project, standfirst, summary, description, features, git_url, demo, stack, img;
+  import {isDarkTheme} from '$store/theme.store.js';
+  import SOCIAL_MEDIA from '$config/socialmedia.conf.json';
+
   let card;
   const nodeType_URL = "A";//html tag a
+
+  let git_img ="";
+  SOCIAL_MEDIA.forEach(socialMedia => {
+    if (socialMedia.name === "Github"){
+      git_img = socialMedia.img;
+    }
+  });
 
   /**
    * 
@@ -33,7 +43,7 @@
           <h4 class='standfirst'>{standfirst}</h4>
           <p class='summary'>{summary}</p>
           <a class='git-link' href='{git_url}' target='_blank'>
-            <img class="logo card" src="public/img/logo/socialMedia/github-mark-white.png" alt="{git_url}" title="{git_url}">
+            <img class="logo card" src={$isDarkTheme ? git_img.dark : git_img.light} alt="{git_url}" title="{git_url}">
           </a>
           <div class="stack" role="list">
             {#if stack}
@@ -62,7 +72,7 @@
         </div>
         <div class='card-ref'>
           <a class='git-link' href='{git_url}' target='_blank'>
-            <img class="logo card" src="public/img/logo/socialMedia/github-mark-white.png" alt="{git_url}" title="{git_url}">
+            <img class="logo card" src={$isDarkTheme ? git_img.dark : git_img.light} alt="{git_url}" title="{git_url}">
             <span>{git_url}</span>
           </a>
           <a class='demo-link' href='{demo}' target='_blank'>demo: website</a>
