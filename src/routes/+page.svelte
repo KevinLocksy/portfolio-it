@@ -96,7 +96,12 @@
   #pres-desc-social{
     display: flex;
     flex-direction: row;
-    padding: 1em;
+    padding: 0 1em;
+  }
+  @media screen and (max-width:28em){
+    #pres-desc-social{
+      justify-content: center;
+    }
   }
   #pres-3d{
     flex: 1;
@@ -121,6 +126,14 @@
   #techStack-list{
     display: flex;
     flex-flow: row wrap;
+  }
+  @media screen and (max-width:35em){
+    #techStack-wrapper>h2{
+      text-align: center;
+    }
+    #techStack-list{
+      justify-content: center;
+    }
   }
   .techStack-logo-container{
     position: relative;
