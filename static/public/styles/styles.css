@@ -21,6 +21,11 @@
 html {
   font-family: var(--font-family-primary);
   overflow-x: hidden; /*check why it is necessary*/
+  background: radial-gradient(
+    var(--background-halo-cursor-radius) circle at calc(var(--x) * 1px) calc(var(--y) * 1px),
+    var(--background-halo-cursor-primary),
+    transparent 90%
+    );
 }
 body {
   display: flex;
