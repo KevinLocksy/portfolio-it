@@ -1,5 +1,5 @@
 <script>
-  export let project, standfirst, summary, description, features, git, demo, stack, img;
+  export let project, standfirst, summary, description, features, git_url, demo, stack, img;
   let card;
   const nodeType_URL = "A";//html tag a
 
@@ -32,7 +32,9 @@
           <h2 class='title'>{project}</h2>
           <h4 class='standfirst'>{standfirst}</h4>
           <p class='summary'>{summary}</p>
-          <a class='git-link' href='{git}' target='_blank'>only git logo</a>
+          <a class='git-link' href='{git_url}' target='_blank'>
+            <img class="logo card" src="public/img/logo/socialMedia/github-mark-white.png" alt="{git_url}" title="{git_url}">
+          </a>
           <div class="stack" role="list">
             {#if stack}
               {#each stack as language}
@@ -59,7 +61,10 @@
           {/if}
         </div>
         <div class='card-ref'>
-          <a class='git-link' href='{git}' target='_blank'>logo + {git}</a>
+          <a class='git-link' href='{git_url}' target='_blank'>
+            <img class="logo card" src="public/img/logo/socialMedia/github-mark-white.png" alt="{git_url}" title="{git_url}">
+            <span>{git_url}</span>
+          </a>
           <a class='demo-link' href='{demo}' target='_blank'>demo: website</a>
         </div>
       </div>
@@ -74,7 +79,16 @@
     --card-rotation-duration:3s;
     --card-rotation-iteration:2;
     --card-rotation-angle:30deg;
+    --front-background-color: var(--card-background-primary,#110e2fe3);
+    --front-border-color: var(--card-border-primary,#110e2fe3);
+    --front-shadow-color: var(--card-border-primary,#110e2fe3);
+    --back-background-color:var(--card-background-secondary,#17133ee3);
+    --back-border-color: var(--card-border-secondary,#110e2fe3);
+    --back-shadow-color: var(--card-border-secondary,#110e2fe3);
+    --dot-shadow-primary: var(--card-dot-shadow-primary,rgba(0,255,182,0.5));
+    --dot-shadow-secondary: var(--card-dot-shadow-secondary,rgba(0,255,135,1));
     font-family:var(--font-family-primary,initial);
+    color:var(--card-font-color-primary,#d8d8fb);
   }
   /**
   * Card
@@ -105,9 +119,9 @@
     position: relative;
     width: 100%;
     height: 100%;
-    border: solid 1px var(--card-border-primary);
+    border: solid 1px var(--border-color-front);
     border-radius: 1em;
-    box-shadow: 0px 10px 10px var(--card-shadow-primary);
+    box-shadow: 0px 10px 10px var(--shadow-color-front);
   }
   .card-front, .card-back{
     position: absolute;
@@ -137,7 +151,7 @@
   * Front card content
   */
   .card-front{
-    background-color: var(--card-background-primary);
+    background-color: var(--front-background-color);
   }
   .card-body{
     display: flex;
@@ -147,7 +161,7 @@
   * Back card content
   */
   .card-back{
-    background-color: pink;
+    background-color: var(--back-background-color);
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
   }
@@ -172,8 +186,8 @@
     background: rgba(255,255,255,1);
     height: 5px;
     width: 5px;
-    box-shadow: inset 0px 0px 10px 2px var(--card-shadow-secondary),
-                      0px 0px 10px 2px var(--card-shadow-third);
+    box-shadow: inset 0px 0px 10px 2px var(--dot-shadow-primary),
+                      0px 0px 10px 2px var(--dot-shadow-secondary);
     border-radius: 10px;
   }
   /**
@@ -202,5 +216,9 @@
     width:fit-content;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
+  }
+  img.logo.card{
+    height:1.5em;
+    width: auto;
   }
 </style>

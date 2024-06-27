@@ -5,7 +5,7 @@
 </script>
 <div class="tab">
   {#each webapps as webapp}
-    <Card project={webapp.project} standfirst={webapp.standfirst} summary={webapp.summary} description={webapp.description} features={webapp.features} git={webapp.git} demo={webapp.git} stack={webapp.stack} img={webapp.img}/>
+    <Card project={webapp.project} standfirst={webapp.standfirst} summary={webapp.summary} description={webapp.description} features={webapp.features} git_url={webapp.git} demo={webapp.git} stack={webapp.stack} img={webapp.img}/>
   {/each}
 </div>
 
