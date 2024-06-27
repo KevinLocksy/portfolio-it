@@ -3,7 +3,6 @@
 </script>
 
 <div class="tab">
-  <Card></Card>
 </div>
 
 <style>
