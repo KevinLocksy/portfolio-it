@@ -4,6 +4,12 @@
 
   let selectedValue = defaultValue;
   let selectedId = 0;
+  options.forEach(option => {
+    if (option.value === defaultValue){
+      selectedId = option.id;
+    }
+  });
+
   let open = false;
 
   function closeDropdownList(){
@@ -26,6 +32,7 @@
     }
     selectedValue = event.currentTarget.value;
     selectedId = event.currentTarget.getAttribute("data-option-id");
+    console.log("options[selectedId]=",options[selectedId])
     closeDropdownList();
   }
 </script>
@@ -33,7 +40,7 @@
 <div class="component">
   <div class="dropdown-container" role="button" use:clickOutside on:click_outside={closeDropdownList} tabindex="0" on:keydown={()=>{}}>
     <button class="options-selected" data-option-id={selectedId} value={selectedValue} on:click={() => toggleDropdownList(open)}>
-      <img class='flag icon' src={options[selectedId].logo} alt='flag' title='flag'/>
+      <img class='flag icon' src={options[selectedId].logo} alt='{options[selectedId].value}' title='{options[selectedId].label}'/>
       <span class="size-l">{options[selectedId].label}</span>
       <span class="options-selected-arrow"/>
     </button>
@@ -42,7 +49,7 @@
         {#if selectedId != option.id}
         <button class="options-item" data-option-id={option.id} value="{option.value}" on:click={(e)=> selectOption(e)}>
           {#if (option.logo)}
-          <img class='flag icon' src={option.logo} alt='flag' title='flag'/>
+          <img class='flag icon' src={option.logo} alt='{option.value}' title='{option.label}'/>
           {:else}
           <span>{option.label}</span>
           {/if}
