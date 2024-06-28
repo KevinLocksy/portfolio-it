@@ -3,6 +3,8 @@
   import {toggleTheme} from '$utils/theme.utils.js';
   import {i18nStore} from '$store/i18n.store.js';
   import {isDarkTheme} from '$store/theme.store.js';
+  import SOCIAL_MEDIA from '$config/socialmedia.conf.json';
+
 
   import PERSONAL_INFO from '$config/personalInfo.conf.json';
   import LANG from "$config/i18n.conf.json";
@@ -41,7 +43,14 @@
 
   <footer>
     <h4 id='credits'>{$i18n.footer.credits}</h4>
-    <h4 id='contact'>{$i18n.footer.contact}</h4>
+    <div id='contact'>
+      {#each SOCIAL_MEDIA as { url, img, alt, title }}
+          <a href={url}>
+            <img class='logo contact' src={$isDarkTheme ? img.dark : img.light} alt='{alt}' title='{title}' /><br/>
+            <span>{alt}</span>
+          </a>
+      {/each}
+    </div>
     <h4 id='date'>{CREATION_DATE}{#if currentYear.toString()!=CREATION_DATE} - {currentYear}{/if}</h4>
   </footer>
 {/await}
@@ -110,6 +119,16 @@
       grid-column: 3;
       grid-area: date;
       justify-self: end;
+    }
+  }
+  #contact{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    &>*{
+      font-size: x-small;
+      word-wrap: break-word;
+      width: 80px;
     }
   }
 </style>
