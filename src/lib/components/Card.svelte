@@ -252,7 +252,7 @@
   * Content
   */
   .title{
-    font-family: Dancing Script;
+    font-family: var(--font-family-quaternary);
     padding-bottom: 0.5em;
   }
   img.logo.card{
