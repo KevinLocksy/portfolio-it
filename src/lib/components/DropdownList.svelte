@@ -118,6 +118,7 @@
     border: solid 1px var(--option-separator-color);
     border-width: thin;
     top:var(--button-height);
+    width: 100%;
     max-width: var(--max-width);
   }
   div.options-list.open{
