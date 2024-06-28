@@ -1,0 +1,6 @@
+{
+  "en-US":"./src/assets/i18n/projects/projects-en.json",
+  "fr-FR":"./src/assets/i18n/projects/projects-fr.json",
+  "epo-EO":"./src/assets/i18n/projects/projects-epo.json",
+  "spa-ES":"./src/assets/i18n/projects/projects-spa.json"
+}

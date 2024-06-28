@@ -2,11 +2,13 @@ import {writable,get} from "svelte/store";
 import {i18nStore} from '$store/i18n.store.js';
 import {setDefaultLang,updateLang} from '$utils/lang.utils.js';
 import en from "$assets/i18n/lang-en.json";
+import en_project from "$assets/i18n/projects/projects-en.json";
 import mappingJSON from "$config/i18n.mapping.json";
 
 const defaultLang = {
   lang: "en",
-  ...en
+  ...en,
+  ...en_project
 }
 
 /**
@@ -14,13 +16,17 @@ const defaultLang = {
  * @returns language dict
  */
 async function getTranslateJSON(locale){
-  const path = mappingJSON[locale];
+  const path = mappingJSON.main[locale];
+  const path_projects = mappingJSON.projects[locale];
   try {
-    const promise = await fetch(path);
+    const promise = await fetch(path);//or ...(await import(path)) with relative path //fetch better to catch errors
+    const promise_projects = await fetch(path_projects);
     const bundle = await promise.json();
+    const bundle_project = await promise_projects.json();
     return {
       lang: locale,
-      ...bundle//or ...(await import(path)) with relative path //fetch better to catch errors
+      ...bundle,
+      ...bundle_project
     };
   }catch{
     console.log("error with the dict path:",path);
