@@ -27,7 +27,7 @@
         {#each SOCIAL_MEDIA as { url, img, alt, title }}
           <div class="socialMedia">
             <a href={url}>
-              <img class='logo' src={$isDarkTheme ? img.dark : img.light} alt='{alt}' title='{title}' />
+              <img class='socialMedia logo' src={$isDarkTheme ? img.dark : img.light} alt='{alt}' title='{title}' />
             </a>
           </div>
         {/each}
@@ -117,6 +117,9 @@
     display: flex;
     justify-content:center;
     padding: 1em 0;
+  }
+  .socialMedia.logo:hover{
+    filter:var(--logo-hover-secondary);
   }
   /**
   * TechStack section
