@@ -55,9 +55,6 @@ h2{
   width:clamp(15px,15px + 5vw,50px);
   height: auto;
 }
-.socialMedia {
-  margin: 0 0.5em;
-}
 .logo.locksy{
   border-radius: 50px;
   width: clamp(25px,50px + 1vw,50px);

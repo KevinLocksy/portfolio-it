@@ -104,7 +104,8 @@
   #pres-desc-social{
     display: flex;
     flex-direction: row;
-    padding: 0 1em;
+    padding: 0 clamp(1em,10vw,3em);
+    gap:1em;
   }
   @media screen and (max-width:28em){
     #pres-desc-social{
@@ -151,19 +152,6 @@
       content: "";
       position: absolute;
     }
-    /* ::before = background halo-logo: (position,height,width) mandatory in the transition. init in public/styles/styles.css */
-    &::before {
-      width: 135%;
-      height: 120%;
-      background: radial-gradient(closest-side, var(--background-halo-logo-primary), transparent);
-      transition: opacity var(--logo-transition-duration);
-      opacity: 0;
-      top: -20%;
-      left: -15%;
-    }
-    &:hover::before {
-      opacity: 1;
-    }
     /* ::after = shadow on the ground: (position,height,width) mandatory. init in public/styles/styles.css  */
     &::after{
       width: clamp(15px,15px + 5vw,50px);
@@ -183,12 +171,11 @@
     opacity: 0;
     transition: opacity var(--logo-transition-duration) linear;
   }
+  .techStack-logo-container:hover{
+    filter:drop-shadow(0px 0px 8px var(--background-halo-logo-primary));
+  }
   .techStack-logo-container:hover .techStack-logo-caption {
     opacity: 1;
-    z-index: var(--z-index-logo);
-  }
-  .techStack-logo-img{
-    position: relative;
     z-index: var(--z-index-logo);
   }
   /**
