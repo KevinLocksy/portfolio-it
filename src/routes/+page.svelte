@@ -29,6 +29,7 @@
             <a href={url}>
               <img class='socialMedia logo' src={$isDarkTheme ? img.dark : img.light} alt='{alt}' title='{title}' />
             </a>
+            <span>{alt}</span>
           </div>
         {/each}
       </div>
@@ -105,7 +106,7 @@
     display: flex;
     flex-direction: row;
     padding: 0 clamp(1em,10vw,3em);
-    gap:1em;
+    gap:2em;
   }
   @media screen and (max-width:28em){
     #pres-desc-social{
@@ -120,6 +121,14 @@
   }
   .socialMedia.logo:hover{
     filter:var(--logo-hover-secondary);
+  }
+  .socialMedia>span{
+    font-size: x-small;
+  }
+  @media screen and (max-width:28em){
+    .socialMedia>span{
+      font-size: xx-small;
+    }
   }
   /**
   * TechStack section
