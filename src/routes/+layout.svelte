@@ -46,7 +46,7 @@
     <div id='contact'>
       {#each SOCIAL_MEDIA as { url, img, alt, title }}
           <a href={url}>
-            <img class='logo contact' src={$isDarkTheme ? img.dark : img.light} alt='{alt}' title='{title}' /><br/>
+            <img class='logo contact' src={$isDarkTheme ? img.dark : img.light} alt='{alt}' title='{title}' />
             <span>{alt}</span>
           </a>
       {/each}
@@ -125,10 +125,27 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    gap: 0.5em;
     &>*{
       font-size: x-small;
       word-wrap: break-word;
       width: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1em;
+    }
+  }
+  .logo.contact{
+    width: 30px;
+  }
+  @media screen and (max-width:28em){
+    #contact>*{
+      width: 50px;
+      font-size: xx-small;
+    }
+    .logo.contact{
+      width: 25px;
     }
   }
 </style>
