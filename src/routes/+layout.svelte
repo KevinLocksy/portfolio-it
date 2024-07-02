@@ -46,7 +46,7 @@
     <div id='contact'>
       {#each SOCIAL_MEDIA as { url, img, alt, title }}
           <a href={url}>
-            <img class='logo contact' src={$isDarkTheme ? img.dark : img.light} alt='{alt}' title='{title}' />
+            <img class='contact logo' src={$isDarkTheme ? img.dark : img.light} alt='{alt}' title='{title}' />
           </a>
       {/each}
     </div>

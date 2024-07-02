@@ -51,7 +51,7 @@ h2{
 /**
 * Logo
 */
-.logo, .socialMedia {
+img.logo {
   width:clamp(15px,15px + 5vw,50px);
   height: auto;
 }

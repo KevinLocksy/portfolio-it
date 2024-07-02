@@ -25,9 +25,9 @@
       </div>
       <div id="pres-desc-social">
         {#each SOCIAL_MEDIA as { url, img, alt, title }}
-          <div class="socialMedia">
+          <div class="pres-desc-social-item">
             <a href={url}>
-              <img class='socialMedia logo' src={$isDarkTheme ? img.dark : img.light} alt='{alt}' title='{title}' />
+              <img class='logo socialMedia' src={$isDarkTheme ? img.dark : img.light} alt='{alt}' title='{title}' />
             </a>
             <span>{alt}</span>
           </div>
@@ -111,6 +111,7 @@
   @media screen and (max-width:28em){
     #pres-desc-social{
       justify-content: center;
+      gap: 0.5em;
     }
   }
   #pres-3d{
@@ -122,11 +123,15 @@
   .socialMedia.logo:hover{
     filter:var(--logo-hover-secondary);
   }
-  .socialMedia>span{
+  .pres-desc-social-item{
+    max-width: 5em;
+    text-align: center;
+  }
+  .pres-desc-social-item>span{
     font-size: x-small;
   }
   @media screen and (max-width:28em){
-    .socialMedia>span{
+    .pres-desc-social-item>span{
       font-size: xx-small;
     }
   }
