@@ -78,7 +78,7 @@
     justify-content:space-between;
     position: sticky;
     top:0;
-    max-height:75px;
+    max-height:65px;
   }
   main{
     flex:auto;
@@ -133,14 +133,11 @@
     gap: 1em;
   }
   .logo.contact{
-    width: 35px;
+    width: 25px;
   }
   @media screen and (max-width:28em){
     #contact{
       gap: 0.5em;
-    }
-    .logo.contact{
-      width: 25px;
     }
   }
 </style>
