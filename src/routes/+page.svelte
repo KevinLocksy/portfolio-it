@@ -187,13 +187,20 @@
     color:var(--logo-caption-primary);
     opacity: 0;
     transition: opacity var(--logo-transition-duration) linear;
+    z-index: var(--z-index-logo);
+  }
+  @media screen and (max-width:35em){
+    .techStack-logo-caption{
+      font-size: x-small;
+      line-height: 1.5em;
+      opacity: 0.8;
+    }
   }
   .techStack-logo-container:hover{
     filter:drop-shadow(0px 0px 8px var(--background-halo-logo-primary));
   }
-  .techStack-logo-container:hover .techStack-logo-caption {
+  .techStack-logo-container:hover .techStack-logo-caption{
     opacity: 1;
-    z-index: var(--z-index-logo);
   }
   /**
   * Projects section
