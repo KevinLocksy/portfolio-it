@@ -6,8 +6,8 @@
       "dark":"public/img/logo/socialMedia/logo_darkmode_fb.png",
       "light":"public/img/logo/socialMedia/logo_lightmode_fb.png"
     },
-    "alt":"Facebook page",
-    "title":"Facebook page"
+    "alt":"Kevin Locksy",
+    "title":"Kevin Locksy"
   },
   {
     "name": "Instagram",
@@ -20,23 +20,13 @@
     "title":"@Kevin.Locksy"
   },
   {
-    "name": "LinkedIn",
-    "url":"https://www.linkedin.com/",
-    "img":{
-      "dark":"public/img/logo/socialMedia/logo_darkmode_linkedin.png",
-      "light":"public/img/logo/socialMedia/logo_lightmode_linkedin.png"
-    },
-    "alt":"@Kevin.Locksy",
-    "title":"@Kevin.Locksy"
-  },
-  {
     "name": "Mail",
     "url":"mailto:artsy.locksy@proton.me",
     "img":{
       "dark":"public/img/logo/socialMedia/logo_darkmode_mail.png",
       "light":"public/img/logo/socialMedia/logo_lightmode_mail.png"
     },
-    "alt":"mailto:artsy.locksy@proton.me",
+    "alt":"artsy.locksy@</br>proton.me",
     "title":"mailto:artsy.locksy@proton.me"
   },
   {
@@ -46,7 +36,7 @@
       "dark":"public/img/logo/socialMedia/github-mark-white.png",
       "light":"public/img/logo/socialMedia/github-mark.png"
     },
-    "alt":"https://github.com/KevinLocksy",
+    "alt":"@KevinLocksy",
     "title":"https://github.com/KevinLocksy"
   }
 ]

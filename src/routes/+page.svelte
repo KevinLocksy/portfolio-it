@@ -29,7 +29,7 @@
             <a href={url}>
               <img class='logo socialMedia' src={$isDarkTheme ? img.dark : img.light} alt='{alt}' title='{title}' />
             </a>
-            <span>{alt}</span>
+            <span>{@html alt}</span>
           </div>
         {/each}
       </div>
