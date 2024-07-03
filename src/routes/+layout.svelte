@@ -26,13 +26,13 @@
 {:then _}
   <header>
     <div id='trademark'>
-      <div class='color-scheme' role='button' on:click={toggleTheme} on:keyup tabindex="0">
+      <div id='color-scheme' role='button' on:click={toggleTheme} on:keyup tabindex="0">
         <img class='logo locksy' src={isDarkTheme? LOGO.img.dark : LOGO.img.light} alt='{LOGO.alt}' title='{LOGO.title}' />
       </div>
       <h1 class='title'>{PERSONAL_INFO.pseudo} - IT Portfolio</h1>
     </div>
 
-    <div class='lang-dropdown'>
+    <div id='lang-dropdown'>
       <DropdownList options={LANGUAGE} defaultValue={$i18nStore} onClick={onLangChange}/>
     </div>
   </header>
@@ -46,7 +46,7 @@
     <div id='contact'>
       {#each SOCIAL_MEDIA as { url, img, alt, title }}
           <a href={url}>
-            <img class='contact logo' src={$isDarkTheme ? img.dark : img.light} alt='{alt}' title='{title}' />
+            <img class='logo contact' src={$isDarkTheme ? img.dark : img.light} alt='{alt}' title='{title}' />
           </a>
       {/each}
     </div>
@@ -98,10 +98,10 @@
     flex-direction: row;
     align-items: center;
   }
-  div.color-scheme{
+  div#color-scheme{
     cursor: pointer;
   }
-  div.lang-dropdown{
+  div#lang-dropdown{
     position: relative;
     height: inherit;
     width: clamp(3em,4em + 10vw,15em);

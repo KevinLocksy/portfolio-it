@@ -69,7 +69,6 @@
     width:30vw;
     max-width: 300px;
     border: solid var(--text-primary);
-    
   }
   /**
   * Main
