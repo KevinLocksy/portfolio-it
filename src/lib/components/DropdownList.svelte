@@ -1,6 +1,6 @@
 <script>
   import {clickOutside} from '$utils/node.utils.js';
-  export let options, defaultValue, onClick;
+  export let options, defaultValue, onClick, optionsListOnTop = false;
 
   let selectedValue = defaultValue;
   let selectedId = 0;
@@ -44,7 +44,7 @@
       <span class="size-l">{options[selectedId].label}</span>
       <span class="options-selected-arrow"/>
     </button>
-    <div class="options-list" class:open>
+    <div class="options-list" class:open class:optionsListOnTop>
       {#each options as option}
         {#if selectedId != option.id}
         <button class="options-item" data-option-id={option.id} value="{option.value}" on:click={(e)=> selectOption(e)}>
@@ -123,6 +123,10 @@
   }
   div.options-list.open{
     display:flex;
+  }
+  div.options-list.optionsListOnTop{
+    top:unset;
+    bottom:var(--button-height);
   }
   /**
   * Option item
