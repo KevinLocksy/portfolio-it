@@ -1,7 +1,7 @@
 const cursorEvent_start = "pointermove";
-const cursorEvent_ending = "pointerout";
+const cursorEvent_end = "pointerout";
 const scrollingEvent_start = "scroll";
-const scrollingEvent_ending = "scrollend";
+const scrollingEvent_end = "scrollend";
 
 export function setCursorPositions(){
   const cursor = new CursorPosition();
@@ -10,18 +10,18 @@ export function setCursorPositions(){
 
   function setCursorPosition(e){
     cursor.setCursorProperties(e.clientX,e.clientY);
-    e.target.removeEventListener(cursorEvent_ending,removeListener);
+    e.target.removeEventListener(cursorEvent_end,removeListener);
   }
   function setScrollPosition(e){
     const html = document.documentElement;//to get the scroll position
     cursor.setScrollProperties(html.scrollLeft,html.scrollTop);
-    e.target.removeEventListener(scrollingEvent_ending,removeListener);
+    e.target.removeEventListener(scrollingEvent_end,removeListener);
   }
   function removeListener(ev){
     ev.target.removeEventListener(cursorEvent_start,setCursorPosition);
-    ev.target.removeEventListener(cursorEvent_ending,removeListener);
+    ev.target.removeEventListener(cursorEvent_end,removeListener);
     ev.target.removeEventListener(scrollingEvent_start,setScrollPosition);
-    ev.target.removeEventListener(scrollingEvent_ending,removeListener);
+    ev.target.removeEventListener(scrollingEvent_end,removeListener);
   }
 }//end export function setCursorPositions()
 
