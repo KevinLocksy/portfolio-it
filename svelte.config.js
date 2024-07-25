@@ -16,6 +16,9 @@ const config = {
 			$styles:'src/assets/styles',
 			$utils:'src/lib/utils',
 		},
+		paths: {
+			base: process.env.NODE_ENV === 'production' ? '/portfolio-it' : '',
+		}
 	}
 };
 
