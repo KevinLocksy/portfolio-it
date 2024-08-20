@@ -85,6 +85,14 @@
       display: none;
     }
   }
+  @media screen and (max-width:23em){
+    li{
+      padding:0.25em;
+    }
+    div.tab-list-item{
+      gap: 0.25em;
+    }
+  }
   .active{
     background-color: var(--background-color-active);
   }

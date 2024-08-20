@@ -153,5 +153,8 @@
     #contact{
       gap: 0.5em;
     }
+    h4.contact-logo-caption{
+      display: none;
+    }
   }
 </style>
