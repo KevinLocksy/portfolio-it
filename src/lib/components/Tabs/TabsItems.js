@@ -24,8 +24,8 @@ const TabsItems = [
   {
     "id":2,
     "label":"Algorithms",
-    "icon":"&radic;&#960;=&#8747;e<sup>-x<sup>2</sup></sup>dx",
-    "iconlabel":"Algo",
+    "icon":"&radic;&#960;=&#8747;e<sup>-...</sup>",
+    "iconlabel":"Algorithms",
     "component":Algo,
     "comments":"Algorithms in python, ml..."
   },
@@ -41,7 +41,7 @@ const TabsItems = [
     "id":4,
     "label":"Snippets",
     "icon":"&#x1F469;&#x200D;&#x1F4BB;",
-    "iconlabel":"Snippet",
+    "iconlabel":"Snippets",
     "component":Snippet,
     "comments":"Snippet codes in every language"
   }

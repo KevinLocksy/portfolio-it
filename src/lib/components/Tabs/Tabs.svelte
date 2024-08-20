@@ -15,7 +15,7 @@
         <li class={isActive(item.id) ? 'active' : ''} role="tab" on:click={changeTab(item.id)} on:keydown={()=>{}} tabindex={isActive(item.id) ? "0" : "-1"}  aria-selected={isActive(item.id)} aria-controls="panel-{item.id}">
           <span class="tab-list-item-label">{item.label}</span><!-- medium-large-screen-->
           <div class="tab-list-item-icon"><!-- small-screen-->
-            <h2>{@html item.icon}</h2>
+            <h3>{@html item.icon}</h3>
             <p>{item.iconlabel}</p>
           </div>
         </li>
@@ -64,11 +64,11 @@
     div.tab-list-item-icon{
       display: block;
       text-align: center;
-      padding: 0 1em;
+      padding: 0 0.5em;
     }
     div.tab-list-item-icon > p{
       font-size: x-small;
-      padding: 0.25em 0;
+      padding: 0.5em 0;
     }
     span.tab-list-item-label{
       display: none;
