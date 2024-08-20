@@ -1,0 +1,13 @@
+{
+  "pres":{
+    "title":"Je suis Kevin LOCKSY, un ingénieur multi-disciplinaire basé en France.",
+    "desc":"Artiste dans l'âme, libre-penseur, et développeur à mes heures perdues, je me dédie pour donner le meilleur de ma personne."
+  },
+  "techStack":{
+    "desc":"Technologies et frameworks"
+  },
+  "footer":{
+    "credits":"Développé par Kevin LOCKSY",
+    "contact":"Contact"
+  }
+}
