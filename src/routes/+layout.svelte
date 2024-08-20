@@ -4,7 +4,7 @@
   import {i18nStore} from '$store/i18n.store.js';
   import {isDarkTheme} from '$store/theme.store.js';
   import SOCIAL_MEDIA from '$config/socialmedia.conf.json';
-  import LoadingPage from './LoadingPage.svelte';
+  import LoadingPage from './loadingPage.svelte';
 
   import PERSONAL_INFO from '$config/personalInfo.conf.json';
   import LANG from "$config/i18n.conf.json";
