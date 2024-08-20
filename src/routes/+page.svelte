@@ -87,6 +87,7 @@
     min-height: 355px;
     display: flex;
     align-items: center;
+    justify-content:center;
     flex-flow: row wrap-reverse;
   }
   #pres-desc{
