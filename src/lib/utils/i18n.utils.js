@@ -18,6 +18,7 @@ const defaultLang = {
 async function getTranslateJSON(locale){
   const path = mappingJSON.main[locale];
   const path_projects = mappingJSON.projects[locale];
+  //console.log("locale=",locale)
   try {
     const promise = await fetch(path);//or ...(await import(path)) with relative path //fetch better to catch errors
     const promise_projects = await fetch(path_projects);

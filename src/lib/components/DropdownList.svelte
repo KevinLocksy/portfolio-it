@@ -32,7 +32,7 @@
     }
     selectedValue = event.currentTarget.value;
     selectedId = event.currentTarget.getAttribute("data-option-id");
-    console.log("options[selectedId]=",options[selectedId])
+    //console.log("options[selectedId]=",options[selectedId])
     closeDropdownList();
   }
 </script>
