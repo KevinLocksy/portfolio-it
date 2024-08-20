@@ -1,15 +1,9 @@
 import {writable,get} from "svelte/store";
 import {i18nStore} from '$store/i18n.store.js';
 import {setDefaultLang,updateLang} from '$utils/lang.utils.js';
-import en from "$assets/i18n/lang-en.json";
-import en_project from "$assets/i18n/projects/projects-en.json";
 import mappingJSON from "$config/i18n.mapping.json";
 
-const defaultLang = {
-  lang: "en",
-  ...en,
-  ...en_project
-}
+const defaultLangCode="en";
 
 /**
  * @param {string} locale 
@@ -32,14 +26,20 @@ async function getTranslateJSON(locale){
   }catch{
     console.log("error with the dict path:",path);
   }
-  return defaultLang
+  const en = await fetch(mappingJSON.main[defaultLangCode]);
+  const en_project = await fetch(mappingJSON.projects[defaultLangCode]);
+  return {
+    lang: defaultLangCode,
+    ...en,
+    ...en_project
+  }
 }//end async function getTranslateJSON(locale)
 
 /**
  * @returns new store with a subscribe method and the functions {init(),switchLang()} 
  */
 const init18n = () => {
-  const {subscribe, set} = writable(defaultLang);
+  const {subscribe, set} = writable({});
 
   return { subscribe, 
     init: async () => {

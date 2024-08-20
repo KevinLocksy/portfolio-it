@@ -49,11 +49,18 @@ h2{
   padding: 0.5em 0;
 }
 /**
+* Links
+*/
+a:visited, a:-webkit-any-link{
+  color:inherit;
+}
+/**
 * Logo
 */
 img.logo {
   width:clamp(15px,15px + 5vw,50px);
   height: auto;
+  user-select: none;
 }
 .logo.locksy{
   border-radius: 50px;

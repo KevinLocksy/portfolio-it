@@ -13,13 +13,10 @@
     <ul role="tablist" aria-label="Sample Tabs">
       {#each items as item}  
         <li class={isActive(item.id) ? 'active' : ''} role="tab" on:click={changeTab(item.id)} on:keydown={()=>{}} tabindex={isActive(item.id) ? "0" : "-1"}  aria-selected={isActive(item.id)} aria-controls="panel-{item.id}">
-          <div class="tab-list-item-label"><!-- medium-large-screen-->
-            <h5>{@html item.icon}</h5>
-            <p>{item.label}</p>
-          </div>
-          <div class="tab-list-item-icon"><!-- small-screen-->
+          <div class="tab-list-item">
             <h3>{@html item.icon}</h3>
-            <p>{item.iconlabel}</p>
+            <p class="tab-list-item-label-m">{item.label}</p>
+            <p class="tab-list-item-label-s">{item.label_s}</p>
           </div>
         </li>
       {/each}
@@ -38,6 +35,9 @@
     --background-color-hover:var(--tab-background-color-hover,#17133ee3);
     --line-color:var(--tab-line,var(--text-color));
   }
+  div#tab-list{
+    user-select: none;
+  }
   ul{
     display: flex;
     flex-wrap: wrap;
@@ -54,42 +54,36 @@
     border: 0px solid transparent;
     border-top-left-radius: var(--border-radius);
     border-top-right-radius: var(--border-radius);
+    border-bottom: none;
+    cursor: pointer;
     &:hover{
       background-color: var(--background-color-hover);
     }
   }
-  div.tab-list-item-label{
+  div.tab-list-item{
     display: flex;
     flex-direction: row;
     align-items: center;
     height: 100%;
     gap: 0.5em;
   }
-  div.tab-list-item-icon{
+  p.tab-list-item-label-s{
     display: none;
   }
   @media screen and (max-width:48em){
     li{
       width: unset;
     }
-    div.tab-list-item-icon{
+    div.tab-list-item{
+      flex-direction: column;
+    }
+    p.tab-list-item-label-s{
       display: block;
-      text-align: center;
-      padding: 0 0.25em;
-    }
-    div.tab-list-item-icon > p{
       font-size: x-small;
-      padding: 0.5em 0;
     }
-    div.tab-list-item-label{
+    p.tab-list-item-label-m{
       display: none;
     }
-  }
-  span{
-    display: block;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    border-bottom: none;
   }
   .active{
     background-color: var(--background-color-active);

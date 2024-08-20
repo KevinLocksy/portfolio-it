@@ -25,13 +25,15 @@
 
     if(isTransformEmpty){
       card.classList.remove("animation");
+      card.classList.remove("back-invisible");
     }else{
       card.classList.add("animation");
+      card.classList.add("back-invisible");
     }
   }
 </script>
 
-<div bind:this={card} class='component card animation' role='button' on:click={flipCard} on:keyup tabindex="0">
+<div bind:this={card} class='component card animation back-invisible' role='button' on:click={flipCard} on:keyup tabindex="0">
   <div class='card-container'>
     <div class='card-front'>
       <div class='card-inner'>
@@ -155,6 +157,8 @@
     height: 100%;
     border-radius: inherit;
     transform-style: preserve-3d;
+  }
+  .back-invisible .card-back{
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }

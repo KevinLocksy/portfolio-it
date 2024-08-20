@@ -52,7 +52,15 @@
       "img":{
       "path":"public/img/logo/techStack/svelte-sqr.logo.png",
       "title":"",
-      "alt":"PytSveltehon logo"
+      "alt":"Svelte logo"
+    }
+  },
+  {
+    "name":"Flutter",
+      "img":{
+      "path":"public/img/logo/techStack/flutter-sqr.logo.png",
+      "title":"",
+      "alt":"Flutter logo"
     }
   },
   {

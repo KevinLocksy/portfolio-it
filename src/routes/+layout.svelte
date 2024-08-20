@@ -1,14 +1,15 @@
 <script>
   import {i18n} from '$utils/i18n.utils.js';
-  import {toggleTheme} from '$utils/theme.utils.js';
+  import {setDefaultTheme,toggleTheme} from '$utils/theme.utils.js';
+  import {initCssStyleSheet} from "$utils/cssStyles.utils.js";
   import {i18nStore} from '$store/i18n.store.js';
   import {isDarkTheme} from '$store/theme.store.js';
   import SOCIAL_MEDIA from '$config/socialmedia.conf.json';
   import LoadingPage from './loadingPage.svelte';
-
   import PERSONAL_INFO from '$config/personalInfo.conf.json';
   import LANG from "$config/i18n.conf.json";
 	import DropdownList from '$components/DropdownList.svelte';
+	import { onMount } from 'svelte';
 
   const LOGO = PERSONAL_INFO.logo;
   const CREATION_DATE = PERSONAL_INFO.date_creation;
@@ -19,6 +20,10 @@
     const newLang = e.currentTarget.value;
     await i18n.switchLang(newLang);
   }
+  onMount(() => {
+    setDefaultTheme();
+    initCssStyleSheet();
+  });
 </script>
 
 {#await i18n.init()}
@@ -44,10 +49,13 @@
   <footer>
     <h4 id='credits'>{$i18n.footer.credits}</h4>
     <div id='contact'>
-      {#each SOCIAL_MEDIA as { url, img, alt, title }}
-          <a href={url}>
-            <img class='logo highlight contact' src={$isDarkTheme ? img.dark : img.light} alt='{alt}' title='{title}' />
+      {#each SOCIAL_MEDIA as {url, img, alt, title}}
+        <div class="contact-item">
+          <a href={url} target="_blank">
+            <img class='contact-logo logo highlight' src={$isDarkTheme ? img.dark : img.light} alt='{alt}' title='{title}' />
+            <h4 class="contact-logo-caption">{@html alt}</h4>
           </a>
+        </div>
       {/each}
     </div>
     <h4 id='date'>{CREATION_DATE}{#if currentYear.toString()!=CREATION_DATE} - {currentYear}{/if}</h4>
@@ -132,8 +140,14 @@
     justify-content: center;
     gap: 1em;
   }
-  .logo.contact{
+  .logo.contact-logo{
     width: 25px;
+  }
+  div.contact-item{
+    text-align: center;
+  }
+  h4.contact-logo-caption{
+    font-size: xx-small;
   }
   @media screen and (max-width:28em){
     #contact{

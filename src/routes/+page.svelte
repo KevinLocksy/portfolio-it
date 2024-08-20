@@ -26,7 +26,7 @@
       <div id="pres-desc-social">
         {#each SOCIAL_MEDIA as { url, img, alt, title }}
           <div class="pres-desc-social-item">
-            <a href={url}>
+            <a href={url} target="_blank">
               <img class='logo highlight socialMedia' src={$isDarkTheme ? img.dark : img.light} alt='{alt}' title='{title}' />
             </a>
             <span>{@html alt}</span>
@@ -145,6 +145,7 @@
   /**necessary because the "flex-direction" is column to have the child elements in the same width*/
   #techStack-wrapper{
     padding: 1em;
+    user-select: none;
   }
   #techStack-list{
     display: flex;
@@ -173,6 +174,10 @@
       background: var(--shadow-logo-primary);
       filter: blur(6px);
       border-radius: 100%;
+      /**for chrome**/
+      left: 0;
+      bottom: -1em;
+      /**end for chrome**/
     }
   }
   .techStack-logo-caption{
