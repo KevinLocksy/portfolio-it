@@ -64,7 +64,7 @@
     div.tab-list-item-icon{
       display: block;
       text-align: center;
-      padding: 0 0.5em;
+      padding: 0 0.25em;
     }
     div.tab-list-item-icon > p{
       font-size: x-small;
