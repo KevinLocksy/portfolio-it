@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "Technology";
+  font-display: swap;
+  src:
+    url("/public/fonts/Technology/Technology.ttf") format("truetype"),
+}
+
+@font-face {
+  font-family: "Yellowtail";
+  font-display: swap;
+  src:
+    url("/public/fonts/Yellowtail/Yellowtail-Regular.ttf") format("truetype"),
+}
+
+@font-face {
+  font-family: "Dancing Script";
+  font-display: swap;
+  src:
+    local("Dancing Script"),
+    url("/public/fonts/Dancing_Script/DancingScript-VariableFont_wght.ttf") format("truetype"),
+}
