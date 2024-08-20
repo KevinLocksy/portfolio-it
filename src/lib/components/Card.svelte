@@ -4,6 +4,8 @@
   import SOCIAL_MEDIA from '$config/socialmedia.conf.json';
 
   let card;
+  let cardFront;
+  let cardBack;
   const nodeType_URL = "A";//html tag a
 
   let git_img ="";
@@ -21,21 +23,21 @@
       return;
 
     const isTransformEmpty = typeof card.style.transform === "string" && card.style.transform.length === 0;
-    card.style.transform = isTransformEmpty ? "rotateY(180deg)" : "";
+    card.style.transform = isTransformEmpty ? "rotateY(-180deg)" : "";
+    cardFront.style.backfaceVisibility = isTransformEmpty ? "hidden" : "visible";
+    cardBack.style.backfaceVisibility = isTransformEmpty ? "visible" : "hidden";
 
     if(isTransformEmpty){
       card.classList.remove("animation");
-      card.classList.remove("back-invisible");
     }else{
       card.classList.add("animation");
-      card.classList.add("back-invisible");
     }
   }
 </script>
 
-<div bind:this={card} class='component card animation back-invisible' role='button' on:click={flipCard} on:keyup tabindex="0">
+<div bind:this={card} class='component card animation' role='button' on:click={flipCard} on:keyup tabindex="0">
   <div class='card-container'>
-    <div class='card-front'>
+    <div bind:this={cardFront} class='card-front'>
       <div class='card-inner'>
         <div class='card-img'>
           img {img}
@@ -63,7 +65,7 @@
           </div>
         </div>
     </div>
-    <div class='card-back'>
+    <div bind:this={cardBack} class='card-back'>
       <div class='card-inner'>
         <div class='card-desc'>
           <h2>Description</h2>
@@ -129,7 +131,6 @@
     cursor: pointer;
     transform-style: preserve-3d;
     transform-origin: center;
-    transition: transform var(--card-flip-duration);
     perspective: 1000px;
   }
   .animation:hover{
@@ -157,10 +158,6 @@
     height: 100%;
     border-radius: inherit;
     transform-style: preserve-3d;
-  }
-  .back-invisible .card-back{
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
   }
   .card-inner{
     display: flex;
@@ -192,6 +189,10 @@
     background-color: var(--back-background-color);
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: transform var(--card-flip-duration);
   }
   .card-back>.card-inner{
     display: grid;
