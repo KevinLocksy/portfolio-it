@@ -51,7 +51,10 @@ h2{
 /**
 * Links
 */
-a:visited, a:-webkit-any-link{
+a, a:visited{
+  color:inherit;
+}
+a:-webkit-any-link{/*must be separated. why?*/
   color:inherit;
 }
 /**
