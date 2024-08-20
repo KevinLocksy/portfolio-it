@@ -16,7 +16,7 @@
   const LANGUAGE = LANG.language;
 
   const onLangChange = async (e) => {
-    const newLang = e.target.value;
+    const newLang = e.currentTarget.value;
     await i18n.switchLang(newLang);
   }
 </script>
