@@ -36,7 +36,7 @@
     </div>
     <div id='pres-3d'>
       <!-- <img class='tempImg' src='src/assets/tempImg.jpg' alt='temp img for 3d' title='temp img for 3d' /> -->
-      <img class='tempImg' src='public/img/logo/logo_darkmode_kevinLocksy.jpg' alt='temp img for 3d' title='temp img for 3d' />
+      <img class='tempImg' src='./public/img/logo/logo_darkmode_kevinLocksy.jpg' alt='temp img for 3d' title='temp img for 3d' />
       <!-- <Model3d /> -->
     </div>
   </section>
