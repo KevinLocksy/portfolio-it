@@ -65,3 +65,6 @@ img.logo {
     margin:0.8em;
   }
 }
+img.logo.highlight:hover{
+  filter:var(--logo-hover-secondary);
+}

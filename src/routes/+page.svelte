@@ -27,7 +27,7 @@
         {#each SOCIAL_MEDIA as { url, img, alt, title }}
           <div class="pres-desc-social-item">
             <a href={url}>
-              <img class='logo socialMedia' src={$isDarkTheme ? img.dark : img.light} alt='{alt}' title='{title}' />
+              <img class='logo highlight socialMedia' src={$isDarkTheme ? img.dark : img.light} alt='{alt}' title='{title}' />
             </a>
             <span>{@html alt}</span>
           </div>
@@ -119,9 +119,6 @@
     display: flex;
     justify-content:center;
     padding: 1em 0;
-  }
-  .socialMedia.logo:hover{
-    filter:var(--logo-hover-secondary);
   }
   .pres-desc-social-item{
     max-width: 5em;

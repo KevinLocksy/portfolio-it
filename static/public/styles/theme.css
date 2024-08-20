@@ -9,7 +9,7 @@
   --background-halo-cursor-primary:#181359e2;
   --background-halo-cursor-secondary:#942a78e2;
   --background-halo-logo-primary:#2a3e54eb;
-  --logo-hover-secondary:contrast(1000%) sepia(100%) saturate(1000%) hue-rotate(90deg);
+  --logo-hover-secondary:contrast(1000%) sepia(100%) saturate(1000%) hue-rotate(170deg) brightness(70%);
   --shadow-desc-primary:#0a080861;
   --shadow-logo-primary:#2a3e54eb;
   --shadow-logo-secondary:256, 28%, 18%, 0.886;
@@ -39,7 +39,7 @@
   --background-dropdown-secondary: #e7dddd;
   --background-dropdown-hover-primary:#e4d1e9;
   --background-dropdown-hover-secondary:#c730bae2;
-  --logo-hover-secondary:contrast(1000%) invert(100%) sepia(100%) saturate(1000%) hue-rotate(90deg);
+  --logo-hover-secondary:contrast(1000%) invert(100%) sepia(100%) saturate(1000%) rotate(190deg) brightness(70%);
   --text-color-dropdown-primary:#1d1b1b;
   --background-halo-cursor-primary:#decaca;
   --background-halo-cursor-secondary:#942a78e2;
