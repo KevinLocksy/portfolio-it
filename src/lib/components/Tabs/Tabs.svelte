@@ -13,7 +13,10 @@
     <ul role="tablist" aria-label="Sample Tabs">
       {#each items as item}  
         <li class={isActive(item.id) ? 'active' : ''} role="tab" on:click={changeTab(item.id)} on:keydown={()=>{}} tabindex={isActive(item.id) ? "0" : "-1"}  aria-selected={isActive(item.id)} aria-controls="panel-{item.id}">
-          <span class="tab-list-item-label">{item.label}</span><!-- medium-large-screen-->
+          <div class="tab-list-item-label"><!-- medium-large-screen-->
+            <h5>{@html item.icon}</h5>
+            <p>{item.label}</p>
+          </div>
           <div class="tab-list-item-icon"><!-- small-screen-->
             <h3>{@html item.icon}</h3>
             <p>{item.iconlabel}</p>
@@ -47,12 +50,20 @@
   li{
     width:10%;
     min-width:min-content;
+    padding:0.5em;
     border: 0px solid transparent;
     border-top-left-radius: var(--border-radius);
     border-top-right-radius: var(--border-radius);
     &:hover{
       background-color: var(--background-color-hover);
     }
+  }
+  div.tab-list-item-label{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    gap: 0.5em;
   }
   div.tab-list-item-icon{
     display: none;
@@ -70,7 +81,7 @@
       font-size: x-small;
       padding: 0.5em 0;
     }
-    span.tab-list-item-label{
+    div.tab-list-item-label{
       display: none;
     }
   }

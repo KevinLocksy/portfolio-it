@@ -39,7 +39,7 @@ const TabsItems = [
   },
   {
     "id":4,
-    "label":"Snippets",
+    "label":"Snippet codes",
     "icon":"&#x1F469;&#x200D;&#x1F4BB;",
     "iconlabel":"Snippets",
     "component":Snippet,
