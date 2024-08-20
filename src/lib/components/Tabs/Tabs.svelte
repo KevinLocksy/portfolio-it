@@ -12,8 +12,12 @@
   <div id="tab-list">
     <ul role="tablist" aria-label="Sample Tabs">
       {#each items as item}  
-        <li class={isActive(item.id) ? 'active' : ''}>
-          <span role="tab" on:click={changeTab(item.id)} on:keydown={()=>{}} tabindex={isActive(item.id) ? "0" : "-1"}  aria-selected={isActive(item.id)} aria-controls="panel-{item.id}">{item.label}</span>
+        <li class={isActive(item.id) ? 'active' : ''} role="tab" on:click={changeTab(item.id)} on:keydown={()=>{}} tabindex={isActive(item.id) ? "0" : "-1"}  aria-selected={isActive(item.id)} aria-controls="panel-{item.id}">
+          <span class="tab-list-item-label">{item.label}</span><!-- medium-large-screen-->
+          <div class="tab-list-item-icon"><!-- small-screen-->
+            <h2>{@html item.icon}</h2>
+            <p>{item.iconlabel}</p>
+          </div>
         </li>
       {/each}
     </ul>
@@ -48,6 +52,26 @@
     border-top-right-radius: var(--border-radius);
     &:hover{
       background-color: var(--background-color-hover);
+    }
+  }
+  div.tab-list-item-icon{
+    display: none;
+  }
+  @media screen and (max-width:48em){
+    li{
+      width: unset;
+    }
+    div.tab-list-item-icon{
+      display: block;
+      text-align: center;
+      padding: 0 1em;
+    }
+    div.tab-list-item-icon > p{
+      font-size: x-small;
+      padding: 0.25em 0;
+    }
+    span.tab-list-item-label{
+      display: none;
     }
   }
   span{

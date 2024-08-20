@@ -8,30 +8,40 @@ const TabsItems = [
   {
     "id":0,
     "label":"Web applications",
+    "icon":"&#x1F310;",
+    "iconlabel":"www",
     "component":WebApp,
     "comments":"web applications in svelte/pure css..."
   },
   {
     "id":1,
     "label":"Mobile applications",
+    "icon":"&#x1F4F1;",
+    "iconlabel":"Mobile",
     "component":MobileApp,
     "comments":"Mobile applications in react native/flutter..."
   },
   {
     "id":2,
     "label":"Algorithms",
+    "icon":"&radic;&#960;=&#8747;e<sup>-x<sup>2</sup></sup>dx",
+    "iconlabel":"Algo",
     "component":Algo,
     "comments":"Algorithms in python, ml..."
   },
   {
     "id":3,
     "label":"Document templates",
+    "icon":"&#x1F4DD;",
+    "iconlabel":"Documents",
     "component":DocTemplate,
     "comments":"Document templates in latex/figma css..."
   },
   {
     "id":4,
     "label":"Snippets",
+    "icon":"&#x1F469;&#x200D;&#x1F4BB;",
+    "iconlabel":"Snippet",
     "component":Snippet,
     "comments":"Snippet codes in every language"
   }
