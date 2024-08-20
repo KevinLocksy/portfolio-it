@@ -2,14 +2,14 @@
   font-family: "Technology";
   font-display: swap;
   src:
-    url("./public/fonts/Technology/Technology.ttf") format("truetype"),
+    url("../fonts/Technology/Technology.ttf") format("truetype"),
 }
 
 @font-face {
   font-family: "Yellowtail";
   font-display: swap;
   src:
-    url("./public/fonts/Yellowtail/Yellowtail-Regular.ttf") format("truetype"),
+    url("../fonts/Yellowtail/Yellowtail-Regular.ttf") format("truetype"),
 }
 
 @font-face {
@@ -17,5 +17,5 @@
   font-display: swap;
   src:
     local("Dancing Script"),
-    url("./public/fonts/Dancing_Script/DancingScript-VariableFont_wght.ttf") format("truetype"),
+    url("../fonts/Dancing_Script/DancingScript-VariableFont_wght.ttf") format("truetype"),
 }
