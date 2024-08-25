@@ -47,18 +47,18 @@
   </main>
 
   <footer>
-    <h4 id='credits'>{$i18n.footer.credits}</h4>
+    <p id='credits'>{$i18n.footer.credits}</p>
     <div id='contact'>
       {#each SOCIAL_MEDIA as {url, img, alt, title}}
         <div class="contact-item">
           <a href={url} target="_blank">
             <img class='contact-logo logo highlight' src={$isDarkTheme ? img.dark : img.light} alt='{alt}' title='{title}' />
-            <h4 class="contact-logo-caption">{@html alt}</h4>
+            <p class="contact-logo-caption">{@html alt}</p>
           </a>
         </div>
       {/each}
     </div>
-    <h4 id='date'>{CREATION_DATE}{#if currentYear.toString()!=CREATION_DATE} - {currentYear}{/if}</h4>
+    <p id='date'>{CREATION_DATE}{#if currentYear.toString()!=CREATION_DATE} - {currentYear}{/if}</p>
   </footer>
 {/await}
 
@@ -94,7 +94,6 @@
   footer{
     display: grid;
     grid-template-areas: "credits contact date";
-    grid-template-columns: repeat(3,1fr);
     position: sticky;
     bottom:0;
   }
@@ -122,6 +121,7 @@
     &:first-child{
       grid-column: 1;
       grid-area: credits;
+      max-width: 20vw;
     }
     &:nth-child(2){
       grid-column: 2;
@@ -146,14 +146,17 @@
   div.contact-item{
     text-align: center;
   }
-  h4.contact-logo-caption{
+  p.contact-logo-caption{
     font-size: xx-small;
   }
   @media screen and (max-width:28em){
+    footer{
+      font-size: xx-small;
+    }
     #contact{
       gap: 0.5em;
     }
-    h4.contact-logo-caption{
+    p.contact-logo-caption{
       display: none;
     }
   }
