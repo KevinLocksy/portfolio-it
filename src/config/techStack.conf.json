@@ -64,14 +64,6 @@
     }
   },
   {
-    "name":"React Native",
-      "img":{
-      "path":"public/img/logo/techStack/reactNative-sqr.logo.png",
-      "title":"",
-      "alt":"React Native logo"
-    }
-  },
-  {
     "name":"Photoshop",
       "img":{
       "path":"public/img/logo/techStack/photoshop-sqr.logo.png",
