@@ -25,7 +25,7 @@ const TabsItems = [
     "id":2,
     "label":"Algorithms",
     "label_s":"Algorithms",
-    "icon":"&radic;&#960;=&#8747;e<sup>-...</sup>",
+    "icon":"&radic;&#960;=&#8747;e<sup>-</sup>..",
     "component":Algo,
     "comments":"Algorithms in python, ml..."
   },
