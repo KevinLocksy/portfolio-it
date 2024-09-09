@@ -8,6 +8,14 @@
     }
   },
   {
+    "name":"JS",
+      "img":{
+      "path":"public/img/logo/techStack/js-sqr.logo.png",
+      "title":"",
+      "alt":"Javascript logo"
+    }
+  },
+  {
     "name":"Python",
     "img":{
       "path":"public/img/logo/techStack/python-sqr.logo.png",
@@ -16,27 +24,11 @@
     }
   },
   {
-    "name":"C++",
-    "img":{
-      "path":"public/img/logo/techStack/cpp-sqr.logo.png",
-      "title":"",
-      "alt":"C++ logo"
-    }
-  },
-  {
     "name":"Html5",
       "img":{
       "path":"public/img/logo/techStack/html5-sqr.logo.png",
       "title":"",
       "alt":"HTML5 logo"
-    }
-  },
-  {
-    "name":"JS",
-      "img":{
-      "path":"public/img/logo/techStack/js-sqr.logo.png",
-      "title":"",
-      "alt":"Javascript logo"
     }
   },
   {
@@ -61,6 +53,14 @@
       "path":"public/img/logo/techStack/flutter-sqr.logo.png",
       "title":"",
       "alt":"Flutter logo"
+    }
+  },
+  {
+    "name":"C++",
+    "img":{
+      "path":"public/img/logo/techStack/cpp-sqr.logo.png",
+      "title":"",
+      "alt":"C++ logo"
     }
   },
   {

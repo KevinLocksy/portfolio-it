@@ -1,8 +1,9 @@
 <script>
-  import Card from '$components/Card.svelte'
+  import {i18n} from '$utils/i18n.utils.js';
 </script>
 
 <div class="tab">
+  {$i18n.noproject}
 </div>
 
 <style>

@@ -2,15 +2,40 @@
   "webapp":[
     {
       "project":"Artistic Portfolio",
-      "standfirst":"@Kevin.locksy",
-      "summary":"I developed my own artistic portfolio to share my vision of the world. ",
-      "description":"Use technology to show the beauty of the world",
+      "standfirst":"Instagram @Kevin.locksy",
+      "summary":"I developed my own artistic portfolio to share my vision of the world, through my camera or my pencil",
+      "description":"Use technology to reveal the beauty of the world",
       "features":["Image comparison slider","Modal gallery"],
       "git":"https://github.com/KevinLocksy/portfolio-art",
-      "demo":"link.demo.com",
-      "stack":["Svelte","Javascript","CSS","HTML"],
+      "url":"https://kangaroo-primary-mainly.ngrok-free.app/",
+      "stack":["Svelte","Javascript","CSS","HTML","NGrok"],
       "img":"./path.jpg"
     }
   ],
-  "snippet":[]
+  "mobile":[
+    {
+      "project":"Practice with me",
+      "standfirst":"Custom makes us what we are",
+      "summary":"'Practice with Me' is designed to help users improve their language skills through AI-driven and engaging conversations",
+      "description":"In chats with a human-like AI on various topics, the AI corrects the user's mistakes, generates practice exercises for better language mastery",
+      "features":["Tailored practice exercises","LLM","Cross-platform", "up to 50 languages"],
+      "git":"https://github.com/KevinLocksy/portfolio-art",
+      "url":"https://ai.google.dev/competition/projects/practice-with-me",
+      "stack":["Flutter","Dart","API Gemini"],
+      "img":"./path.jpg"
+    }
+  ],
+  "snippet":[
+    {
+      "project":"Image Compare Slider",
+      "standfirst":"Svelte component",
+      "summary":"Single page application to showcase the use of a component",
+      "description":"Simple to use, the component is easily customizable",
+      "features":["Ready-to-use","Custom characteristics"],
+      "git":"https://github.com/KevinLocksy/portfolio-art",
+      "url":"https://kevinlocksy.github.io/svelte-image-compare-slider/",
+      "stack":["Svelte","Javascript","CSS","HTML", "Rollup"],
+      "img":"./path.jpg"
+    }
+  ]
 }

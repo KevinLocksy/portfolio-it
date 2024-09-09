@@ -1,6 +1,6 @@
 {
   "pres":{
-    "title":"I am Kevin LOCKSY, a multidisciplanary engineer based in France.",
+    "title":"I am Kevin LOCKSY, a multidisciplanary engineer based in France, awarded with the 1st prize at the Game of Code hackathon",
     "desc":"Artist at heart, spirit of a free-thinker, and developer at night, I devote myself to the fullest to give the best of myself."
   },
   "techStack":{
@@ -9,5 +9,6 @@
   "footer":{
     "credits":"Developed by Kevin LOCKSY",
     "contact":"Contact"
-  }
+  },
+  "noproject":"Projects in development progress"
 }

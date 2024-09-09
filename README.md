@@ -25,12 +25,16 @@ npm run dev
 npm run dev -- --open
 ```
 
-## Building
+## Building & deploy
 
 To create a production version of your app:
 
 ```bash
 npm run build
+```
+
+```bash
+npm run deploy
 ```
 
 You can preview the production build with `npm run preview`.

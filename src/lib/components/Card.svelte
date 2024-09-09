@@ -1,5 +1,5 @@
 <script>
-  export let projectName, standfirst, summary, description, features, git_url, demo, stack, img;
+  export let projectName, standfirst, summary, description, features, git_url, url, stack, img;
   import {isDarkTheme} from '$store/theme.store.js';
   import SOCIAL_MEDIA from '$config/socialmedia.conf.json';
 
@@ -39,20 +39,26 @@
   <div class='card-container'>
     <div bind:this={cardFront} class='card-front'>
       <div class='card-inner'>
-        <div class='card-img'>
+        <!-- <div class='card-img'>
           img {img}
-        </div>
+        </div> -->
         <div class='card-body'>
           <h2 class='title'>
-            <a href='{demo}' target='_blank'>
+            <a class='url-title' href='{url}' target='_blank'>
               {projectName}
             </a>
           </h2>
           <p class='standfirst'>{standfirst}</p>
           <p class='summary'>{summary}</p>
-          <a class='git-link' href='{git_url}' target='_blank'>
+          <span>
+            <br/>
+            🌐
+            <a class='link' href='{url}' target='_blank'>{url}</a>
+          </span>
+
+          <!-- <a class='git-link' href='{git_url}' target='_blank'> 
             <img class="logo card" src={$isDarkTheme ? git_img.dark : git_img.light} alt="{git_url}" title="{git_url}">
-          </a>
+          </a> -->
           <div class="stack" role="list">
             {#if stack}
               {#each stack as language}
@@ -82,14 +88,15 @@
           {/if}
         </div>
         <div class='card-link'>
-          <a class='git-link' href='{git_url}' target='_blank'>
+          <!-- <a class='git-link' href='{git_url}' target='_blank'>
             <img class="logo card" src={$isDarkTheme ? git_img.dark : git_img.light} alt="{git_url}" title="{git_url}">
             <span>{git_url}</span>
-          </a>
-          <a class='demo-link' href='{demo}' target='_blank'>
-            <img class="logo card" src={$isDarkTheme ? git_img.dark : git_img.light} alt="{git_url}" title="{git_url}">
-            <span>{demo}</span>
-          </a>
+          </a> -->
+          <span>🌐 
+            <a class='demo-link' href='{url}' target='_blank'>
+              {url}
+            </a>
+          </span>
         </div>
       </div>
     </div>
@@ -215,7 +222,7 @@
   .card-link>*{
     display: flex;
     width:fit-content;
-    margin: 0.5em 0;
+    /* margin: 0.5em 0; */
     & > span{
       font-size: smaller;
       margin: 0 1em;
@@ -263,5 +270,11 @@
   img.logo.card{
     height:1.5em;
     width: auto;
+  }
+  /**
+  * Link
+  */
+  a:not(.url-title){
+    font-size: x-small;
   }
 </style>
