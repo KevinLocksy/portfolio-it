@@ -1,14 +1,14 @@
 {
-  "main":{
-    "en-US":"./public/i18n/lang-en.json",
-    "epo-EO":"./public/i18n/lang-epo.json",
-    "fr-FR":"./public/i18n/lang-fr.json",
-    "spa-ES":"./public/i18n/lang-spa.json"
-  },
-  "projects":{
-    "en-US":"./public/i18n/projects/projects-en.json",
-    "epo-EO":"./public/i18n/projects/projects-epo.json",
-    "fr-FR":"./public/i18n/projects/projects-fr.json",
-    "spa-ES":"./public/i18n/projects/projects-spa.json"
-  }
+	"main": {
+		"en-US": "./public/i18n/lang-en.json",
+		"epo-EO": "./public/i18n/lang-epo.json",
+		"fr-FR": "./public/i18n/lang-fr.json",
+		"spa-ES": "./public/i18n/lang-spa.json"
+	},
+	"projects": {
+		"en-US": "./public/i18n/projects/projects-en.json",
+		"epo-EO": "./public/i18n/projects/projects-epo.json",
+		"fr-FR": "./public/i18n/projects/projects-fr.json",
+		"spa-ES": "./public/i18n/projects/projects-spa.json"
+	}
 }

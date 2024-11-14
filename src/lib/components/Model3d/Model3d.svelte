@@ -1,47 +1,46 @@
 <script>
-  import * as THREE from 'three';
-  import { onMount } from 'svelte';
-  
-  let canvas;
-  onMount(() => {
-    createScene(canvas)
-  });
+	import * as THREE from 'three';
+	import { onMount } from 'svelte';
 
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-  const geometry = new THREE.BoxGeometry();
-  const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-  const cube = new THREE.Mesh(geometry, material);
-  let renderer =  new THREE.WebGLRenderer( { alpha: true } );
-  renderer.setClearColor( 0x000000, 0 ); 
-  scene.background = null;
-  scene.add(cube);
-  camera.position.z = 5;
+	let canvas;
+	onMount(() => {
+		createScene(canvas);
+	});
 
-  const animate = () => {
-    requestAnimationFrame(animate);
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
-    renderer.render(scene, camera);
-  };
+	const scene = new THREE.Scene();
+	const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+	const geometry = new THREE.BoxGeometry();
+	const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+	const cube = new THREE.Mesh(geometry, material);
+	let renderer = new THREE.WebGLRenderer({ alpha: true });
+	renderer.setClearColor(0x000000, 0);
+	scene.background = null;
+	scene.add(cube);
+	camera.position.z = 5;
 
-  const resize = () => {
-    renderer.setSize(window.innerWidth*0.3, window.innerHeight*0.3)
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-  };
+	const animate = () => {
+		requestAnimationFrame(animate);
+		cube.rotation.x += 0.01;
+		cube.rotation.y += 0.01;
+		renderer.render(scene, camera);
+	};
 
-  export const createScene = (el) => {
-    renderer = new THREE.WebGLRenderer({ antialias: true, canvas: el });
-    resize();
-    animate();
-  }
+	const resize = () => {
+		renderer.setSize(window.innerWidth * 0.3, window.innerHeight * 0.3);
+		camera.aspect = window.innerWidth / window.innerHeight;
+		camera.updateProjectionMatrix();
+	};
 
-  window.addEventListener('resize', resize);
+	export const createScene = (el) => {
+		renderer = new THREE.WebGLRenderer({ antialias: true, canvas: el });
+		resize();
+		animate();
+	};
+
+	window.addEventListener('resize', resize);
 </script>
 
-<canvas id='model' bind:this={canvas}></canvas>
+<canvas id="model" bind:this={canvas}></canvas>
 
 <style>
-
 </style>

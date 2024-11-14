@@ -1,41 +1,41 @@
 {
-  "webapp":[
-    {
-      "project":"Arta biletujo",
-      "standfirst":"@Kevin.locksy",
-      "summary":"Mi evoluigis mian propian artan biletujon por kunhavi mian vizion de la mondo",
-      "description":"Uzu teknologion por montri la belecon de la mondo",
-      "features":["Image comparison slider","Modal gallery"],
-      "git":"https://github.com/KevinLocksy/portfolio-art",
-      "url":"https://kangaroo-primary-mainly.ngrok-free.app/",
-      "stack":["Svelte","Javascript","CSS","HTML"],
-      "img":"./path.jpg"
-    }
-  ],
-  "mobile":[
-    {
-      "project":"Practice with me",
-      "standfirst":"Kutimo faras nin kiaj ni estas",
-      "summary":"'Practice with me' estas desegnita por helpi uzantojn plibonigi siajn lingvajn kapablojn per AI-movitaj kaj engaĝaj konversacioj",
-      "description":"En babilejoj kun homsimila AI pri diversaj temoj, la AI korektas la erarojn de la uzanto, generas praktikajn ekzercojn por pli bona lingvoregado",
-      "features":["Tajlitaj praktikaj ekzercoj","LLM","Cross-platform", "ĝis 50 lingvoj"],
-      "git":"https://github.com/KevinLocksy/portfolio-art",
-      "url":"https://ai.google.dev/competition/projects/practice-with-me",
-      "stack":["Flutter","Dart","API Gemini"],
-      "img":"./path.jpg"
-    }
-  ],
-  "snippet":[
-    {
-      "project":"Image Compare Slider",
-      "standfirst":"Svelte komponanto",
-      "summary":"Unupaĝa aplikaĵo por montri la uzon de komponanto",
-      "description":"Simpla uzebla, la komponanto estas facile agordebla",
-      "features":["Ready-to-use","Propraj trajtoj"],
-      "git":"https://github.com/KevinLocksy/portfolio-art",
-      "url":"https://kevinlocksy.github.io/svelte-image-compare-slider/",
-      "stack":["Svelte","Javascript","CSS","HTML", "Rollup"],
-      "img":"./path.jpg"
-    }
-  ]
+	"webapp": [
+		{
+			"project": "Arta biletujo",
+			"standfirst": "@Kevin.locksy",
+			"summary": "Mi evoluigis mian propian artan biletujon por kunhavi mian vizion de la mondo",
+			"description": "Uzu teknologion por montri la belecon de la mondo",
+			"features": ["Image comparison slider", "Modal gallery"],
+			"git": "https://github.com/KevinLocksy/portfolio-art",
+			"url": "https://kangaroo-primary-mainly.ngrok-free.app/",
+			"stack": ["Svelte", "Javascript", "CSS", "HTML"],
+			"img": "./path.jpg"
+		}
+	],
+	"mobile": [
+		{
+			"project": "Practice with me",
+			"standfirst": "Kutimo faras nin kiaj ni estas",
+			"summary": "'Practice with me' estas desegnita por helpi uzantojn plibonigi siajn lingvajn kapablojn per AI-movitaj kaj engaĝaj konversacioj",
+			"description": "En babilejoj kun homsimila AI pri diversaj temoj, la AI korektas la erarojn de la uzanto, generas praktikajn ekzercojn por pli bona lingvoregado",
+			"features": ["Tajlitaj praktikaj ekzercoj", "LLM", "Cross-platform", "ĝis 50 lingvoj"],
+			"git": "https://github.com/KevinLocksy/portfolio-art",
+			"url": "https://ai.google.dev/competition/projects/practice-with-me",
+			"stack": ["Flutter", "Dart", "API Gemini"],
+			"img": "./path.jpg"
+		}
+	],
+	"snippet": [
+		{
+			"project": "Image Compare Slider",
+			"standfirst": "Svelte komponanto",
+			"summary": "Unupaĝa aplikaĵo por montri la uzon de komponanto",
+			"description": "Simpla uzebla, la komponanto estas facile agordebla",
+			"features": ["Ready-to-use", "Propraj trajtoj"],
+			"git": "https://github.com/KevinLocksy/portfolio-art",
+			"url": "https://kevinlocksy.github.io/svelte-image-compare-slider/",
+			"stack": ["Svelte", "Javascript", "CSS", "HTML", "Rollup"],
+			"img": "./path.jpg"
+		}
+	]
 }

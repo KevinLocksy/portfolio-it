@@ -1,7 +1,7 @@
 {
-  "color": "red",
-  "overflow": "hidden",
-  "border-right": ".15em solid orange",
-  "white-space": "nowrap",
-  "letter-spacing": ".15em"
+	"color": "red",
+	"overflow": "hidden",
+	"border-right": ".15em solid orange",
+	"white-space": "nowrap",
+	"letter-spacing": ".15em"
 }

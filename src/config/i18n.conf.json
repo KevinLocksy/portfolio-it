@@ -1,32 +1,32 @@
 {
-  "language":[
-    {
-      "id":0,
-      "label":"English",
-      "value":"en-US",
-      "locale":"EN",
-      "logo":"./public/img/lang/flag-en.png"
-    },
-    {
-      "id":1,
-      "label":"Français",
-      "value":"fr-FR",
-      "locale":"FR",
-      "logo":"./public/img/lang/flag-fr.png"
-    },
-    {
-      "id":2,
-      "label":"Esperanto",
-      "value":"epo-EO",
-      "locale":"EO",
-      "logo":"./public/img/lang/flag-epo.png"
-    },
-    {
-      "id":3,
-      "label":"Español",
-      "value":"spa-ES",
-      "locale":"ES",
-      "logo":"./public/img/lang/flag-spa.png"
-    }
-  ]
+	"language": [
+		{
+			"id": 0,
+			"label": "English",
+			"value": "en-US",
+			"locale": "EN",
+			"logo": "./public/img/lang/flag-en.png"
+		},
+		{
+			"id": 1,
+			"label": "Français",
+			"value": "fr-FR",
+			"locale": "FR",
+			"logo": "./public/img/lang/flag-fr.png"
+		},
+		{
+			"id": 2,
+			"label": "Esperanto",
+			"value": "epo-EO",
+			"locale": "EO",
+			"logo": "./public/img/lang/flag-epo.png"
+		},
+		{
+			"id": 3,
+			"label": "Español",
+			"value": "spa-ES",
+			"locale": "ES",
+			"logo": "./public/img/lang/flag-spa.png"
+		}
+	]
 }
