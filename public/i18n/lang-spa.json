@@ -1,14 +1,14 @@
 {
-  "pres":{
-    "title":"Soy Kevin LOCKSY, multidisciplinario ingenioro radicado en Francia, galardonado con el 1er premio en el hackathon de Game of Code (2018).",
-    "desc":"Artisto en mi corazón, pensador libre, y developer en mi tiempo libre, me dedico para dar lo mejor de mi mismo."
-  },
-  "techStack":{
-    "desc":"Technologies y frameworks"
-  },
-  "footer":{
-    "credits":"Desarrollado por Kevin LOCKSY",
-    "contact":"Contacto"
-  },
-  "noproject":"Proyectos en proceso de desarrollo"
+	"pres": {
+		"title": "Soy Kevin LOCKSY, multidisciplinario ingenioro radicado en Francia, galardonado con el 1er premio en el hackathon de Game of Code (2018).",
+		"desc": "Artisto en mi corazón, pensador libre, y developer en mi tiempo libre, me dedico para dar lo mejor de mi mismo."
+	},
+	"techStack": {
+		"desc": "Technologies y frameworks"
+	},
+	"footer": {
+		"credits": "Desarrollado por Kevin LOCKSY",
+		"contact": "Contacto"
+	},
+	"noproject": "Proyectos en proceso de desarrollo"
 }

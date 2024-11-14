@@ -1,14 +1,14 @@
 {
-  "pres":{
-    "title":"Mi estas Kevin LOCKSY, multfaka inĝeniero bazita en Francio, aljuĝis la unuan premion ĉe la Game of Code hackathon (2018).",
-    "desc":"Artisto en la koro, liberpensulo, kaj programisto en mia libertempo, mi dediĉas min doni la plej bonan de mi mem."
-  },
-  "techStack":{
-    "desc":"Teknologioj kaj kadroj"
-  },
-  "footer":{
-    "credits":"Evoluinta de Kevin Locksy",
-    "contact":"Contact"
-  },
-  "noproject":"Projektoj en disvolviĝo progresas"
+	"pres": {
+		"title": "Mi estas Kevin LOCKSY, multfaka inĝeniero bazita en Francio, aljuĝis la unuan premion ĉe la Game of Code hackathon (2018).",
+		"desc": "Artisto en la koro, liberpensulo, kaj programisto en mia libertempo, mi dediĉas min doni la plej bonan de mi mem."
+	},
+	"techStack": {
+		"desc": "Teknologioj kaj kadroj"
+	},
+	"footer": {
+		"credits": "Evoluinta de Kevin Locksy",
+		"contact": "Contact"
+	},
+	"noproject": "Projektoj en disvolviĝo progresas"
 }

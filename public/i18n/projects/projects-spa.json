@@ -1,41 +1,46 @@
 {
-  "webapp":[
-    {
-      "project":"Cartera artista",
-      "standfirst":"@Kevin.locksy",
-      "summary":"He desarrolado mi propia cartera artista para compartir mi visión del mundo",
-      "description":"Usar de la technología para mostrar la belleza del mundo",
-      "features":["Comparación de imagenes","Modal gallery"],
-      "git":"https://github.com/KevinLocksy/portfolio-art",
-      "url":"https://kangaroo-primary-mainly.ngrok-free.app/",
-      "stack":["Svelte","Javascript","CSS","HTML"],
-      "img":"./path.jpg"
-    }
-  ],
-  "mobile":[
-    {
-      "project":"Practice with me",
-      "standfirst":"La costumbre nos hace lo que somos",
-      "summary":"'Practice with Me' ayuda a los usuarios a mejorar sus habilidades lingüísticas a través de conversaciones interesantes impulsadas por IA",
-      "description":"En los chats con una IA sobre diversos temas, la IA corrige los errores del usuario y genera ejercicios de práctica para un mejor dominio del idioma",
-      "features":["Ejercicios de práctica personalizados","LLM","Cross-platform", "hasta 50 idiomas"],
-      "git":"https://github.com/KevinLocksy/portfolio-art",
-      "url":"https://ai.google.dev/competition/projects/practice-with-me",
-      "stack":["Flutter","Dart","API Gemini"],
-      "img":"./path.jpg"
-    }
-  ],
-  "snippet":[
-    {
-      "project":"Image Compare Slider",
-      "standfirst":"Svelte componente",
-      "summary":"Single page application para demonstrar el uso del componente",
-      "description":"Fácil de usar, el componente se puede personalizar fácilmente",
-      "features":["Ready-to-use","Características personalizadas"],
-      "git":"https://github.com/KevinLocksy/portfolio-art",
-      "url":"https://kevinlocksy.github.io/svelte-image-compare-slider/",
-      "stack":["Svelte","Javascript","CSS","HTML", "Rollup"],
-      "img":"./path.jpg"
-    }
-  ]
+	"webapp": [
+		{
+			"project": "Cartera artista",
+			"standfirst": "@Kevin.locksy",
+			"summary": "He desarrolado mi propia cartera artista para compartir mi visión del mundo",
+			"description": "Usar de la technología para mostrar la belleza del mundo",
+			"features": ["Comparación de imagenes", "Modal gallery"],
+			"git": "https://github.com/KevinLocksy/portfolio-art",
+			"url": "https://kangaroo-primary-mainly.ngrok-free.app/",
+			"stack": ["Svelte", "Javascript", "CSS", "HTML"],
+			"img": "./path.jpg"
+		}
+	],
+	"mobile": [
+		{
+			"project": "Practice with me",
+			"standfirst": "La costumbre nos hace lo que somos",
+			"summary": "'Practice with Me' ayuda a los usuarios a mejorar sus habilidades lingüísticas a través de conversaciones interesantes impulsadas por IA",
+			"description": "En los chats con una IA sobre diversos temas, la IA corrige los errores del usuario y genera ejercicios de práctica para un mejor dominio del idioma",
+			"features": [
+				"Ejercicios de práctica personalizados",
+				"LLM",
+				"Cross-platform",
+				"hasta 50 idiomas"
+			],
+			"git": "https://github.com/KevinLocksy/portfolio-art",
+			"url": "https://ai.google.dev/competition/projects/practice-with-me",
+			"stack": ["Flutter", "Dart", "API Gemini"],
+			"img": "./path.jpg"
+		}
+	],
+	"snippet": [
+		{
+			"project": "Image Compare Slider",
+			"standfirst": "Svelte componente",
+			"summary": "Single page application para demonstrar el uso del componente",
+			"description": "Fácil de usar, el componente se puede personalizar fácilmente",
+			"features": ["Ready-to-use", "Características personalizadas"],
+			"git": "https://github.com/KevinLocksy/portfolio-art",
+			"url": "https://kevinlocksy.github.io/svelte-image-compare-slider/",
+			"stack": ["Svelte", "Javascript", "CSS", "HTML", "Rollup"],
+			"img": "./path.jpg"
+		}
+	]
 }
