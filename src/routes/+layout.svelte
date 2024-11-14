@@ -134,13 +134,13 @@
       justify-self: end;
     }
   }
-  #contact{
+  div#contact{
     display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 1em;
   }
-  .logo.contact-logo{
+  img.logo.contact-logo{
     width: 25px;
   }
   div.contact-item{
@@ -153,7 +153,7 @@
     footer{
       font-size: xx-small;
     }
-    #contact{
+    div#contact{
       gap: 0.5em;
     }
     p.contact-logo-caption{

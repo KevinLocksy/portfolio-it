@@ -27,7 +27,7 @@
         {#each SOCIAL_MEDIA as { url, img, alt, title }}
           <div class="pres-desc-social-item">
             <a href={url} target="_blank">
-              <img class='logo highlight socialMedia' src={$isDarkTheme ? img.dark : img.light} alt='{alt}' title='{title}' />
+              <img class='logo clickable socialMedia' src={$isDarkTheme ? img.dark : img.light} alt='{alt}' title='{title}' />
             </a>
             <span>{@html alt}</span>
           </div>
@@ -65,7 +65,7 @@
 </div>
 
 <style>
-  .tempImg{
+  img.tempImg{
     width:30vw;
     max-width: 300px;
     border: solid var(--text-primary);
@@ -73,7 +73,7 @@
   /**
   * Main
   */
-  #main-wrapper{
+  div#main-wrapper{
     margin: 0 auto;
     max-width: 1440px;
   }
@@ -90,45 +90,45 @@
     justify-content:center;
     flex-flow: row wrap-reverse;
   }
-  #pres-desc{
+  div#pres-desc{
     flex: 2;
     max-width:35em;
     margin: 1em clamp(1em,5vw,8em);
     background-color: var(--shadow-desc-primary);
     box-shadow: 0 0 15px 10px var(--shadow-desc-primary);
   }
-  #pres-desc-text{
+  div#pres-desc-text{
     padding: 1em clamp(1em,10vw,3em);
     text-align: justify;
     text-justify: inter-character;
   }
-  #pres-desc-social{
+  div#pres-desc-social{
     display: flex;
     flex-direction: row;
     padding: 0 clamp(1em,10vw,3em);
     gap:2em;
   }
   @media screen and (max-width:28em){
-    #pres-desc-social{
+    div#pres-desc-social{
       justify-content: center;
       gap: 0.5em;
     }
   }
-  #pres-3d{
+  div#pres-3d{
     flex: 1;
     display: flex;
     justify-content:center;
     padding: 1em 0;
   }
-  .pres-desc-social-item{
+  div.pres-desc-social-item{
     max-width: 5em;
     text-align: center;
   }
-  .pres-desc-social-item>span{
+  div.pres-desc-social-item>span{
     font-size: x-small;
   }
   @media screen and (max-width:28em){
-    .pres-desc-social-item>span{
+    div.pres-desc-social-item>span{
       font-size: xx-small;
     }
   }
@@ -143,23 +143,23 @@
     padding-bottom: 1em;/**because of the h2 padding*/
   }
   /**necessary because the "flex-direction" is column to have the child elements in the same width*/
-  #techStack-wrapper{
+  div#techStack-wrapper{
     padding: 1em;
     user-select: none;
   }
-  #techStack-list{
+  div#techStack-list{
     display: flex;
     flex-flow: row wrap;
   }
   @media screen and (max-width:35em){
-    #techStack-wrapper>h2{
+    div#techStack-wrapper>h2{
       text-align: center;
     }
-    #techStack-list{
+    div#techStack-list{
       justify-content: center;
     }
   }
-  .techStack-logo-container{
+  div.techStack-logo-container{
     position: relative;
     max-height: fit-content;
     margin: calc(0.5rem + 1vw);
@@ -180,7 +180,7 @@
       /**end for chrome**/
     }
   }
-  .techStack-logo-caption{
+  h4.techStack-logo-caption{
     position: absolute;
     height: max-content;
     width: 100%;
@@ -192,16 +192,16 @@
     z-index: var(--z-index-logo);
   }
   @media screen and (max-width:35em){
-    .techStack-logo-caption{
+    h4.techStack-logo-caption{
       font-size: x-small;
       line-height: 1.5em;
       opacity: 0.8;
     }
   }
-  .techStack-logo-container:hover{
+  div.techStack-logo-container:hover{
     filter:drop-shadow(0px 0px 8px var(--background-halo-logo-primary));
   }
-  .techStack-logo-container:hover .techStack-logo-caption{
+  div.techStack-logo-container:hover h4.techStack-logo-caption{
     opacity: 1;
   }
   /**

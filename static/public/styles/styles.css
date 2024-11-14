@@ -65,16 +65,16 @@ img.logo {
   height: auto;
   user-select: none;
 }
-.logo.locksy{
+img.logo.locksy{
   border-radius: 50px;
   width: clamp(25px,50px + 1vw,40px);
   margin:0.5em;
 }
 @media screen and (max-width:30em) {
-  .logo.locksy{
+  img.logo.locksy{
     margin:0.8em;
   }
 }
-img.logo.highlight:hover{
-  filter:var(--logo-hover-secondary);
+img.logo.clickable:hover{
+  filter:var(--logo-clickable-hover-secondary);
 }
